@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Group Policy Disabler")]
-[assembly: AssemblyDescription("As the title says, this program can help you circumvent windows group policies set by your administrator/organization.")]
+[assembly: AssemblyDescription("This program can help you circumvent windows group policies set by your administrator/organization.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("YDS & NS")]
 [assembly: AssemblyProduct("Group Policy Disabler")]
