@@ -1,0 +1,24 @@
+C:\Users\andyy\source\Local Repos\Clock\Clock\bin\Release\Clock.exe.config
+C:\Users\andyy\source\Local Repos\Clock\Clock\bin\Release\Clock.exe
+C:\Users\andyy\source\Local Repos\Clock\Clock\bin\Release\Clock.pdb
+C:\Users\andyy\source\Local Repos\Clock\Clock\obj\Release\Clock.AboutBox1.resources
+C:\Users\andyy\source\Local Repos\Clock\Clock\obj\Release\Clock.Clock.resources
+C:\Users\andyy\source\Local Repos\Clock\Clock\obj\Release\Clock.Manual.resources
+C:\Users\andyy\source\Local Repos\Clock\Clock\obj\Release\Clock.Properties.Resources.resources
+C:\Users\andyy\source\Local Repos\Clock\Clock\obj\Release\Clock.csproj.GenerateResource.cache
+C:\Users\andyy\source\Local Repos\Clock\Clock\obj\Release\Clock.csproj.CoreCompileInputs.cache
+C:\Users\andyy\source\Local Repos\Clock\Clock\obj\Release\Clock.exe
+C:\Users\andyy\source\Local Repos\Clock\Clock\obj\Release\Clock.pdb
+C:\Users\andyy\source\Local Repos\Clock\Clock\obj\Release\Clock.csprojAssemblyReference.cache
+C:\Users\andyy\source\Local Repos\C#\Windows Forms\Clock\Clock\bin\Release\Clock.exe.config
+C:\Users\andyy\source\Local Repos\C#\Windows Forms\Clock\Clock\bin\Release\Clock.exe
+C:\Users\andyy\source\Local Repos\C#\Windows Forms\Clock\Clock\bin\Release\Clock.pdb
+C:\Users\andyy\source\Local Repos\C#\Windows Forms\Clock\Clock\obj\Release\Clock.csprojAssemblyReference.cache
+C:\Users\andyy\source\Local Repos\C#\Windows Forms\Clock\Clock\obj\Release\Clock.AboutBox1.resources
+C:\Users\andyy\source\Local Repos\C#\Windows Forms\Clock\Clock\obj\Release\Clock.Clock.resources
+C:\Users\andyy\source\Local Repos\C#\Windows Forms\Clock\Clock\obj\Release\Clock.Manual.resources
+C:\Users\andyy\source\Local Repos\C#\Windows Forms\Clock\Clock\obj\Release\Clock.Properties.Resources.resources
+C:\Users\andyy\source\Local Repos\C#\Windows Forms\Clock\Clock\obj\Release\Clock.csproj.GenerateResource.cache
+C:\Users\andyy\source\Local Repos\C#\Windows Forms\Clock\Clock\obj\Release\Clock.csproj.CoreCompileInputs.cache
+C:\Users\andyy\source\Local Repos\C#\Windows Forms\Clock\Clock\obj\Release\Clock.exe
+C:\Users\andyy\source\Local Repos\C#\Windows Forms\Clock\Clock\obj\Release\Clock.pdb
