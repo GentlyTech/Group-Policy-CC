@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.Globalization;
 using System.Runtime.InteropServices;
+using System.Security.Principal;
 using System.Windows.Forms;
 
 namespace Group_Policy_CC
@@ -16,6 +17,41 @@ namespace Group_Policy_CC
         {
             InitializeComponent();
             timer1.Start();
+        }
+
+        public static bool IsAdministrator()
+        {
+            var identity = WindowsIdentity.GetCurrent();
+            var principal = new WindowsPrincipal(identity);
+            return principal.IsInRole(WindowsBuiltInRole.Administrator);
+        }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+            if (IsAdministrator())
+            {
+                this.Text = this.Text + " " + "(Administrator)";
+            }
+            else
+            {
+                Lockdown();
+            }
+        }
+
+        private void Lockdown()
+        {
+            this.Text = this.Text + " " + "(Limited User)";
+            button1.Enabled = false;
+            button2.Enabled = false;
+
+            //Configure the MessageBox
+            string message = "This program was not run with Administrator Privileges.\n\nIn order to change the password or strip policies, Administrator Privileges is required.\n\nPlease 'Run As Administrator' to enable functionality.";
+            string caption = "Error: Limited User";
+            MessageBoxButtons buttons = MessageBoxButtons.OK;
+            DialogResult result;
+
+            // Displays the MessageBox.
+            result = MessageBox.Show(message, caption, buttons, MessageBoxIcon.Error);
         }
 
         [DllImport("ntdll.dll")]
@@ -84,7 +120,7 @@ namespace Group_Policy_CC
 
         private void READMEToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string message = "Please note that administrative privileges are required for the program to successfully execute its functions.\n\nWe are not responsible for any data loss or damage caused by this program.";
+            string message = "Please note that administrative privileges are required for the program to successfully execute its functions.\n\nWe are not responsible for any data loss or damage caused by this program. Thank you for using our product.";
             string caption = "README - Please Note";
             MessageBoxButtons buttons = MessageBoxButtons.OK;
             DialogResult result;
