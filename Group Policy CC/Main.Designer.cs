@@ -1,4 +1,4 @@
-﻿namespace Clock
+﻿namespace Group_Policy_CC
 {
     partial class Main
     {
@@ -33,8 +33,6 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.shutdownThisPCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.shutdownComputerToolStripMenuItem = new System.Windows.Forms.ToolStripSeparator();
             this.relaunchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rEADMEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -68,8 +66,6 @@
             // menuToolStripMenuItem
             // 
             this.menuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.shutdownThisPCToolStripMenuItem,
-            this.shutdownComputerToolStripMenuItem,
             this.relaunchToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
@@ -77,31 +73,19 @@
             this.menuToolStripMenuItem.Text = "Menu";
             this.menuToolStripMenuItem.Click += new System.EventHandler(this.menuToolStripMenuItem_Click);
             // 
-            // shutdownThisPCToolStripMenuItem
-            // 
-            this.shutdownThisPCToolStripMenuItem.Name = "shutdownThisPCToolStripMenuItem";
-            this.shutdownThisPCToolStripMenuItem.Size = new System.Drawing.Size(161, 26);
-            this.shutdownThisPCToolStripMenuItem.Text = "&Blue Screen";
-            this.shutdownThisPCToolStripMenuItem.Click += new System.EventHandler(this.shutdownThisPCToolStripMenuItem_Click);
-            // 
-            // shutdownComputerToolStripMenuItem
-            // 
-            this.shutdownComputerToolStripMenuItem.Name = "shutdownComputerToolStripMenuItem";
-            this.shutdownComputerToolStripMenuItem.Size = new System.Drawing.Size(158, 6);
-            // 
             // relaunchToolStripMenuItem
             // 
             this.relaunchToolStripMenuItem.Name = "relaunchToolStripMenuItem";
             this.relaunchToolStripMenuItem.ShortcutKeyDisplayString = "";
-            this.relaunchToolStripMenuItem.Size = new System.Drawing.Size(161, 26);
-            this.relaunchToolStripMenuItem.Text = "Refresh";
+            this.relaunchToolStripMenuItem.Size = new System.Drawing.Size(225, 26);
+            this.relaunchToolStripMenuItem.Text = "Relaunch Application";
             this.relaunchToolStripMenuItem.Click += new System.EventHandler(this.RelaunchToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.ShortcutKeyDisplayString = "Alt+F4";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(161, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(225, 26);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -154,18 +138,23 @@
             // 
             // button3
             // 
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button3.Font = new System.Drawing.Font("Arial", 16.2F);
+            this.button3.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.button3.Location = new System.Drawing.Point(3, 392);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(562, 274);
             this.button3.TabIndex = 17;
-            this.button3.Text = "[Not Implemented]";
+            this.button3.Text = "Invoke Blue Screen of Death";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 
             // button4
             // 
+            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button4.Enabled = false;
             this.button4.Font = new System.Drawing.Font("Arial", 16.2F);
             this.button4.Location = new System.Drawing.Point(571, 392);
             this.button4.Name = "button4";
@@ -176,17 +165,20 @@
             // 
             // button2
             // 
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button2.Font = new System.Drawing.Font("Arial", 16.2F);
+            this.button2.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold);
             this.button2.Location = new System.Drawing.Point(571, 114);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(562, 272);
             this.button2.TabIndex = 13;
             this.button2.Text = "Hijack Administrator Account";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // button1
             // 
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button1.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(3, 114);
@@ -212,14 +204,14 @@
             // 
             // label1
             // 
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(562, 111);
             this.label1.TabIndex = 15;
-            this.label1.Text = "Welcome to the Group Policy Control Centre!";
+            this.label1.Text = "Welcome to the Group Policy Control Centre (GPCC)!";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Main
@@ -249,8 +241,6 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem shutdownThisPCToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator shutdownComputerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem relaunchToolStripMenuItem;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;

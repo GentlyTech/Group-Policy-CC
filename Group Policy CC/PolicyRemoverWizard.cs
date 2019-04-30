@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.Win32;
+using System;
 using System.Windows.Forms;
 
-namespace Group_Policy_Disabler
+namespace Group_Policy_CC
 {
     public partial class PolicyRemoverWizard : Form
     {
@@ -68,17 +62,38 @@ namespace Group_Policy_Disabler
 
             if (result == DialogResult.Yes)
             {
+                //Current User
                 if (radioButton1.Checked)
                 {
+                    RegistryKey desiredKey = Registry.CurrentUser.OpenSubKey("SOFTWARE\\", true);
+                    desiredKey.DeleteSubKey("Policies");
 
+                    desiredKey = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\", true);
+                    desiredKey.DeleteSubKey("Policies");
                 }
+                //Local Machine
                 else if (radioButton2.Checked)
                 {
+                    RegistryKey desiredKey = Registry.LocalMachine.OpenSubKey("SOFTWARE\\", true);
+                    desiredKey.DeleteSubKey("Policies");
 
+                    desiredKey = Registry.LocalMachine.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\", true);
+                    desiredKey.DeleteSubKey("Policies");
                 }
+                //Both
                 else if (radioButton3.Checked)
                 {
+                    RegistryKey desiredKey = Registry.LocalMachine.OpenSubKey("SOFTWARE\\", true);
+                    desiredKey.DeleteSubKey("Policies");
 
+                    desiredKey = Registry.LocalMachine.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\", true);
+                    desiredKey.DeleteSubKey("Policies");
+
+                    desiredKey = Registry.CurrentUser.OpenSubKey("SOFTWARE\\", true);
+                    desiredKey.DeleteSubKey("Policies");
+
+                    desiredKey = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\", true);
+                    desiredKey.DeleteSubKey("Policies");
                 }
 
                 //Configure the MessageBox
@@ -95,7 +110,7 @@ namespace Group_Policy_Disabler
             else
             {
                 //Configure the MessageBox
-                string message2 = "The user cancelled the action.";
+                string message2 = "The operation was cancelled by the user.";
                 string caption2 = "Cancelled";
                 MessageBoxButtons buttons2 = MessageBoxButtons.OK;
                 DialogResult result2;
@@ -109,15 +124,6 @@ namespace Group_Policy_Disabler
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            //Configure the MessageBox
-            string message = "The user cancelled the action.";
-            string caption = "Cancelled";
-            MessageBoxButtons buttons = MessageBoxButtons.OK;
-            DialogResult result;
-
-            // Displays the MessageBox.
-            result = MessageBox.Show(message, caption, buttons, MessageBoxIcon.Error);
-
             this.Close();
         }
     }
