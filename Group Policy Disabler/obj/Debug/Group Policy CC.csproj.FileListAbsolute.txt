@@ -1,0 +1,10 @@
+C:\Users\andyy\source\Collaborative Git Repos\Group Policy Disabler\Group Policy Disabler\bin\Debug\Group Policy CC.exe.config
+C:\Users\andyy\source\Collaborative Git Repos\Group Policy Disabler\Group Policy Disabler\bin\Debug\Group Policy CC.exe
+C:\Users\andyy\source\Collaborative Git Repos\Group Policy Disabler\Group Policy Disabler\bin\Debug\Group Policy CC.pdb
+C:\Users\andyy\source\Collaborative Git Repos\Group Policy Disabler\Group Policy Disabler\obj\Debug\Clock.Main.resources
+C:\Users\andyy\source\Collaborative Git Repos\Group Policy Disabler\Group Policy Disabler\obj\Debug\Group_Policy_Disabler.PolicyRemoverWizard.resources
+C:\Users\andyy\source\Collaborative Git Repos\Group Policy Disabler\Group Policy Disabler\obj\Debug\Group_Policy_CC.Properties.Resources.resources
+C:\Users\andyy\source\Collaborative Git Repos\Group Policy Disabler\Group Policy Disabler\obj\Debug\Group Policy CC.csproj.GenerateResource.cache
+C:\Users\andyy\source\Collaborative Git Repos\Group Policy Disabler\Group Policy Disabler\obj\Debug\Group Policy CC.csproj.CoreCompileInputs.cache
+C:\Users\andyy\source\Collaborative Git Repos\Group Policy Disabler\Group Policy Disabler\obj\Debug\Group Policy CC.exe
+C:\Users\andyy\source\Collaborative Git Repos\Group Policy Disabler\Group Policy Disabler\obj\Debug\Group Policy CC.pdb

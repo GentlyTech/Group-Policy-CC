@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Group Policy Disabler")]
+[assembly: AssemblyTitle("Group Policy CC")]
 [assembly: AssemblyDescription("This program can help you circumvent windows group policies set by your administrator/organization.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("YDS & NS")]
-[assembly: AssemblyProduct("Group Policy Disabler")]
+[assembly: AssemblyProduct("Group Policy CC")]
 [assembly: AssemblyCopyright("Copyright © YDS & NS 2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

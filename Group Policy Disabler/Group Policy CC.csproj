@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{E19E5702-24C3-40E2-8514-2CA04DAD7B96}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Group_Policy_Disabler</RootNamespace>
-    <AssemblyName>Group Policy Disabler</AssemblyName>
+    <RootNamespace>Group_Policy_CC</RootNamespace>
+    <AssemblyName>Group Policy CC</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -87,10 +87,19 @@
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="PolicyRemoverWizard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PolicyRemoverWizard.Designer.cs">
+      <DependentUpon>PolicyRemoverWizard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PolicyRemoverWizard.resx">
+      <DependentUpon>PolicyRemoverWizard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

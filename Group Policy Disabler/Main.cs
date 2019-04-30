@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Group_Policy_Disabler;
+using Microsoft.Win32;
+using System;
 using System.Globalization;
 using System.Media;
 using System.Runtime.InteropServices;
@@ -8,6 +10,8 @@ namespace Clock
 {
     public partial class Main : Form
     {
+        Form PolicyRemoverWizard = new PolicyRemoverWizard();
+
         public Main()
         {
             InitializeComponent();
@@ -39,12 +43,12 @@ namespace Clock
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            System.Windows.Forms.Application.Exit();
+            Application.Exit();
         }
 
         private void RelaunchToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            System.Windows.Forms.Application.Restart();
+            Application.Restart();
         }
 
         private void shutdownThisPCToolStripMenuItem_Click(object sender, EventArgs e)
@@ -65,6 +69,22 @@ namespace Clock
                 RtlAdjustPrivilege(19, true, false, out t1);
                 NtRaiseHardError(0xc0000022, 0, 0, IntPtr.Zero, 6, out t2);
             }
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            PolicyRemoverWizard.ShowDialog();
+        }
+
+        private void READMEToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string message = "Please note that administrative privileges are required for the program to successfully execute its functions.";
+            string caption = "README - Please Note";
+            MessageBoxButtons buttons = MessageBoxButtons.OK;
+            DialogResult result;
+
+            // Displays the MessageBox.
+            result = MessageBox.Show(message, caption, buttons, MessageBoxIcon.Information);
         }
     }
 }

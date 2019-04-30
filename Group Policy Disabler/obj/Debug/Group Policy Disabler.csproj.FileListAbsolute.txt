@@ -8,3 +8,4 @@ C:\Users\andyy\source\Collaborative Git Repos\Group Policy Disabler\Group Policy
 C:\Users\andyy\source\Collaborative Git Repos\Group Policy Disabler\Group Policy Disabler\obj\Debug\Group Policy Disabler.csproj.CoreCompileInputs.cache
 C:\Users\andyy\source\Collaborative Git Repos\Group Policy Disabler\Group Policy Disabler\obj\Debug\Group Policy Disabler.exe
 C:\Users\andyy\source\Collaborative Git Repos\Group Policy Disabler\Group Policy Disabler\obj\Debug\Group Policy Disabler.pdb
+C:\Users\andyy\source\Collaborative Git Repos\Group Policy Disabler\Group Policy Disabler\obj\Debug\Group_Policy_Disabler.PolicyRemoverWizard.resources

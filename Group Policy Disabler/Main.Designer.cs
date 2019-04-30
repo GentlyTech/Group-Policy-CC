@@ -40,10 +40,11 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.Time = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.Time = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.rEADMEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -56,7 +57,8 @@
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuToolStripMenuItem});
+            this.menuToolStripMenuItem,
+            this.rEADMEToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1136, 28);
@@ -109,10 +111,10 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.button2, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.button1, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.button3, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.button4, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.button3, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.button4, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.button2, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.button1, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.Time, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -146,35 +148,47 @@
             // button3
             // 
             this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button3.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold);
-            this.button3.Location = new System.Drawing.Point(571, 114);
+            this.button3.Font = new System.Drawing.Font("Arial", 16.2F);
+            this.button3.Location = new System.Drawing.Point(3, 392);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(562, 272);
-            this.button3.TabIndex = 13;
-            this.button3.Text = "Hijack Administrator Account";
+            this.button3.Size = new System.Drawing.Size(562, 274);
+            this.button3.TabIndex = 17;
+            this.button3.Text = "[Not Implemented]";
             this.button3.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
             this.button4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button4.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(3, 114);
+            this.button4.Font = new System.Drawing.Font("Arial", 16.2F);
+            this.button4.Location = new System.Drawing.Point(571, 392);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(562, 272);
-            this.button4.TabIndex = 12;
-            this.button4.Text = "Strip Group Policies";
+            this.button4.Size = new System.Drawing.Size(562, 274);
+            this.button4.TabIndex = 16;
+            this.button4.Text = "[Not Implemented]";
             this.button4.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // button2
             // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(562, 111);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "Welcome to Group Policy Disabler!";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button2.Font = new System.Drawing.Font("Arial", 16.2F);
+            this.button2.Location = new System.Drawing.Point(571, 114);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(562, 272);
+            this.button2.TabIndex = 13;
+            this.button2.Text = "Hijack Administrator Account";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button1.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(3, 114);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(562, 272);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "Strip Group Policies";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // Time
             // 
@@ -189,27 +203,23 @@
             this.Time.Text = "[Time]";
             this.Time.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button2
+            // label1
             // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button2.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold);
-            this.button2.Location = new System.Drawing.Point(3, 392);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(562, 274);
-            this.button2.TabIndex = 17;
-            this.button2.Text = "[Not Implemented]";
-            this.button2.UseVisualStyleBackColor = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(562, 111);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Welcome to the Group Policy Control Centre!";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button1
+            // rEADMEToolStripMenuItem
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold);
-            this.button1.Location = new System.Drawing.Point(571, 392);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(562, 274);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "[Not Implemented]";
-            this.button1.UseVisualStyleBackColor = true;
+            this.rEADMEToolStripMenuItem.Name = "rEADMEToolStripMenuItem";
+            this.rEADMEToolStripMenuItem.Size = new System.Drawing.Size(80, 24);
+            this.rEADMEToolStripMenuItem.Text = "README";
+            this.rEADMEToolStripMenuItem.Click += new System.EventHandler(this.READMEToolStripMenuItem_Click);
             // 
             // Main
             // 
@@ -243,12 +253,13 @@
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem relaunchToolStripMenuItem;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label Time;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolStripMenuItem rEADMEToolStripMenuItem;
     }
 }
 
