@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace Group_Policy_CC
@@ -10,6 +11,8 @@ namespace Group_Policy_CC
         {
             InitializeComponent();
         }
+
+        static Process net = new Process();
 
         private void AdminHijacker_Load(object sender, EventArgs e)
         {
@@ -23,41 +26,111 @@ namespace Group_Policy_CC
         //------------------------------------------------Button Functions------------------------------------------------\\
         private void Button1_Click(object sender, EventArgs e)
         {
-            label1.Text = "Confirm...";
-            label2.Visible = false;
+            //Configure the MessageBox
+            string message = "Are you sure you want to change the password for the Local Administrator account?\n\nYour Administrator will not be able to log on with their credentials anymore.";
+            string caption = "Confirm";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result;
 
-            string password = textBox1.Text.ToString();
-            string confirmpassword = textBox2.Text.ToString();
+            // Displays the MessageBox.
+            result = MessageBox.Show(message, caption, buttons, MessageBoxIcon.Exclamation);
 
-            if (password == confirmpassword)
+            if(result == DialogResult.Yes)
             {
-                Process net = new Process();
+                label1.Text = "Verifying...";
+                label2.Visible = false;
 
-                net.StartInfo.FileName = "net.exe";
-                net.StartInfo.Arguments = $"user Administrator {password}";
+                string password = textBox1.Text.ToString();
+                string confirmpassword = textBox2.Text.ToString();
 
-                net.StartInfo.CreateNoWindow = true;
-                net.StartInfo.UseShellExecute = false;
+                if (!password.Contains("*") && !password.Equals(""))
+                {
+                    if (password == confirmpassword)
+                    {
+                        net.StartInfo.FileName = "net.exe";
+                        net.StartInfo.Arguments = $"user Administrator {password}";
 
-                net.Start();
+                        net.StartInfo.CreateNoWindow = true;
+                        net.StartInfo.UseShellExecute = false;
 
-                //Configure the MessageBox
-                string message1 = "The operation completed successfully!";
-                string caption1 = "Success";
-                MessageBoxButtons buttons1 = MessageBoxButtons.OK;
-                DialogResult result1;
+                        net.Start();
+                        net.WaitForExit();
 
-                // Displays the MessageBox.
-                result1 = MessageBox.Show(message1, caption1, buttons1, MessageBoxIcon.Information);
+                        PasswordChangeStatus();
 
-                this.Close();
+                        if (PasswordChangeStatus())
+                        {
+                            //Configure the MessageBox
+                            string message1 = "The operation completed successfully!";
+                            string caption1 = "Success";
+                            MessageBoxButtons buttons1 = MessageBoxButtons.OK;
+                            DialogResult result1;
 
+                            // Displays the MessageBox.
+                            result1 = MessageBox.Show(message1, caption1, buttons1, MessageBoxIcon.Information);
+
+                            this.Close();
+                        }
+                        else
+                        {
+                            //Configure the MessageBox
+                            string message1 = "An error occurred and the password was not set.\n\nPlease try again.";
+                            string caption1 = "Error - Unable to Set Password";
+                            MessageBoxButtons buttons1 = MessageBoxButtons.OK;
+                            DialogResult result1;
+
+                            // Displays the MessageBox.
+                            result1 = MessageBox.Show(message1, caption1, buttons1, MessageBoxIcon.Error);
+
+                            this.Close();
+                        }
+                    }
+                    else if (password != confirmpassword)
+                    {
+                        //Configure the MessageBox
+                        string message2 = "The passwords entered do not match.\n\nPlease try again.";
+                        string caption2 = "Non-Matching Passwords";
+                        MessageBoxButtons buttons2 = MessageBoxButtons.OK;
+                        DialogResult result2;
+
+                        // Displays the MessageBox.
+                        result2 = MessageBox.Show(message2, caption2, buttons2, MessageBoxIcon.Error);
+
+                        this.Close();
+                    }
+                }
+                else if (password.Contains("*"))
+                {
+                    //Configure the MessageBox
+                    string message1 = "An invalid character was entered.\n\nPlease try again.";
+                    string caption1 = "Invalid Password";
+                    MessageBoxButtons buttons1 = MessageBoxButtons.OK;
+                    DialogResult result1;
+
+                    // Displays the MessageBox.
+                    result1 = MessageBox.Show(message1, caption1, buttons1, MessageBoxIcon.Error);
+
+                    this.Close();
+                }
+                else if (password.Equals(""))
+                {
+                    //Configure the MessageBox
+                    string message1 = "No password was supplied.\n\nPlease try again.";
+                    string caption1 = "Invalid Password";
+                    MessageBoxButtons buttons1 = MessageBoxButtons.OK;
+                    DialogResult result1;
+
+                    // Displays the MessageBox.
+                    result1 = MessageBox.Show(message1, caption1, buttons1, MessageBoxIcon.Error);
+
+                    this.Close();
+                }
             }
-            else if (password != confirmpassword)
+            else
             {
                 //Configure the MessageBox
-                string message2 = "The passwords entered do not match. Please try again.";
-                string caption2 = "Non-Matching Passwords";
+                string message2 = "The operation was cancelled by the user.";
+                string caption2 = "Cancelled";
                 MessageBoxButtons buttons2 = MessageBoxButtons.OK;
                 DialogResult result2;
 
@@ -71,6 +144,20 @@ namespace Group_Policy_CC
         private void Button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        //------------------------------------------------Bool Functions (To check if an operation was completed)------------------------------------------------\\
+
+        private bool PasswordChangeStatus()
+        {
+            if (net.ExitCode == 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         //------------------------------------------------Checkbox Function------------------------------------------------\\
@@ -87,7 +174,6 @@ namespace Group_Policy_CC
                 net.StartInfo.UseShellExecute = false;
 
                 net.Start();
-
 
             }
         }

@@ -65,34 +65,34 @@ namespace Group_Policy_CC
                 //Current User
                 if (radioButton1.Checked)
                 {
-                    RegistryKey desiredKey = Registry.CurrentUser.OpenSubKey("SOFTWARE\\", true);
-                    desiredKey.DeleteSubKey("Policies");
+                    RegistryKey desiredKey = Registry.CurrentUser.OpenSubKey("SOFTWARE", true);
+                    desiredKey.DeleteSubKeyTree("Policies");
 
-                    desiredKey = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\", true);
-                    desiredKey.DeleteSubKey("Policies");
+                    desiredKey = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion", true);
+                    desiredKey.DeleteSubKeyTree("Policies");
                 }
                 //Local Machine
                 else if (radioButton2.Checked)
                 {
-                    RegistryKey desiredKey = Registry.LocalMachine.OpenSubKey("SOFTWARE\\", true);
-                    desiredKey.DeleteSubKey("Policies");
+                    RegistryKey desiredKey = Registry.LocalMachine.OpenSubKey("SOFTWARE", true);
+                    desiredKey.DeleteSubKeyTree("Policies");
 
-                    desiredKey = Registry.LocalMachine.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\", true);
-                    desiredKey.DeleteSubKey("Policies");
+                    desiredKey = Registry.LocalMachine.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion", true);
+                    desiredKey.DeleteSubKeyTree("Policies");
                 }
                 //Both
                 else if (radioButton3.Checked)
                 {
-                    RegistryKey desiredKey = Registry.LocalMachine.OpenSubKey("SOFTWARE\\", true);
+                    RegistryKey desiredKey = Registry.LocalMachine.OpenSubKey("SOFTWARE", true);
                     desiredKey.DeleteSubKeyTree("Policies");
 
-                    desiredKey = Registry.LocalMachine.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\", true);
+                    desiredKey = Registry.LocalMachine.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion", true);
                     desiredKey.DeleteSubKeyTree("Policies");
 
-                    desiredKey = Registry.CurrentUser.OpenSubKey("SOFTWARE\\", true);
+                    desiredKey = Registry.CurrentUser.OpenSubKey("SOFTWARE", true);
                     desiredKey.DeleteSubKeyTree("Policies");
 
-                    desiredKey = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\", true);
+                    desiredKey = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion", true);
                     desiredKey.DeleteSubKeyTree("Policies");
                 }
 

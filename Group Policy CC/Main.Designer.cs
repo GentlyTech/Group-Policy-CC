@@ -43,6 +43,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.Time = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.installFortniteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -56,7 +57,8 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuToolStripMenuItem,
-            this.rEADMEToolStripMenuItem});
+            this.rEADMEToolStripMenuItem,
+            this.installFortniteToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1136, 28);
@@ -214,6 +216,13 @@
             this.label1.Text = "Welcome to the Group Policy Control Centre (GPCC)!";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // installFortniteToolStripMenuItem
+            // 
+            this.installFortniteToolStripMenuItem.Name = "installFortniteToolStripMenuItem";
+            this.installFortniteToolStripMenuItem.Size = new System.Drawing.Size(115, 24);
+            this.installFortniteToolStripMenuItem.Text = "Install Fortnite";
+            this.installFortniteToolStripMenuItem.Click += new System.EventHandler(this.InstallFortniteToolStripMenuItem_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -252,6 +261,7 @@
         private System.Windows.Forms.Label Time;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStripMenuItem rEADMEToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem installFortniteToolStripMenuItem;
     }
 }
 

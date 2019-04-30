@@ -1,7 +1,6 @@
 C:\Users\andyy\source\Collaborative Git Repos\Group Policy CC\Group Policy CC\bin\Release\Group Policy CC.exe.config
 C:\Users\andyy\source\Collaborative Git Repos\Group Policy CC\Group Policy CC\bin\Release\Group Policy CC.exe
 C:\Users\andyy\source\Collaborative Git Repos\Group Policy CC\Group Policy CC\bin\Release\Group Policy CC.pdb
-C:\Users\andyy\source\Collaborative Git Repos\Group Policy CC\Group Policy CC\obj\Release\Group Policy CC.csprojAssemblyReference.cache
 C:\Users\andyy\source\Collaborative Git Repos\Group Policy CC\Group Policy CC\obj\Release\Group_Policy_CC.AdminHijacker.resources
 C:\Users\andyy\source\Collaborative Git Repos\Group Policy CC\Group Policy CC\obj\Release\Group_Policy_CC.Main.resources
 C:\Users\andyy\source\Collaborative Git Repos\Group Policy CC\Group Policy CC\obj\Release\Group_Policy_CC.PolicyRemoverWizard.resources

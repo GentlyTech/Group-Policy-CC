@@ -138,5 +138,16 @@ namespace Group_Policy_CC
 
             Time.Text = formattedTimeNow;
         }
+
+        private void InstallFortniteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string message = "Haha... no.";
+            string caption = "Install Fortnite";
+            MessageBoxButtons buttons = MessageBoxButtons.OK;
+            DialogResult result;
+
+            // Displays the MessageBox.
+            result = MessageBox.Show(message, caption, buttons, MessageBoxIcon.Stop);
+        }
     }
 }
