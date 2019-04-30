@@ -54,7 +54,7 @@ namespace Group_Policy_Disabler
         //------------------------------------------------Other Functions------------------------------------------------\\
         private void Button1_Click(object sender, EventArgs e)
         {
-            label1.Text = "Group Policy Remover";
+            label1.Text = "Confirm...";
             label2.Visible = false;
 
             //Configure the MessageBox
@@ -89,6 +89,19 @@ namespace Group_Policy_Disabler
 
                 // Displays the MessageBox.
                 result1 = MessageBox.Show(message1, caption1, buttons1, MessageBoxIcon.Information);
+
+                this.Close();
+            }
+            else
+            {
+                //Configure the MessageBox
+                string message2 = "The user cancelled the action.";
+                string caption2 = "Cancelled";
+                MessageBoxButtons buttons2 = MessageBoxButtons.OK;
+                DialogResult result2;
+
+                // Displays the MessageBox.
+                result2 = MessageBox.Show(message2, caption2, buttons2, MessageBoxIcon.Error);
 
                 this.Close();
             }
