@@ -84,16 +84,16 @@ namespace Group_Policy_CC
                 else if (radioButton3.Checked)
                 {
                     RegistryKey desiredKey = Registry.LocalMachine.OpenSubKey("SOFTWARE\\", true);
-                    desiredKey.DeleteSubKey("Policies");
+                    desiredKey.DeleteSubKeyTree("Policies");
 
                     desiredKey = Registry.LocalMachine.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\", true);
-                    desiredKey.DeleteSubKey("Policies");
+                    desiredKey.DeleteSubKeyTree("Policies");
 
                     desiredKey = Registry.CurrentUser.OpenSubKey("SOFTWARE\\", true);
-                    desiredKey.DeleteSubKey("Policies");
+                    desiredKey.DeleteSubKeyTree("Policies");
 
                     desiredKey = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\", true);
-                    desiredKey.DeleteSubKey("Policies");
+                    desiredKey.DeleteSubKeyTree("Policies");
                 }
 
                 //Configure the MessageBox
