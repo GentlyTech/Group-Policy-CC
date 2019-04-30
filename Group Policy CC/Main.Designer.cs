@@ -154,14 +154,14 @@
             // 
             this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button4.Enabled = false;
             this.button4.Font = new System.Drawing.Font("Arial", 16.2F);
             this.button4.Location = new System.Drawing.Point(571, 392);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(562, 274);
             this.button4.TabIndex = 16;
-            this.button4.Text = "[Not Implemented]";
+            this.button4.Text = "Launch PowerShell";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.Button4_Click);
             // 
             // button2
             // 

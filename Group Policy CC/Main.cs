@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Globalization;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
@@ -55,11 +56,20 @@ namespace Group_Policy_CC
             }
         }
 
+        private void Button4_Click(object sender, EventArgs e)
+        {
+            Process PowerShell = new Process();
+            // Configure the process using the StartInfo properties.
+            PowerShell.StartInfo.FileName = "powershell.exe";
+            PowerShell.StartInfo.WindowStyle = ProcessWindowStyle.Maximized;
+            PowerShell.Start();
+        }
+
         //------------------------------------------------------------Tool Strip Functions------------------------------------------------------------------------\\
 
         private void menuToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -82,7 +92,7 @@ namespace Group_Policy_CC
             // Displays the MessageBox.
             result = MessageBox.Show(message, caption, buttons, MessageBoxIcon.Information);
         }
-        
+
         //------------------------------------------------------------Clock------------------------------------------------------------------------\\
         private void timer1_Tick(object sender, EventArgs e)
         {

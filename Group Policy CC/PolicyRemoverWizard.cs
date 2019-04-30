@@ -23,7 +23,7 @@ namespace Group_Policy_CC
 
         private void RadioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            if(radioButton1.Checked == true)
+            if (radioButton1.Checked == true)
             {
                 OptionName = radioButton1.Text;
             }
