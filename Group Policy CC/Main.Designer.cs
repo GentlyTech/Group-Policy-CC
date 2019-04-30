@@ -37,6 +37,7 @@
             this.shutdownComputerToolStripMenuItem = new System.Windows.Forms.ToolStripSeparator();
             this.relaunchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rEADMEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -44,7 +45,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.Time = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.rEADMEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -104,6 +104,13 @@
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(161, 26);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // rEADMEToolStripMenuItem
+            // 
+            this.rEADMEToolStripMenuItem.Name = "rEADMEToolStripMenuItem";
+            this.rEADMEToolStripMenuItem.Size = new System.Drawing.Size(80, 24);
+            this.rEADMEToolStripMenuItem.Text = "README";
+            this.rEADMEToolStripMenuItem.Click += new System.EventHandler(this.READMEToolStripMenuItem_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -205,6 +212,7 @@
             // 
             // label1
             // 
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(3, 0);
@@ -213,13 +221,6 @@
             this.label1.TabIndex = 15;
             this.label1.Text = "Welcome to the Group Policy Control Centre!";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // rEADMEToolStripMenuItem
-            // 
-            this.rEADMEToolStripMenuItem.Name = "rEADMEToolStripMenuItem";
-            this.rEADMEToolStripMenuItem.Size = new System.Drawing.Size(80, 24);
-            this.rEADMEToolStripMenuItem.Text = "README";
-            this.rEADMEToolStripMenuItem.Click += new System.EventHandler(this.READMEToolStripMenuItem_Click);
             // 
             // Main
             // 
