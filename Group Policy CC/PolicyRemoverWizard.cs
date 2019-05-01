@@ -45,6 +45,12 @@ namespace Group_Policy_CC
             }
         }
 
+        //------------------------------------------------Checkbox Functions------------------------------------------------\\
+        private void CheckBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
         //------------------------------------------------Other Functions------------------------------------------------\\
         private void Button1_Click(object sender, EventArgs e)
         {

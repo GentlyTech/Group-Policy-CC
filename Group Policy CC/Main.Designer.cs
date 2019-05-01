@@ -36,6 +36,7 @@
             this.relaunchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rEADMEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.installFortniteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -43,7 +44,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.Time = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.installFortniteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -97,6 +97,13 @@
             this.rEADMEToolStripMenuItem.Size = new System.Drawing.Size(80, 24);
             this.rEADMEToolStripMenuItem.Text = "README";
             this.rEADMEToolStripMenuItem.Click += new System.EventHandler(this.READMEToolStripMenuItem_Click);
+            // 
+            // installFortniteToolStripMenuItem
+            // 
+            this.installFortniteToolStripMenuItem.Name = "installFortniteToolStripMenuItem";
+            this.installFortniteToolStripMenuItem.Size = new System.Drawing.Size(115, 24);
+            this.installFortniteToolStripMenuItem.Text = "Install Fortnite";
+            this.installFortniteToolStripMenuItem.Click += new System.EventHandler(this.InstallFortniteToolStripMenuItem_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -215,13 +222,6 @@
             this.label1.TabIndex = 15;
             this.label1.Text = "Welcome to the Group Policy Control Centre (GPCC)!";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // installFortniteToolStripMenuItem
-            // 
-            this.installFortniteToolStripMenuItem.Name = "installFortniteToolStripMenuItem";
-            this.installFortniteToolStripMenuItem.Size = new System.Drawing.Size(115, 24);
-            this.installFortniteToolStripMenuItem.Text = "Install Fortnite";
-            this.installFortniteToolStripMenuItem.Click += new System.EventHandler(this.InstallFortniteToolStripMenuItem_Click);
             // 
             // Main
             // 
