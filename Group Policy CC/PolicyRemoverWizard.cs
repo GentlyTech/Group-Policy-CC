@@ -1,5 +1,7 @@
 ﻿using Microsoft.Win32;
 using System;
+using System.Diagnostics;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Group_Policy_CC
@@ -45,12 +47,123 @@ namespace Group_Policy_CC
             }
         }
 
-        //------------------------------------------------Checkbox Functions------------------------------------------------\\
+        //------------------------------------------------Service Functions------------------------------------------------\\
+        static Process svc = new Process();
+        static Process svc2 = new Process();
+
         private void CheckBox1_CheckedChanged(object sender, EventArgs e)
         {
+            if (checkBox1.Checked == true)
+            {
+                svc.StartInfo.FileName = "sc.exe";
+                svc.StartInfo.Arguments = "stop gpsvc";
 
+                svc2.StartInfo.FileName = "sc.exe";
+                svc2.StartInfo.Arguments = "sc config gpsvc start=disabled";
+
+                svc.StartInfo.CreateNoWindow = true;
+                svc.StartInfo.UseShellExecute = false;
+
+                svc2.StartInfo.CreateNoWindow = true;
+                svc2.StartInfo.UseShellExecute = false;
+
+                svc.Start();
+                svc2.Start();
+
+                svc.WaitForExit();
+                svc2.WaitForExit();
+
+                CheckForCompletion();
+
+                if (CheckForCompletion())
+                {
+                    //Configure the MessageBox
+                    string message = "The operation completed successfully!";
+                    string caption = "Success";
+                    MessageBoxButtons buttons = MessageBoxButtons.OK;
+                    DialogResult result;
+
+                    // Displays the MessageBox.
+                    result = MessageBox.Show(message, caption, buttons, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    //Configure the MessageBox
+                    string message1 = "Something went wrong while disabling the group policy service (e.g. The service wasn't started).\n\nPlease try again or do it manually through powershell/command prompt.";
+                    string caption1 = "Error - Unable to Disable Service";
+                    MessageBoxButtons buttons1 = MessageBoxButtons.OK;
+                    DialogResult result1;
+
+                    // Displays the MessageBox.
+                    result1 = MessageBox.Show(message1, caption1, buttons1, MessageBoxIcon.Error);
+
+                    checkBox1.CheckStateChanged -= CheckBox1_CheckedChanged;
+                    checkBox1.Checked = false;
+                    checkBox1.CheckStateChanged += CheckBox1_CheckedChanged;
+                }
+            }
+            else
+            {
+                svc2.StartInfo.FileName = "sc.exe";
+                svc2.StartInfo.Arguments = "sc config gpsvc start=auto";
+
+                svc.StartInfo.FileName = "sc.exe";
+                svc.StartInfo.Arguments = "start gpsvc";
+
+                svc.StartInfo.CreateNoWindow = true;
+                svc.StartInfo.UseShellExecute = false;
+
+                svc2.StartInfo.CreateNoWindow = true;
+                svc2.StartInfo.UseShellExecute = false;
+
+                svc.Start();
+                svc2.Start();
+
+                svc.WaitForExit();
+                svc2.WaitForExit();
+
+                CheckForCompletion();
+
+                if (CheckForCompletion())
+                {
+                    //Configure the MessageBox
+                    string message = "Service Enabled Successfully!";
+                    string caption = "Success";
+                    MessageBoxButtons buttons = MessageBoxButtons.OK;
+                    DialogResult result;
+
+                    // Displays the MessageBox.
+                    result = MessageBox.Show(message, caption, buttons, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    //Configure the MessageBox
+                    string message1 = "Something went wrong while enabling the group policy service (e.g. The service is already running).\n\nPlease try again or do it manually through powershell/command prompt.";
+                    string caption1 = "Error - Unable to Enable Service";
+                    MessageBoxButtons buttons1 = MessageBoxButtons.OK;
+                    DialogResult result1;
+
+                    // Displays the MessageBox.
+                    result1 = MessageBox.Show(message1, caption1, buttons1, MessageBoxIcon.Error);
+
+                    checkBox1.CheckStateChanged -= CheckBox1_CheckedChanged;
+                    checkBox1.Checked = true;
+                    checkBox1.CheckStateChanged += CheckBox1_CheckedChanged;
+                }
+            }
         }
 
+        private bool CheckForCompletion()
+        {
+            if (svc.ExitCode == 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         //------------------------------------------------Other Functions------------------------------------------------\\
         private void Button1_Click(object sender, EventArgs e)
         {
