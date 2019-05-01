@@ -48,7 +48,7 @@ namespace Group_Policy_CC
                     if (password == confirmpassword)
                     {
                         net.StartInfo.FileName = "net.exe";
-                        net.StartInfo.Arguments = $"user Administrator {password}";
+                        net.StartInfo.Arguments = $"user Administrator {password} /active:yes";
 
                         net.StartInfo.CreateNoWindow = true;
                         net.StartInfo.UseShellExecute = false;
