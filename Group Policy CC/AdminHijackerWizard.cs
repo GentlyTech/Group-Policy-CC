@@ -5,9 +5,9 @@ using System.Windows.Forms;
 
 namespace Group_Policy_CC
 {
-    public partial class AdminHijacker : Form
+    public partial class AdminHijackerWizard : Form
     {
-        public AdminHijacker()
+        public AdminHijackerWizard()
         {
             InitializeComponent();
         }

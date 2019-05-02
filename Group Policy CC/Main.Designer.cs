@@ -220,7 +220,7 @@
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(562, 179);
             this.button5.TabIndex = 18;
-            this.button5.Text = "Bind LShift to Program";
+            this.button5.Text = "Bind Shift to Launch Program";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.Button5_Click);
             // 

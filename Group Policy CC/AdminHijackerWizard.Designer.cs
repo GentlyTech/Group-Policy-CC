@@ -1,6 +1,6 @@
 ﻿namespace Group_Policy_CC
 {
-    partial class AdminHijacker
+    partial class AdminHijackerWizard
     {
         /// <summary>
         /// Required designer variable.

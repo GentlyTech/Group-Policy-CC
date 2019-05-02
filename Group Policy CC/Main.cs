@@ -11,8 +11,8 @@ namespace Group_Policy_CC
     {
         //Instantiate Forms
         Form PolicyRemoverWizard = new PolicyRemoverWizard();
-        Form AdminHijacker = new AdminHijacker();
-        Form Keybinder = new Keybinder();
+        Form AdminHijacker = new AdminHijackerWizard();
+        Form Keybinder = new KeybindWizard();
 
         public Main()
         {

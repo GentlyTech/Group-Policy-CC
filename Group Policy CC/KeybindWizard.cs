@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,9 +11,9 @@ using System.Windows.Forms;
 
 namespace Group_Policy_CC
 {
-    public partial class Keybinder : Form
+    public partial class KeybindWizard : Form
     {
-        public Keybinder()
+        public KeybindWizard()
         {
             InitializeComponent();
         }
@@ -36,5 +37,26 @@ namespace Group_Policy_CC
             this.Close();
         }
 
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            var filePath = string.Empty;
+            string WinDir = Environment.GetEnvironmentVariable("windir");
+
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.InitialDirectory = WinDir + "\\System32";
+                openFileDialog.Filter = "Executable files (*.exe) | *.exe";
+                openFileDialog.FileName = "cmd.exe";
+                openFileDialog.FilterIndex = 2;
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    //Get the path of specified file
+                    filePath = openFileDialog.SafeFileName;
+                    textBox1.Text = filePath;
+                }
+            }
+
+        }
     }
 }

@@ -84,17 +84,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdminHijacker.cs">
+    <Compile Include="AdminHijackerWizard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdminHijacker.Designer.cs">
-      <DependentUpon>AdminHijacker.cs</DependentUpon>
+    <Compile Include="AdminHijackerWizard.Designer.cs">
+      <DependentUpon>AdminHijackerWizard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Keybinder.cs">
+    <Compile Include="KeybindWizard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Keybinder.Designer.cs">
-      <DependentUpon>Keybinder.cs</DependentUpon>
+    <Compile Include="KeybindWizard.Designer.cs">
+      <DependentUpon>KeybindWizard.cs</DependentUpon>
     </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
@@ -110,11 +110,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AdminHijacker.resx">
-      <DependentUpon>AdminHijacker.cs</DependentUpon>
+    <EmbeddedResource Include="AdminHijackerWizard.resx">
+      <DependentUpon>AdminHijackerWizard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Keybinder.resx">
-      <DependentUpon>Keybinder.cs</DependentUpon>
+    <EmbeddedResource Include="KeybindWizard.resx">
+      <DependentUpon>KeybindWizard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
