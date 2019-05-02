@@ -90,6 +90,12 @@
     <Compile Include="AdminHijacker.Designer.cs">
       <DependentUpon>AdminHijacker.cs</DependentUpon>
     </Compile>
+    <Compile Include="Keybinder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Keybinder.Designer.cs">
+      <DependentUpon>Keybinder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +112,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AdminHijacker.resx">
       <DependentUpon>AdminHijacker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Keybinder.resx">
+      <DependentUpon>Keybinder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>

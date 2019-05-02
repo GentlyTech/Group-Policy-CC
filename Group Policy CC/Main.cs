@@ -12,6 +12,7 @@ namespace Group_Policy_CC
         //Instantiate Forms
         Form PolicyRemoverWizard = new PolicyRemoverWizard();
         Form AdminHijacker = new AdminHijacker();
+        Form Keybinder = new Keybinder();
 
         public Main()
         {
@@ -99,6 +100,11 @@ namespace Group_Policy_CC
             PowerShell.StartInfo.FileName = "powershell.exe";
             PowerShell.StartInfo.WindowStyle = ProcessWindowStyle.Maximized;
             PowerShell.Start();
+        }
+
+        private void Button5_Click(object sender, EventArgs e)
+        {
+            Keybinder.ShowDialog();
         }
 
         //------------------------------------------------------------Tool Strip Functions------------------------------------------------------------------------\\
