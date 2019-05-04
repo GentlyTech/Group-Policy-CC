@@ -16,7 +16,7 @@ namespace Group_Policy_CC
 
         private void AdminHijacker_Load(object sender, EventArgs e)
         {
-            label1.Text = "Welcome to the Local Administrator password changer";
+            label1.Text = "Welcome to the Local Administrator Hijacker Wizard";
             label2.Visible = true;
 
             textBox1.Text = "";

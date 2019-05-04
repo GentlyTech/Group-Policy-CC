@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.IO;
+﻿using Microsoft.Win32;
+using System;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Group_Policy_CC
@@ -17,17 +11,36 @@ namespace Group_Policy_CC
         {
             InitializeComponent();
         }
+
+        private void KeybindWizard_Load(object sender, EventArgs e)
+        {
+            sethcExists();
+        }
+
+        //------------------------------------------------Variables------------------------------------------------\\
+
+        string UserInput;
+
+        public static bool sethcExists()
+        {
+            RegistryKey IFEO = Registry.LocalMachine.OpenSubKey("SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\sethc.exe");
+
+            if(IFEO != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         //------------------------------------------------Button Functions------------------------------------------------\\
         private void Button1_Click(object sender, EventArgs e)
         {
-            //Configure the MessageBox
-            string message = "Not Implemented";
-            string caption = "Error";
-            MessageBoxButtons buttons = MessageBoxButtons.OK;
-            DialogResult result;
+            UserInput = textBox1.Text;
 
-            // Displays the MessageBox.
-            result = MessageBox.Show(message, caption, buttons, MessageBoxIcon.Error);
+            AddDebugger();
 
             this.Close();
         }
@@ -52,11 +65,70 @@ namespace Group_Policy_CC
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     //Get the path of specified file
-                    filePath = openFileDialog.SafeFileName;
+                    filePath = openFileDialog.FileName;
                     textBox1.Text = filePath;
                 }
             }
+        }
 
+        private void Button4_Click(object sender, EventArgs e)
+        {
+            RemoveDebugger();
+        }
+
+        //------------------------------------------------Void Functions------------------------------------------------\\
+
+        private void AddDebugger()
+        {
+            if (!sethcExists())
+            {
+                RegistryKey sethc = Registry.LocalMachine.OpenSubKey("SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options", true);
+                sethc.CreateSubKey("sethc.exe", true);
+            }
+
+            RegistryKey AddDebugger = Registry.LocalMachine.OpenSubKey("SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\sethc.exe", true);
+
+            AddDebugger.SetValue("Debugger", UserInput, RegistryValueKind.String);
+
+            //Configure the MessageBox
+            string message = "Keybind Sucessfully Created";
+            string caption = "Success";
+            MessageBoxButtons buttons = MessageBoxButtons.OK;
+            DialogResult result;
+
+            // Displays the MessageBox.
+            result = MessageBox.Show(message, caption, buttons, MessageBoxIcon.Information);
+        }
+
+        private void RemoveDebugger()
+        {
+            if (sethcExists())
+            {
+                RegistryKey sethc = Registry.LocalMachine.OpenSubKey("SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options", true);
+                sethc.DeleteSubKey("sethc.exe");
+
+                //Configure the MessageBox
+                string message = "Keybind Sucessfully Deleted";
+                string caption = "Success";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result;
+
+                // Displays the MessageBox.
+                result = MessageBox.Show(message, caption, buttons, MessageBoxIcon.Information);
+            }
+            else
+            {
+                //Configure the MessageBox
+                string message = "The keybind was not bound to begin with.";
+                string caption = "Error";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result;
+
+                // Displays the MessageBox.
+                result = MessageBox.Show(message, caption, buttons, MessageBoxIcon.Error);
+
+                this.Close();
+            }
         }
     }
 }
