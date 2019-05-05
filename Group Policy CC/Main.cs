@@ -47,6 +47,7 @@ namespace Group_Policy_CC
             if (IsAdministrator())
             {
                 this.Text = this.Text + " " + "(Administrator)";
+                relaunchToolStripMenuItem.Text = "Relaunch Application";
             }
             else
             {
@@ -59,10 +60,10 @@ namespace Group_Policy_CC
             this.Text = this.Text + " " + "(Limited User)";
             button1.Enabled = false;
             button2.Enabled = false;
-            button4.Enabled = false;
+            button3.Enabled = false;
 
             //Configure the MessageBox
-            string message = "This program was not run with Administrator Privileges.\n\nIn order to change the password or strip policies, Administrator Privileges is required.\n\nPlease 'Run As Administrator' to enable functionality.";
+            string message = "This program was not run with Administrator Privileges.\n\nIn order to use the majority of the features in this application (e.g. change the password or strip policies), Administrator Privileges is required.\n\nPlease 'Run As Administrator' to enable these functionalities.";
             string caption = "Error: Limited User";
             MessageBoxButtons buttons = MessageBoxButtons.OK;
             DialogResult result;
@@ -144,32 +145,28 @@ namespace Group_Policy_CC
 
         private void RelaunchToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (!IsAdministrator())
+            try
             {
-                string FileName = Assembly.GetEntryAssembly().Location.ToString();
-                Process ThisApp = new Process();
+                if (!IsAdministrator())
+                {
+                    string FileName = Assembly.GetEntryAssembly().Location.ToString();
+                    Process ThisApp = new Process();
 
-                ThisApp.StartInfo.UseShellExecute = true;
-                ThisApp.StartInfo.Verb = "runas";
-                ThisApp.StartInfo.FileName = FileName;
-                ThisApp.Start();
+                    ThisApp.StartInfo.UseShellExecute = true;
+                    ThisApp.StartInfo.Verb = "runas";
+                    ThisApp.StartInfo.FileName = FileName;
+                    ThisApp.Start();
 
-                Application.Exit();
-            }
-            else
-            {
-                string message = "This application is already running with administrator priviliges. Do you want to relaunch instead?";
-                string caption = "Error - Process Already Elevated";
-                MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
-                DialogResult result;
-
-                // Displays the MessageBox.
-                result = MessageBox.Show(message, caption, buttons, MessageBoxIcon.Warning);
-
-                if (result == DialogResult.OK)
+                    Application.Exit();
+                }
+                else
                 {
                     Application.Restart();
                 }
+            }
+            catch
+            {
+
             }
         }
 

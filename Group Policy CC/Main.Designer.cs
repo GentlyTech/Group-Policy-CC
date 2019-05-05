@@ -115,9 +115,9 @@
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button1.Font = new System.Drawing.Font("Arial", 16.2F);
-            this.button1.Location = new System.Drawing.Point(571, 3);
+            this.button1.Location = new System.Drawing.Point(3, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(562, 172);
+            this.button1.Size = new System.Drawing.Size(562, 173);
             this.button1.TabIndex = 2;
             this.button1.Text = "Strip Group Policies";
             this.button1.UseVisualStyleBackColor = true;
@@ -128,9 +128,9 @@
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button2.Font = new System.Drawing.Font("Arial", 16.2F);
-            this.button2.Location = new System.Drawing.Point(3, 3);
+            this.button2.Location = new System.Drawing.Point(571, 3);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(562, 172);
+            this.button2.Size = new System.Drawing.Size(562, 173);
             this.button2.TabIndex = 1;
             this.button2.Text = "Hijack Administrator Account";
             this.button2.UseVisualStyleBackColor = true;
@@ -141,7 +141,7 @@
             this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button5.Font = new System.Drawing.Font("Arial", 16.2F);
-            this.button5.Location = new System.Drawing.Point(3, 359);
+            this.button5.Location = new System.Drawing.Point(3, 361);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(562, 209);
             this.button5.TabIndex = 5;
@@ -155,9 +155,9 @@
             this.button4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button4.Font = new System.Drawing.Font("Arial", 16.2F);
             this.button4.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.button4.Location = new System.Drawing.Point(571, 181);
+            this.button4.Location = new System.Drawing.Point(571, 182);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(562, 172);
+            this.button4.Size = new System.Drawing.Size(562, 173);
             this.button4.TabIndex = 4;
             this.button4.Text = "Invoke Blue Screen of Death";
             this.button4.UseVisualStyleBackColor = true;
@@ -171,20 +171,20 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.button5, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.button2, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.button2, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.button1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.button3, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.button4, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.button6, 1, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 126);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 124);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 31.25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 31.25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 37.5F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1136, 571);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1136, 573);
             this.tableLayoutPanel1.TabIndex = 9;
             // 
             // button3
@@ -192,9 +192,9 @@
             this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button3.Font = new System.Drawing.Font("Arial", 16.2F);
-            this.button3.Location = new System.Drawing.Point(3, 181);
+            this.button3.Location = new System.Drawing.Point(3, 182);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(562, 172);
+            this.button3.Size = new System.Drawing.Size(562, 173);
             this.button3.TabIndex = 3;
             this.button3.Text = "Bind Shift to Launch Program";
             this.button3.UseVisualStyleBackColor = true;
@@ -204,8 +204,9 @@
             // 
             this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button6.Enabled = false;
             this.button6.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold);
-            this.button6.Location = new System.Drawing.Point(571, 359);
+            this.button6.Location = new System.Drawing.Point(571, 361);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(562, 209);
             this.button6.TabIndex = 6;

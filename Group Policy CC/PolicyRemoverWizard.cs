@@ -1,9 +1,6 @@
 ﻿using Microsoft.Win32;
 using System;
 using System.Diagnostics;
-using System.Security;
-using System.Security.AccessControl;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Group_Policy_CC
@@ -58,8 +55,8 @@ namespace Group_Policy_CC
 
         private void Button1_Click(object sender, EventArgs e)
         {
+            //ExecuteSvc();
             ExecuteReg();
-            ExecuteSvc();
         }
 
         private void Button2_Click(object sender, EventArgs e)
@@ -133,17 +130,6 @@ namespace Group_Policy_CC
                         desiredKey = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion", true);
                         desiredKey.DeleteSubKeyTree("Policies");
                     }
-                    else
-                    {
-                        //Configure the MessageBox
-                        string message2 = "No level of action was selected.\n\nPlease select one and try again.";
-                        string caption2 = "Error - No Selection";
-                        MessageBoxButtons buttons2 = MessageBoxButtons.OK;
-                        DialogResult result2;
-
-                        // Displays the MessageBox.
-                        result2 = MessageBox.Show(message2, caption2, buttons2, MessageBoxIcon.Error);
-                    }
 
                     //Configure the MessageBox
                     string message1 = "The operation completed successfully!";
@@ -156,19 +142,33 @@ namespace Group_Policy_CC
 
                     this.Close();
                 }
+                else
+                {
+                    //Configure the MessageBox
+                    string message2 = "The operation was cancelled by the user.";
+                    string caption2 = "Cancelled";
+                    MessageBoxButtons buttons2 = MessageBoxButtons.OK;
+                    DialogResult result2;
+
+                    // Displays the MessageBox.
+                    result2 = MessageBox.Show(message2, caption2, buttons2, MessageBoxIcon.Error);
+
+                    this.Close();
+                }
             }
             else
             {
+                label1.Text = "Welcome to the Group Policy Remover Wizard";
+                label2.Visible = true;
+
                 //Configure the MessageBox
-                string message2 = "The operation was cancelled by the user.";
-                string caption2 = "Cancelled";
+                string message2 = "No level of action was selected.\n\nPlease select one and try again.";
+                string caption2 = "Error - No Selection";
                 MessageBoxButtons buttons2 = MessageBoxButtons.OK;
                 DialogResult result2;
 
                 // Displays the MessageBox.
                 result2 = MessageBox.Show(message2, caption2, buttons2, MessageBoxIcon.Error);
-
-                this.Close();
             }
         }
 
