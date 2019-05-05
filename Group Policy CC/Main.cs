@@ -172,7 +172,15 @@ namespace Group_Policy_CC
 
         private void READMEToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string message = "Please note that administrative privileges are required for the program to successfully execute its functions.\n\nWe are not responsible for any data loss or damage caused by this program. Thank you for using our product.";
+            string message = "Program Description:\n\n" + 
+                "This program can help you circumvent windows group policies set by your administrator/organization.\n\n" +
+                "At the moment, Administrator Priviliges are required to complete the tasks, but this program makes it faster and easier to take control over a machine.\n\n" +
+                "This works because some administrators enforce policies but give the students admin.\n\n" +
+                
+                "Disclaimer:\n\n" +
+                "We are not responsible for any data loss or damage caused by this program.\n\n" +
+                "Thank you for using our product!";
+
             string caption = "README - Please Note";
             MessageBoxButtons buttons = MessageBoxButtons.OK;
             DialogResult result;
