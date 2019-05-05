@@ -153,6 +153,7 @@
     <Content Include="Icons\%40bitlockertoastimage.ico" />
     <Content Include="Icons\%40edptoastimage.ico" />
     <Content Include="Icons\AppIcon.ico" />
+    <None Include="Resources\UACShield.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">

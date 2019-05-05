@@ -48,6 +48,7 @@ namespace Group_Policy_CC
             {
                 this.Text = this.Text + " " + "(Administrator)";
                 relaunchToolStripMenuItem.Text = "Relaunch Application";
+                relaunchToolStripMenuItem.Image = null;
             }
             else
             {
@@ -63,7 +64,7 @@ namespace Group_Policy_CC
             button3.Enabled = false;
 
             //Configure the MessageBox
-            string message = "This program was not run with Administrator Privileges.\n\nIn order to use the majority of the features in this application (e.g. change the password or strip policies), Administrator Privileges is required.\n\nPlease 'Run As Administrator' to enable these functionalities.";
+            string message = "This program was not run with Administrator Privileges.\n\nIn order to use the majority of the features in this application (e.g. change the password or strip policies), Administrator Privileges are required.\n\nPlease 'Run As Administrator' to enable these functionalities.";
             string caption = "Error: Limited User";
             MessageBoxButtons buttons = MessageBoxButtons.OK;
             DialogResult result;

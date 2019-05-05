@@ -82,6 +82,8 @@
             // 
             // relaunchToolStripMenuItem
             // 
+            this.relaunchToolStripMenuItem.Image = global::Group_Policy_CC.Properties.Resources.UACShield;
+            this.relaunchToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.relaunchToolStripMenuItem.Name = "relaunchToolStripMenuItem";
             this.relaunchToolStripMenuItem.ShortcutKeyDisplayString = "";
             this.relaunchToolStripMenuItem.Size = new System.Drawing.Size(222, 26);
