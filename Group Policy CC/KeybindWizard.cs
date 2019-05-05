@@ -25,7 +25,7 @@ namespace Group_Policy_CC
         {
             RegistryKey IFEO = Registry.LocalMachine.OpenSubKey("SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\sethc.exe");
 
-            if(IFEO != null)
+            if (IFEO != null)
             {
                 return true;
             }

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Drawing;
 using System.Globalization;
+using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Security.Principal;
 using System.Windows.Forms;
@@ -20,6 +22,19 @@ namespace Group_Policy_CC
             timer1.Start();
         }
 
+        //------------------------------------------------------------Event Handlers & Initialization------------------------------------------------------------------------\\
+        private void OnResized(object sender, EventArgs e)
+        {
+            if (this.Width <= 1154)
+            {
+                this.Width = 1154;
+            }
+            else if (this.Height <= 744)
+            {
+                this.Height = 744;
+            }
+        }
+
         public static bool IsAdministrator()
         {
             var identity = WindowsIdentity.GetCurrent();
@@ -37,13 +52,14 @@ namespace Group_Policy_CC
             {
                 Lockdown();
             }
-        }
+    }
 
         private void Lockdown()
         {
             this.Text = this.Text + " " + "(Limited User)";
             button1.Enabled = false;
             button2.Enabled = false;
+            button4.Enabled = false;
 
             //Configure the MessageBox
             string message = "This program was not run with Administrator Privileges.\n\nIn order to change the password or strip policies, Administrator Privileges is required.\n\nPlease 'Run As Administrator' to enable functionality.";
@@ -61,6 +77,8 @@ namespace Group_Policy_CC
         [DllImport("ntdll.dll")]
         public static extern uint NtRaiseHardError(uint ErrorStatus, uint NumberOfParameters, uint UnicodeStringParameterMask, IntPtr Parameters, uint ValidResponseOption, out uint Response);
 
+        [DllImport("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, uint Msg, int wParam, int lParam);
         //------------------------------------------------------------Button Functions------------------------------------------------------------------------\\
 
         private void Button1_Click(object sender, EventArgs e)
@@ -107,6 +125,11 @@ namespace Group_Policy_CC
             Keybinder.ShowDialog();
         }
 
+        private void Button6_Click(object sender, EventArgs e)
+        {
+
+        }
+
         //------------------------------------------------------------Tool Strip Functions------------------------------------------------------------------------\\
 
         private void menuToolStripMenuItem_Click(object sender, EventArgs e)
@@ -121,7 +144,33 @@ namespace Group_Policy_CC
 
         private void RelaunchToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Application.Restart();
+            if (!IsAdministrator())
+            {
+                string FileName = Assembly.GetEntryAssembly().Location.ToString();
+                Process ThisApp = new Process();
+
+                ThisApp.StartInfo.UseShellExecute = true;
+                ThisApp.StartInfo.Verb = "runas";
+                ThisApp.StartInfo.FileName = FileName;
+                ThisApp.Start();
+
+                Application.Exit();
+            }
+            else
+            {
+                string message = "This application is already running with administrator priviliges. Do you want to relaunch instead?";
+                string caption = "Error - Process Already Elevated";
+                MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
+                DialogResult result;
+
+                // Displays the MessageBox.
+                result = MessageBox.Show(message, caption, buttons, MessageBoxIcon.Warning);
+
+                if (result == DialogResult.OK)
+                {
+                    Application.Restart();
+                }
+            }
         }
 
         private void READMEToolStripMenuItem_Click(object sender, EventArgs e)

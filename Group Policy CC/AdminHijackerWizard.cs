@@ -35,7 +35,7 @@ namespace Group_Policy_CC
             // Displays the MessageBox.
             result = MessageBox.Show(message, caption, buttons, MessageBoxIcon.Exclamation);
 
-            if(result == DialogResult.Yes)
+            if (result == DialogResult.Yes)
             {
                 label1.Text = "Verifying...";
                 label2.Visible = false;
