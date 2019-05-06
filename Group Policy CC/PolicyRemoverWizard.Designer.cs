@@ -33,7 +33,6 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
@@ -55,15 +54,15 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.checkBox1, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label3, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label3, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 116);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70.7317F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 29.26829F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(788, 322);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
@@ -92,7 +91,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(186, 80);
             this.button1.TabIndex = 4;
-            this.button1.Text = "Next";
+            this.button1.Text = "Strip Selected";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
@@ -107,21 +106,6 @@
             this.button2.Text = "Cancel";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.Button2_Click);
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.checkBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBox1.Enabled = false;
-            this.checkBox1.Location = new System.Drawing.Point(6, 230);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(383, 86);
-            this.checkBox1.TabIndex = 6;
-            this.checkBox1.Text = "Disable Group Policy Service to prevent the reinforcement of policies\r\n(Warning: " +
-    "may cause standard local users to become unable to log on)";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.CheckBox1_CheckedChanged);
             // 
             // tableLayoutPanel3
             // 
@@ -160,7 +144,6 @@
             this.radioButton3.AutoSize = true;
             this.radioButton3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.radioButton3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radioButton3.Enabled = false;
             this.radioButton3.Font = new System.Drawing.Font("Arial", 10F);
             this.radioButton3.Location = new System.Drawing.Point(3, 145);
             this.radioButton3.Name = "radioButton3";
@@ -175,7 +158,6 @@
             this.radioButton2.AutoSize = true;
             this.radioButton2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.radioButton2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radioButton2.Enabled = false;
             this.radioButton2.Font = new System.Drawing.Font("Arial", 10F);
             this.radioButton2.Location = new System.Drawing.Point(3, 74);
             this.radioButton2.Name = "radioButton2";
@@ -190,12 +172,11 @@
             this.label3.AutoSize = true;
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(398, 3);
+            this.label3.Location = new System.Drawing.Point(6, 227);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(384, 221);
+            this.label3.Size = new System.Drawing.Size(383, 92);
             this.label3.TabIndex = 8;
-            this.label3.Text = "Currently, stripping system-wide (Local Machine) policies are disabled because th" +
-    "ey are too destructive.";
+            this.label3.Text = "Note: Stripping local machine policies may impact the security of the device.";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel2
@@ -268,6 +249,5 @@
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
