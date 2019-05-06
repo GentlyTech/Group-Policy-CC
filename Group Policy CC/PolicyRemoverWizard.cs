@@ -1,7 +1,8 @@
 ﻿using Microsoft.Win32;
 using System;
-using System.Diagnostics;
 using System.Windows.Forms;
+using System.Management;
+using System.Security.AccessControl;
 
 namespace Group_Policy_CC
 {
@@ -20,11 +21,35 @@ namespace Group_Policy_CC
             radioButton1.Checked = false;
             radioButton2.Checked = false;
             radioButton3.Checked = false;
+
+            string wmiQuery = "SELECT * FROM Win32_Service WHERE Name='gpsvc'";
+            var searcher = new ManagementObjectSearcher(wmiQuery);
+            var results = searcher.Get();
+
+            foreach (ManagementObject service in results)
+            {
+                Status = service["StartMode"].ToString();
+            }
+        }
+
+
+        //------------------------------------------------Check For SVC Status------------------------------------------------\\
+        private static string Status;
+
+        //Checks for the enabled startup state of the service
+        private static bool CheckForSvc()
+        {
+            if (!Status.Equals("Disabled"))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         //------------------------------------------------Service Functions------------------------------------------------\\
-        static Process svc = new Process();
-        static Process svc2 = new Process();
 
         private void CheckBox1_CheckedChanged(object sender, EventArgs e)
         {
@@ -38,25 +63,19 @@ namespace Group_Policy_CC
             }
         }
 
-        private bool CheckForCompletion()
-        {
-            if (svc.ExitCode == 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
         //------------------------------------------------Button Functions------------------------------------------------\\
         static string OptionName;
         static string svcmsg;
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            //ExecuteSvc();
+            if (checkBox1.Checked == true)
+            {
+                DisableSvc();
+            }
+
             ExecuteReg();
+
         }
 
         private void Button2_Click(object sender, EventArgs e)
@@ -64,7 +83,7 @@ namespace Group_Policy_CC
             this.Close();
         }
 
-        //------------------------------------------------Primary Functions------------------------------------------------\\
+        //------------------------------------------------Policy Removal Function------------------------------------------------\\
 
         private void ExecuteReg()
         {
@@ -172,98 +191,29 @@ namespace Group_Policy_CC
             }
         }
 
-        private void ExecuteSvc()
+        //------------------------------------------------Service Modification------------------------------------------------\\
+
+        private void DisableSvc()
         {
-            if (checkBox1.Checked == true)
+            if (CheckForSvc())
             {
-                svc.StartInfo.FileName = "sc.exe";
-                svc.StartInfo.Arguments = "stop gpsvc";
+                    RegistryKey key;
+                    key = Registry.LocalMachine.OpenSubKey(@"HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\services\\gpsvc", true);
+                    RegistrySecurity rs = new RegistrySecurity();
+                    rs = key.GetAccessControl();
+                    string Object = "Administrators";
+                    rs.AddAccessRule(new RegistryAccessRule(Object, RegistryRights.WriteKey | RegistryRights.ReadKey | RegistryRights.Delete | RegistryRights.FullControl, AccessControlType.Allow));
+                
 
-                svc2.StartInfo.FileName = "sc.exe";
-                svc2.StartInfo.Arguments = "sc config gpsvc start=disabled";
+                //Configure the MessageBox
+                string svcmessage0 = "The service was disabled successfully! Please reboot the computer for changes to take effect.";
+                string svccaption0 = "Success";
+                MessageBoxButtons svcbuttons0 = MessageBoxButtons.OK;
+                DialogResult svcresult0;
 
-                svc.StartInfo.CreateNoWindow = true;
-                svc.StartInfo.UseShellExecute = false;
-
-                svc2.StartInfo.CreateNoWindow = true;
-                svc2.StartInfo.UseShellExecute = false;
-
-                svc.Start();
-                svc2.Start();
-
-                svc.WaitForExit();
-                svc2.WaitForExit();
-
-                CheckForCompletion();
-
-                if (CheckForCompletion())
-                {
-                    //Configure the MessageBox
-                    string svcmessage0 = "The operation completed successfully!";
-                    string svccaption0 = "Success";
-                    MessageBoxButtons svcbuttons0 = MessageBoxButtons.OK;
-                    DialogResult svcresult0;
-
-                    // Displays the MessageBox.
-                    svcresult0 = MessageBox.Show(svcmessage0, svccaption0, svcbuttons0, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    //Configure the MessageBox
-                    string message1 = "Something went wrong while disabling the group policy service (e.g. The service wasn't started).\n\nPlease try again or do it manually through powershell/command prompt.";
-                    string caption1 = "Error - Unable to Disable Service";
-                    MessageBoxButtons buttons1 = MessageBoxButtons.OK;
-                    DialogResult result1;
-
-                    // Displays the MessageBox.
-                    result1 = MessageBox.Show(message1, caption1, buttons1, MessageBoxIcon.Error);
-                }
-            }
-            else
-            {
-                svc2.StartInfo.FileName = "sc.exe";
-                svc2.StartInfo.Arguments = "sc config gpsvc start=auto";
-
-                svc.StartInfo.FileName = "sc.exe";
-                svc.StartInfo.Arguments = "start gpsvc";
-
-                svc.StartInfo.CreateNoWindow = true;
-                svc.StartInfo.UseShellExecute = false;
-
-                svc2.StartInfo.CreateNoWindow = true;
-                svc2.StartInfo.UseShellExecute = false;
-
-                svc.Start();
-                svc2.Start();
-
-                svc.WaitForExit();
-                svc2.WaitForExit();
-
-                CheckForCompletion();
-
-                if (CheckForCompletion())
-                {
-                    //Configure the MessageBox
-                    string svcmessage = "Service Enabled Successfully!";
-                    string svccaption = "Success";
-                    MessageBoxButtons svcbuttons = MessageBoxButtons.OK;
-                    DialogResult svcresult;
-
-                    // Displays the MessageBox.
-                    svcresult = MessageBox.Show(svcmessage, svccaption, svcbuttons, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    //Configure the MessageBox
-                    string svcmessage1 = "Something went wrong while enabling the group policy service (e.g. The service is already running).\n\nPlease try again or do it manually through powershell/command prompt.";
-                    string svccaption1 = "Error - Unable to Enable Service";
-                    MessageBoxButtons svcbuttons1 = MessageBoxButtons.OK;
-                    DialogResult svcresult1;
-
-                    // Displays the MessageBox.
-                    svcresult1 = MessageBox.Show(svcmessage1, svccaption1, svcbuttons1, MessageBoxIcon.Error);
-                }
+                // Displays the MessageBox.
+                svcresult0 = MessageBox.Show(svcmessage0, svccaption0, svcbuttons0, MessageBoxIcon.Information);
             }
         }
-    }
+     }
 }

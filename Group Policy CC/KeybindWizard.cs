@@ -80,24 +80,38 @@ namespace Group_Policy_CC
 
         private void AddDebugger()
         {
-            if (!sethcExists())
+            if (textBox1.Text != "")
             {
-                RegistryKey sethc = Registry.LocalMachine.OpenSubKey("SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options", true);
-                sethc.CreateSubKey("sethc.exe", true);
+                if (!sethcExists())
+                {
+                    RegistryKey sethc = Registry.LocalMachine.OpenSubKey("SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options", true);
+                    sethc.CreateSubKey("sethc.exe", true);
+                }
+
+                RegistryKey AddDebugger = Registry.LocalMachine.OpenSubKey("SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\sethc.exe", true);
+
+                AddDebugger.SetValue("Debugger", UserInput, RegistryValueKind.String);
+
+                //Configure the MessageBox
+                string message = "Keybind Sucessfully Created";
+                string caption = "Success";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result;
+
+                // Displays the MessageBox.
+                result = MessageBox.Show(message, caption, buttons, MessageBoxIcon.Information);
             }
+            else
+            {
+                //Configure the MessageBox
+                string message = "No program was supplied! Select one and try again.";
+                string caption = "Error";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result;
 
-            RegistryKey AddDebugger = Registry.LocalMachine.OpenSubKey("SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\sethc.exe", true);
-
-            AddDebugger.SetValue("Debugger", UserInput, RegistryValueKind.String);
-
-            //Configure the MessageBox
-            string message = "Keybind Sucessfully Created";
-            string caption = "Success";
-            MessageBoxButtons buttons = MessageBoxButtons.OK;
-            DialogResult result;
-
-            // Displays the MessageBox.
-            result = MessageBox.Show(message, caption, buttons, MessageBoxIcon.Information);
+                // Displays the MessageBox.
+                result = MessageBox.Show(message, caption, buttons, MessageBoxIcon.Error);
+            }
         }
 
         private void RemoveDebugger()
@@ -126,8 +140,6 @@ namespace Group_Policy_CC
 
                 // Displays the MessageBox.
                 result = MessageBox.Show(message, caption, buttons, MessageBoxIcon.Error);
-
-                this.Close();
             }
         }
     }

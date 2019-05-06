@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Diagnostics;
-using System.Drawing;
 using System.Globalization;
 using System.Reflection;
 using System.Runtime.InteropServices;
@@ -23,13 +22,15 @@ namespace Group_Policy_CC
         }
 
         //------------------------------------------------------------Event Handlers & Initialization------------------------------------------------------------------------\\
+
         private void OnResized(object sender, EventArgs e)
         {
             if (this.Width <= 1154)
             {
                 this.Width = 1154;
             }
-            else if (this.Height <= 744)
+
+            if (this.Height < 744)
             {
                 this.Height = 744;
             }
@@ -54,7 +55,7 @@ namespace Group_Policy_CC
             {
                 Lockdown();
             }
-    }
+        }
 
         private void Lockdown()
         {
@@ -81,7 +82,9 @@ namespace Group_Policy_CC
 
         [DllImport("user32.dll")]
         public static extern int SendMessage(IntPtr hWnd, uint Msg, int wParam, int lParam);
+
         //------------------------------------------------------------Button Functions------------------------------------------------------------------------\\
+        //Page 1
 
         private void Button1_Click(object sender, EventArgs e)
         {
@@ -94,6 +97,11 @@ namespace Group_Policy_CC
         }
 
         private void Button3_Click(object sender, EventArgs e)
+        {
+            Keybinder.ShowDialog();
+        }
+
+        private void Button4_Click(object sender, EventArgs e)
         {
             //Configure the MessageBox
             string message = "Are you sure you want to blue screen this computer?\n\nAny unsaved work will be lost, and there is a risk that something could break (e.g. There is a Windows Update in progress).\n\nWe are not responsible for any damage or data loss caused as a result of this feature.\n\nYou have been warned...";
@@ -113,7 +121,7 @@ namespace Group_Policy_CC
             }
         }
 
-        private void Button4_Click(object sender, EventArgs e)
+        private void Button5_Click(object sender, EventArgs e)
         {
             Process PowerShell = new Process();
             // Configure the process using the StartInfo properties.
@@ -122,14 +130,27 @@ namespace Group_Policy_CC
             PowerShell.Start();
         }
 
-        private void Button5_Click(object sender, EventArgs e)
-        {
-            Keybinder.ShowDialog();
-        }
-
         private void Button6_Click(object sender, EventArgs e)
         {
+            tabControl1.SelectedTab = tabPage2;
+        }
 
+        //Page 2
+
+        private void Button7_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = tabPage1;
+        }
+
+        private void Button8_Click(object sender, EventArgs e)
+        {
+            string message = "Haha... no.";
+            string caption = "Install Fortnite";
+            MessageBoxButtons buttons = MessageBoxButtons.OK;
+            DialogResult result;
+
+            // Displays the MessageBox.
+            result = MessageBox.Show(message, caption, buttons, MessageBoxIcon.Stop);
         }
 
         //------------------------------------------------------------Tool Strip Functions------------------------------------------------------------------------\\
@@ -139,9 +160,20 @@ namespace Group_Policy_CC
 
         }
 
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        private void OpenModernSettingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Process Proc = new Process();
+            Proc.StartInfo.FileName = @"ms-settings:home";
+
+            Proc.Start();
+        }
+
+        private void OpenClassicControlPanelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Process Proc = new Process();
+            Proc.StartInfo.FileName = "control.exe";
+
+            Proc.Start();
         }
 
         private void RelaunchToolStripMenuItem_Click(object sender, EventArgs e)
@@ -173,11 +205,11 @@ namespace Group_Policy_CC
 
         private void READMEToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string message = "Program Description:\n\n" + 
+            string message = "Program Description:\n\n" +
                 "This program can help you circumvent windows group policies set by your administrator/organization.\n\n" +
                 "At the moment, Administrator Priviliges are required to complete the tasks, but this program makes it faster and easier to take control over a machine.\n\n" +
                 "This works because some administrators enforce policies but give the students admin.\n\n" +
-                
+
                 "Disclaimer:\n\n" +
                 "We are not responsible for any data loss or damage caused by this program.\n\n" +
                 "Thank you for using our product!";
@@ -190,6 +222,11 @@ namespace Group_Policy_CC
             result = MessageBox.Show(message, caption, buttons, MessageBoxIcon.Information);
         }
 
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
         //------------------------------------------------------------Clock------------------------------------------------------------------------\\
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -197,18 +234,8 @@ namespace Group_Policy_CC
 
             string formattedTimeNow = CurrentTime.ToString("h:mm:ss tt", CultureInfo.InvariantCulture);
 
-            Time.Text = formattedTimeNow;
-        }
-
-        private void InstallFortniteToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            string message = "Haha... no.";
-            string caption = "Install Fortnite";
-            MessageBoxButtons buttons = MessageBoxButtons.OK;
-            DialogResult result;
-
-            // Displays the MessageBox.
-            result = MessageBox.Show(message, caption, buttons, MessageBoxIcon.Stop);
+            Clock1.Text = formattedTimeNow;
+            Clock2.Text = formattedTimeNow;
         }
     }
 }
