@@ -133,19 +133,26 @@ namespace Group_Policy_CC
                 using (RegistryKey desiredKey = Registry.CurrentUser.OpenSubKey("SOFTWARE", true))
                 {
                     desiredKey.DeleteSubKeyTree("Policies");
-                    desiredKey.Close();
                 }
 
                 using (RegistryKey desiredKey = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion", true))
                 {
                     desiredKey.DeleteSubKeyTree("Policies");
-                    desiredKey.Close();
                 }
+
+                //Configure the MessageBox
+                string message1 = "The [Current User] policies were deleted successfully!";
+                string caption1 = "Success";
+                MessageBoxButtons buttons1 = MessageBoxButtons.OK;
+                DialogResult result1;
+
+                // Displays the MessageBox.
+                result1 = MessageBox.Show(message1, caption1, buttons1, MessageBoxIcon.Information);
             }
             catch (UnauthorizedAccessException)
             {
                 //Configure the MessageBox
-                string message1 = "Access to the [Current User] policies could not be obtained. Please try again.";
+                string message1 = "The [Current User] policies could not be deleted because access is denied.";
                 string caption1 = "Error While Stripping Policies";
                 MessageBoxButtons buttons1 = MessageBoxButtons.OK;
                 DialogResult result1;
@@ -174,12 +181,11 @@ namespace Group_Policy_CC
                 using (RegistryKey desiredKey = Registry.LocalMachine.OpenSubKey("SOFTWARE", true))
                 {
                     desiredKey.DeleteSubKeyTree("Policies");
-                    desiredKey.Close();
                 }
             }
             catch (UnauthorizedAccessException)
             {
-
+                //Do not add any exceptions here
             }
             catch (ArgumentException)
             {
@@ -197,12 +203,27 @@ namespace Group_Policy_CC
                 using (RegistryKey desiredKey = Registry.LocalMachine.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion", true))
                 {
                     desiredKey.DeleteSubKeyTree("Policies");
-                    desiredKey.Close();
                 }
+
+                //Configure the MessageBox
+                string message1 = "The [Local Machine] policies were deleted successfully!";
+                string caption1 = "Success";
+                MessageBoxButtons buttons1 = MessageBoxButtons.OK;
+                DialogResult result1;
+
+                // Displays the MessageBox.
+                result1 = MessageBox.Show(message1, caption1, buttons1, MessageBoxIcon.Information);
             }
             catch (UnauthorizedAccessException)
             {
+                //Configure the MessageBox
+                string message1 = "The [Local Machine] policies could not be deleted because access is denied.";
+                string caption1 = "Error While Stripping Policies";
+                MessageBoxButtons buttons1 = MessageBoxButtons.OK;
+                DialogResult result1;
 
+                // Displays the MessageBox.
+                result1 = MessageBox.Show(message1, caption1, buttons1, MessageBoxIcon.Error);
             }
             catch (ArgumentException)
             {
