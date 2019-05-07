@@ -11,3 +11,4 @@ C:\Users\andyy\source\Collaborative Git Repos\Group Policy CC\Group Policy CC\ob
 C:\Users\andyy\source\Collaborative Git Repos\Group Policy CC\Group Policy CC\obj\Release\Group Policy CC.csprojAssemblyReference.cache
 C:\Users\andyy\source\Collaborative Git Repos\Group Policy CC\Group Policy CC\obj\Release\Group_Policy_CC.AdminHijackerWizard.resources
 C:\Users\andyy\source\Collaborative Git Repos\Group Policy CC\Group Policy CC\obj\Release\Group_Policy_CC.KeybindWizard.resources
+C:\Users\andyy\source\Collaborative Git Repos\Group Policy CC\Group Policy CC\obj\Release\Group_Policy_CC.Settings.resources

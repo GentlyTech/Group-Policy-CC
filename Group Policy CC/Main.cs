@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Drawing;
 using System.Globalization;
+using System.Media;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Security.Principal;
@@ -10,18 +12,18 @@ namespace Group_Policy_CC
 {
     public partial class Main : Form
     {
+        //------------------------------------------------------------Local Event Handlers & Initialization------------------------------------------------------------------------\\
         //Instantiate Forms
         Form PolicyRemoverWizard = new PolicyRemoverWizard();
         Form AdminHijacker = new AdminHijackerWizard();
         Form Keybinder = new KeybindWizard();
+        Form Settings = new Settings();
 
         public Main()
         {
             InitializeComponent();
             timer1.Start();
         }
-
-        //------------------------------------------------------------Event Handlers & Initialization------------------------------------------------------------------------\\
 
         private void OnResized(object sender, EventArgs e)
         {
@@ -203,6 +205,11 @@ namespace Group_Policy_CC
             }
         }
 
+        private void SettingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Settings.ShowDialog();
+        }
+
         private void READMEToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string message = "Program Description:\n\n" +
@@ -236,6 +243,15 @@ namespace Group_Policy_CC
 
             Clock1.Text = formattedTimeNow;
             Clock2.Text = formattedTimeNow;
+        }
+
+        //------------------------------------------------------------Remote Event Handlers------------------------------------------------------------------------\\
+
+        public static bool MusicIsPlaying;
+
+        public static void MusicControl()
+        {
+            
         }
     }
 }

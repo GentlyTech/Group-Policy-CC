@@ -36,8 +36,12 @@ namespace Group_Policy_CC
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.settingsControlPanelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openModernSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openClassicControlPanelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.relaunchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.READMEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -62,10 +66,6 @@ namespace Group_Policy_CC
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.Clock2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.settingsControlPanelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openModernSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openClassicControlPanelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -105,6 +105,29 @@ namespace Group_Policy_CC
             this.menuToolStripMenuItem.Text = "Menu";
             this.menuToolStripMenuItem.Click += new System.EventHandler(this.menuToolStripMenuItem_Click);
             // 
+            // settingsControlPanelToolStripMenuItem
+            // 
+            this.settingsControlPanelToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.openModernSettingsToolStripMenuItem,
+            this.openClassicControlPanelToolStripMenuItem});
+            this.settingsControlPanelToolStripMenuItem.Name = "settingsControlPanelToolStripMenuItem";
+            this.settingsControlPanelToolStripMenuItem.Size = new System.Drawing.Size(231, 26);
+            this.settingsControlPanelToolStripMenuItem.Text = "Settings/Control Panel";
+            // 
+            // openModernSettingsToolStripMenuItem
+            // 
+            this.openModernSettingsToolStripMenuItem.Name = "openModernSettingsToolStripMenuItem";
+            this.openModernSettingsToolStripMenuItem.Size = new System.Drawing.Size(362, 26);
+            this.openModernSettingsToolStripMenuItem.Text = "Open Modern Settings (Windows 10 Only)";
+            this.openModernSettingsToolStripMenuItem.Click += new System.EventHandler(this.OpenModernSettingsToolStripMenuItem_Click);
+            // 
+            // openClassicControlPanelToolStripMenuItem
+            // 
+            this.openClassicControlPanelToolStripMenuItem.Name = "openClassicControlPanelToolStripMenuItem";
+            this.openClassicControlPanelToolStripMenuItem.Size = new System.Drawing.Size(362, 26);
+            this.openClassicControlPanelToolStripMenuItem.Text = "Open Classic Control Panel";
+            this.openClassicControlPanelToolStripMenuItem.Click += new System.EventHandler(this.OpenClassicControlPanelToolStripMenuItem_Click);
+            // 
             // relaunchToolStripMenuItem
             // 
             this.relaunchToolStripMenuItem.Image = global::Group_Policy_CC.Properties.Resources.UACShield;
@@ -122,6 +145,13 @@ namespace Group_Policy_CC
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(231, 26);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // settingsToolStripMenuItem
+            // 
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(74, 24);
+            this.settingsToolStripMenuItem.Text = "Settings";
+            this.settingsToolStripMenuItem.Click += new System.EventHandler(this.SettingsToolStripMenuItem_Click);
             // 
             // READMEToolStripMenuItem
             // 
@@ -455,35 +485,6 @@ namespace Group_Policy_CC
             this.label3.TabIndex = 17;
             this.label3.Text = "More Options";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // settingsToolStripMenuItem
-            // 
-            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(74, 24);
-            this.settingsToolStripMenuItem.Text = "Settings";
-            // 
-            // settingsControlPanelToolStripMenuItem
-            // 
-            this.settingsControlPanelToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.openModernSettingsToolStripMenuItem,
-            this.openClassicControlPanelToolStripMenuItem});
-            this.settingsControlPanelToolStripMenuItem.Name = "settingsControlPanelToolStripMenuItem";
-            this.settingsControlPanelToolStripMenuItem.Size = new System.Drawing.Size(231, 26);
-            this.settingsControlPanelToolStripMenuItem.Text = "Settings/Control Panel";
-            // 
-            // openModernSettingsToolStripMenuItem
-            // 
-            this.openModernSettingsToolStripMenuItem.Name = "openModernSettingsToolStripMenuItem";
-            this.openModernSettingsToolStripMenuItem.Size = new System.Drawing.Size(362, 26);
-            this.openModernSettingsToolStripMenuItem.Text = "Open Modern Settings (Windows 10 Only)";
-            this.openModernSettingsToolStripMenuItem.Click += new System.EventHandler(this.OpenModernSettingsToolStripMenuItem_Click);
-            // 
-            // openClassicControlPanelToolStripMenuItem
-            // 
-            this.openClassicControlPanelToolStripMenuItem.Name = "openClassicControlPanelToolStripMenuItem";
-            this.openClassicControlPanelToolStripMenuItem.Size = new System.Drawing.Size(362, 26);
-            this.openClassicControlPanelToolStripMenuItem.Text = "Open Classic Control Panel";
-            this.openClassicControlPanelToolStripMenuItem.Click += new System.EventHandler(this.OpenClassicControlPanelToolStripMenuItem_Click);
             // 
             // Main
             // 
