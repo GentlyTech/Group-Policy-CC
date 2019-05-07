@@ -13,6 +13,14 @@ namespace Group_Policy_CC
             InitializeComponent();
         }
 
+        private void Form_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
+        }
+
         private void PolicyRemoverWizard_Load(object sender, EventArgs e)
         {
             label1.Text = "Welcome to the Group Policy Remover Wizard";

@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
-using System.Drawing;
 using System.Globalization;
-using System.Media;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Security.Principal;
@@ -18,6 +16,7 @@ namespace Group_Policy_CC
         Form AdminHijacker = new AdminHijackerWizard();
         Form Keybinder = new KeybindWizard();
         Form Settings = new Settings();
+
 
         public Main()
         {
@@ -245,13 +244,5 @@ namespace Group_Policy_CC
             Clock2.Text = formattedTimeNow;
         }
 
-        //------------------------------------------------------------Remote Event Handlers------------------------------------------------------------------------\\
-
-        public static bool MusicIsPlaying;
-
-        public static void MusicControl()
-        {
-            
-        }
     }
 }

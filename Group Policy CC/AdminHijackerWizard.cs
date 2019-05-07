@@ -12,6 +12,14 @@ namespace Group_Policy_CC
             InitializeComponent();
         }
 
+        private void Form_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
+        }
+
         static Process net = new Process();
 
         private void AdminHijacker_Load(object sender, EventArgs e)
