@@ -38,6 +38,7 @@
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -56,6 +57,7 @@
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.checkBox1, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 116);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -176,8 +178,22 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(383, 92);
             this.label3.TabIndex = 8;
-            this.label3.Text = "Note: Stripping local machine policies may impact the security of the device.";
+            this.label3.Text = "Note: Stripping local machine policies may brick the device and impact the securi" +
+    "ty of the device.";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.checkBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.checkBox1.Location = new System.Drawing.Point(398, 6);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(384, 21);
+            this.checkBox1.TabIndex = 9;
+            this.checkBox1.Text = "Enable Local Machine Option (Not Recommended)";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.CheckBox1_CheckedChanged);
             // 
             // panel2
             // 
@@ -251,5 +267,6 @@
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

@@ -29,6 +29,11 @@ namespace Group_Policy_CC
             radioButton1.Checked = false;
             radioButton2.Checked = false;
             radioButton3.Checked = false;
+
+
+            checkBox1.Checked = false;
+            radioButton2.Enabled = false;
+            radioButton3.Enabled = false;
         }
 
         //------------------------------------------------Button Functions------------------------------------------------\\
@@ -244,5 +249,21 @@ namespace Group_Policy_CC
             DelHKCU();
             DelHKLM();
         }
-     }
+
+        //------------------------------------------------CheckBox Function------------------------------------------------\\
+
+        private void CheckBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked == true)
+            {
+                radioButton2.Enabled = true;
+                radioButton3.Enabled = true;
+            }
+            else
+            {
+                radioButton2.Enabled = false;
+                radioButton3.Enabled = false;
+            }
+        }
+    }
 }
