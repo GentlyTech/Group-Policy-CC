@@ -18,16 +18,35 @@ namespace Group_Policy_CC
             }
         }
 
+        private void Settings_Load(object sender, EventArgs e)
+        {
+            //Check Settings State
+            ToggleClockText();
+        }
+
         //------------------------------------------------------------Button Event Handlers------------------------------------------------------------------------\\
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            
+            (Application.OpenForms["Main"] as Main).ToggleClock();
         }
 
         private void Button8_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        //------------------------------------------------------------Return Functions from Main------------------------------------------------------------------------\\
+        public void ToggleClockText()
+        {
+            if ((Application.OpenForms["Main"] as Main).ClockVisible == true)
+            {
+                button1.Text = "Hide Clock";
+            }
+            else if ((Application.OpenForms["Main"] as Main).ClockVisible == false)
+            {
+                button1.Text = "Show Clock";
+            }
         }
     }
 }

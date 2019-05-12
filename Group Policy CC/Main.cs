@@ -56,6 +56,9 @@ namespace Group_Policy_CC
             {
                 Lockdown();
             }
+
+            //Settings Initialization
+            ClockVisible = true;
         }
 
         private void Lockdown()
@@ -163,10 +166,17 @@ namespace Group_Policy_CC
 
         private void OpenModernSettingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Process Proc = new Process();
-            Proc.StartInfo.FileName = @"ms-settings:home";
+            try
+            {
+                Process Proc = new Process();
+                Proc.StartInfo.FileName = @"ms-settings:home";
 
-            Proc.Start();
+                Proc.Start();
+            }
+            catch
+            {
+
+            }
         }
 
         private void OpenClassicControlPanelToolStripMenuItem_Click(object sender, EventArgs e)
@@ -244,5 +254,34 @@ namespace Group_Policy_CC
             Clock2.Text = formattedTimeNow;
         }
 
+        //------------------------------------------------------------Settings Functions------------------------------------------------------------------------\\
+
+        public bool ClockVisible;
+
+        public void ToggleClock()
+        {
+            if (Clock1.Visible == true || Clock2.Visible == true)
+            {
+                Clock1.Visible = false;
+                Clock2.Visible = false;
+                tableLayoutPanel1.ColumnCount = 1;
+                tableLayoutPanel3.ColumnCount = 1;
+
+                ClockVisible = false;
+
+                (Application.OpenForms["Settings"] as Settings).ToggleClockText();
+            }
+            else
+            {
+                Clock1.Visible = true;
+                Clock2.Visible = true;
+                tableLayoutPanel1.ColumnCount = 2;
+                tableLayoutPanel3.ColumnCount = 2;
+
+                ClockVisible = true;
+
+                (Application.OpenForms["Settings"] as Settings).ToggleClockText();
+            }
+        }
     }
 }
