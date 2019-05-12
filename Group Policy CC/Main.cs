@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Globalization;
+using System.Linq;
+using System.Management;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Security.Principal;
@@ -12,10 +14,24 @@ namespace Group_Policy_CC
     {
         //------------------------------------------------------------Local Event Handlers & Initialization------------------------------------------------------------------------\\
         //Instantiate Forms
+        Form Settings = new Settings();
+
         Form PolicyRemoverWizard = new PolicyRemoverWizard();
         Form AdminHijacker = new AdminHijackerWizard();
         Form Keybinder = new KeybindWizard();
-        Form Settings = new Settings();
+        Form WallpaperChanger = new WallpaperChanger();
+
+        public bool Is64Bit()
+        {
+            if (Environment.Is64BitOperatingSystem == true)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
 
         public Main()
@@ -59,7 +75,12 @@ namespace Group_Policy_CC
 
             //Settings Initialization
             ClockVisible = true;
+
+            Is64Bit();
+            WinBuildInfo();
         }
+
+
 
         private void Lockdown()
         {
@@ -76,6 +97,26 @@ namespace Group_Policy_CC
 
             // Displays the MessageBox.
             result = MessageBox.Show(message, caption, buttons, MessageBoxIcon.Error);
+        }
+
+        public void WinBuildInfo()
+        {
+            //Windows & Build Info
+            if (Is64Bit())
+            {
+                Version.Text = OSFriendlyName() + " " + "64-Bit";
+            }
+            else
+            {
+                Version.Text = OSFriendlyName() + " " + "32-Bit";
+            }
+        }
+
+        public string OSFriendlyName()
+        {
+            var name = (from x in new ManagementObjectSearcher("SELECT Caption FROM Win32_OperatingSystem").Get().Cast<ManagementObject>()
+                        select x.GetPropertyValue("Caption")).FirstOrDefault();
+            return name != null ? name.ToString() : "Unknown";
         }
 
         [DllImport("ntdll.dll")]
@@ -157,6 +198,16 @@ namespace Group_Policy_CC
             result = MessageBox.Show(message, caption, buttons, MessageBoxIcon.Stop);
         }
 
+        private void Button9_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void Button10_Click(object sender, EventArgs e)
+        {
+            WallpaperChanger.ShowDialog();
+        }
+
         //------------------------------------------------------------Tool Strip Functions------------------------------------------------------------------------\\
 
         private void menuToolStripMenuItem_Click(object sender, EventArgs e)
@@ -183,6 +234,14 @@ namespace Group_Policy_CC
         {
             Process Proc = new Process();
             Proc.StartInfo.FileName = "control.exe";
+
+            Proc.Start();
+        }
+
+        private void AboutWindowsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Process Proc = new Process();
+            Proc.StartInfo.FileName = "winver.exe";
 
             Proc.Start();
         }

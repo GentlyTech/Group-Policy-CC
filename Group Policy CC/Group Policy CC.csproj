@@ -126,6 +126,12 @@
     <Compile Include="Settings.Designer.cs">
       <DependentUpon>Settings.cs</DependentUpon>
     </Compile>
+    <Compile Include="WallpaperChanger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WallpaperChanger.Designer.cs">
+      <DependentUpon>WallpaperChanger.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AdminHijackerWizard.resx">
       <DependentUpon>AdminHijackerWizard.cs</DependentUpon>
     </EmbeddedResource>
@@ -146,6 +152,9 @@
     <EmbeddedResource Include="Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="WallpaperChanger.resx">
+      <DependentUpon>WallpaperChanger.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="App.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -165,6 +174,7 @@
     <Content Include="Icons\%40bitlockertoastimage.ico" />
     <Content Include="Icons\%40edptoastimage.ico" />
     <Content Include="Icons\AppIcon.ico" />
+    <Content Include="Resources\ErrorIcon.png" />
     <None Include="Resources\Images\UACShield.png" />
   </ItemGroup>
   <ItemGroup>

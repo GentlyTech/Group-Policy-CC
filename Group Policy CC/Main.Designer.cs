@@ -56,6 +56,9 @@ namespace Group_Policy_CC
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.Clock2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
@@ -63,17 +66,16 @@ namespace Group_Policy_CC
             this.button10 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.Clock2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.aboutWindowsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Version = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // timer1
@@ -109,10 +111,11 @@ namespace Group_Policy_CC
             // 
             this.settingsControlPanelToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.openModernSettingsToolStripMenuItem,
-            this.openClassicControlPanelToolStripMenuItem});
+            this.openClassicControlPanelToolStripMenuItem,
+            this.aboutWindowsToolStripMenuItem});
             this.settingsControlPanelToolStripMenuItem.Name = "settingsControlPanelToolStripMenuItem";
-            this.settingsControlPanelToolStripMenuItem.Size = new System.Drawing.Size(231, 26);
-            this.settingsControlPanelToolStripMenuItem.Text = "Settings/Control Panel";
+            this.settingsControlPanelToolStripMenuItem.Size = new System.Drawing.Size(222, 26);
+            this.settingsControlPanelToolStripMenuItem.Text = "Shortcuts";
             // 
             // openModernSettingsToolStripMenuItem
             // 
@@ -134,7 +137,7 @@ namespace Group_Policy_CC
             this.relaunchToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.relaunchToolStripMenuItem.Name = "relaunchToolStripMenuItem";
             this.relaunchToolStripMenuItem.ShortcutKeyDisplayString = "";
-            this.relaunchToolStripMenuItem.Size = new System.Drawing.Size(231, 26);
+            this.relaunchToolStripMenuItem.Size = new System.Drawing.Size(222, 26);
             this.relaunchToolStripMenuItem.Text = "Run as Administrator";
             this.relaunchToolStripMenuItem.Click += new System.EventHandler(this.RelaunchToolStripMenuItem_Click);
             // 
@@ -142,7 +145,7 @@ namespace Group_Policy_CC
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.ShortcutKeyDisplayString = "Alt+F4";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(231, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(222, 26);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -342,6 +345,48 @@ namespace Group_Policy_CC
             this.tabPage2.Text = "Page 2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 2;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Controls.Add(this.Clock2, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.label3, 0, 0);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 98F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1122, 98);
+            this.tableLayoutPanel3.TabIndex = 11;
+            // 
+            // Clock2
+            // 
+            this.Clock2.AutoSize = true;
+            this.Clock2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Clock2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Clock2.Font = new System.Drawing.Font("Comic Sans MS", 20F, System.Drawing.FontStyle.Bold);
+            this.Clock2.Location = new System.Drawing.Point(564, 0);
+            this.Clock2.Name = "Clock2";
+            this.Clock2.Size = new System.Drawing.Size(555, 98);
+            this.Clock2.TabIndex = 16;
+            this.Clock2.Text = "[Time]";
+            this.Clock2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(3, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(555, 98);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "More Options";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -395,28 +440,28 @@ namespace Group_Policy_CC
             // 
             this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button9.Enabled = false;
             this.button9.Font = new System.Drawing.Font("Arial", 16.2F);
             this.button9.Location = new System.Drawing.Point(3, 168);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(555, 159);
             this.button9.TabIndex = 3;
-            this.button9.Text = "[Not Implemented]";
+            this.button9.Text = "Get Wifi Passwords";
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.Button9_Click);
             // 
             // button10
             // 
             this.button10.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button10.Enabled = false;
             this.button10.Font = new System.Drawing.Font("Arial", 16.2F);
             this.button10.ForeColor = System.Drawing.SystemColors.ControlText;
             this.button10.Location = new System.Drawing.Point(564, 168);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(555, 159);
             this.button10.TabIndex = 4;
-            this.button10.Text = "[Not Implemented]";
+            this.button10.Text = "Change Desktop Background";
             this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.Button10_Click);
             // 
             // button11
             // 
@@ -444,53 +489,29 @@ namespace Group_Policy_CC
             this.button12.Text = "[Not Implemented]";
             this.button12.UseVisualStyleBackColor = true;
             // 
-            // tableLayoutPanel3
+            // aboutWindowsToolStripMenuItem
             // 
-            this.tableLayoutPanel3.ColumnCount = 2;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Controls.Add(this.Clock2, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.label3, 0, 0);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 1;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 98F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1122, 98);
-            this.tableLayoutPanel3.TabIndex = 11;
+            this.aboutWindowsToolStripMenuItem.Name = "aboutWindowsToolStripMenuItem";
+            this.aboutWindowsToolStripMenuItem.Size = new System.Drawing.Size(362, 26);
+            this.aboutWindowsToolStripMenuItem.Text = "About Windows";
+            this.aboutWindowsToolStripMenuItem.Click += new System.EventHandler(this.AboutWindowsToolStripMenuItem_Click);
             // 
-            // Clock2
+            // Version
             // 
-            this.Clock2.AutoSize = true;
-            this.Clock2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.Clock2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Clock2.Font = new System.Drawing.Font("Comic Sans MS", 20F, System.Drawing.FontStyle.Bold);
-            this.Clock2.Location = new System.Drawing.Point(564, 0);
-            this.Clock2.Name = "Clock2";
-            this.Clock2.Size = new System.Drawing.Size(555, 98);
-            this.Clock2.TabIndex = 16;
-            this.Clock2.Text = "[Time]";
-            this.Clock2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(3, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(555, 98);
-            this.label3.TabIndex = 17;
-            this.label3.Text = "More Options";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Version.AutoSize = true;
+            this.Version.Dock = System.Windows.Forms.DockStyle.Right;
+            this.Version.Location = new System.Drawing.Point(949, 28);
+            this.Version.Name = "Version";
+            this.Version.Size = new System.Drawing.Size(187, 17);
+            this.Version.TabIndex = 12;
+            this.Version.Text = "[Windows Version and Build]";
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1136, 697);
+            this.Controls.Add(this.Version);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -509,9 +530,9 @@ namespace Group_Policy_CC
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
-            this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
+            this.tableLayoutPanel4.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -552,6 +573,8 @@ namespace Group_Policy_CC
         private ToolStripMenuItem settingsControlPanelToolStripMenuItem;
         private ToolStripMenuItem openModernSettingsToolStripMenuItem;
         private ToolStripMenuItem openClassicControlPanelToolStripMenuItem;
+        private ToolStripMenuItem aboutWindowsToolStripMenuItem;
+        private Label Version;
     }
 }
 
