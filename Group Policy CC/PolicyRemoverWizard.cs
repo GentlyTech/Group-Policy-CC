@@ -131,7 +131,7 @@ namespace Group_Policy_CC
 
         //------------------------------------------------Policy Modification Functions------------------------------------------------\\
 
-            private void DelHKCU()
+        private void DelHKCU()
         {
             try
             {

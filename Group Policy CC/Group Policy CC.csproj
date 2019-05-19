@@ -52,7 +52,7 @@
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Icons\AppIcon.ico</ApplicationIcon>
+    <ApplicationIcon>AppIcon.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup />
   <PropertyGroup>
@@ -78,6 +78,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
+    <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -120,6 +121,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Run.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Run.Designer.cs">
+      <DependentUpon>Run.cs</DependentUpon>
+    </Compile>
     <Compile Include="Settings.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +138,12 @@
     </Compile>
     <Compile Include="WallpaperChanger.Designer.cs">
       <DependentUpon>WallpaperChanger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WiFiPasswordsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WiFiPasswordsList.Designer.cs">
+      <DependentUpon>WiFiPasswordsList.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AdminHijackerWizard.resx">
       <DependentUpon>AdminHijackerWizard.cs</DependentUpon>
@@ -149,11 +162,17 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Run.resx">
+      <DependentUpon>Run.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WallpaperChanger.resx">
       <DependentUpon>WallpaperChanger.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WiFiPasswordsList.resx">
+      <DependentUpon>WiFiPasswordsList.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.manifest" />
     <None Include="Properties\Settings.settings">
@@ -170,11 +189,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Icons\%40AdvancedKeySettingsNotification.ico" />
-    <Content Include="Icons\%40bitlockertoastimage.ico" />
-    <Content Include="Icons\%40edptoastimage.ico" />
+    <Content Include="AppIcon.ico" />
+    <Content Include="Icons\AdminHijackerWizardIcon.ico" />
     <Content Include="Icons\AppIcon.ico" />
-    <Content Include="Resources\ErrorIcon.png" />
+    <Content Include="Icons\KeybindWizardIcon.ico" />
+    <Content Include="Icons\PolicyRemoverWizard.ico" />
+    <Content Include="Icons\RunIcon.ico" />
+    <Content Include="Icons\SettingsIcon.ico" />
+    <Content Include="Icons\WallpaperChangerIcon.ico" />
+    <Content Include="Resources\Images\ErrorIcon.png" />
+    <Content Include="Resources\Images\RunDialogIcon.png" />
     <None Include="Resources\Images\UACShield.png" />
   </ItemGroup>
   <ItemGroup>
@@ -189,6 +213,16 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <COMReference Include="Shell32">
+      <Guid>{50A7E9B0-70EF-11D1-B75A-00A0C90564FE}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -36,13 +36,27 @@ namespace Group_Policy_CC
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.settingsControlPanelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openModernSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openClassicControlPanelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.relaunchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.settingsControlPanelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.taskManagerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.windowsSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openModernSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openClassicControlPanelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.netplWizardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.userAccountControlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.microsoftManagementConsoleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rootConsoleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
+            this.groupPolicyEditorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.localUsersAndGroupsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.servicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.READMEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutWindowsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -66,7 +80,6 @@ namespace Group_Policy_CC
             this.button10 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
-            this.aboutWindowsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Version = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -88,7 +101,8 @@ namespace Group_Policy_CC
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuToolStripMenuItem,
             this.settingsToolStripMenuItem,
-            this.READMEToolStripMenuItem});
+            this.settingsControlPanelToolStripMenuItem,
+            this.aboutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1136, 28);
@@ -99,37 +113,11 @@ namespace Group_Policy_CC
             // menuToolStripMenuItem
             // 
             this.menuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.settingsControlPanelToolStripMenuItem,
             this.relaunchToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
             this.menuToolStripMenuItem.Size = new System.Drawing.Size(58, 24);
             this.menuToolStripMenuItem.Text = "Menu";
-            this.menuToolStripMenuItem.Click += new System.EventHandler(this.menuToolStripMenuItem_Click);
-            // 
-            // settingsControlPanelToolStripMenuItem
-            // 
-            this.settingsControlPanelToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.openModernSettingsToolStripMenuItem,
-            this.openClassicControlPanelToolStripMenuItem,
-            this.aboutWindowsToolStripMenuItem});
-            this.settingsControlPanelToolStripMenuItem.Name = "settingsControlPanelToolStripMenuItem";
-            this.settingsControlPanelToolStripMenuItem.Size = new System.Drawing.Size(222, 26);
-            this.settingsControlPanelToolStripMenuItem.Text = "Shortcuts";
-            // 
-            // openModernSettingsToolStripMenuItem
-            // 
-            this.openModernSettingsToolStripMenuItem.Name = "openModernSettingsToolStripMenuItem";
-            this.openModernSettingsToolStripMenuItem.Size = new System.Drawing.Size(362, 26);
-            this.openModernSettingsToolStripMenuItem.Text = "Open Modern Settings (Windows 10 Only)";
-            this.openModernSettingsToolStripMenuItem.Click += new System.EventHandler(this.OpenModernSettingsToolStripMenuItem_Click);
-            // 
-            // openClassicControlPanelToolStripMenuItem
-            // 
-            this.openClassicControlPanelToolStripMenuItem.Name = "openClassicControlPanelToolStripMenuItem";
-            this.openClassicControlPanelToolStripMenuItem.Size = new System.Drawing.Size(362, 26);
-            this.openClassicControlPanelToolStripMenuItem.Text = "Open Classic Control Panel";
-            this.openClassicControlPanelToolStripMenuItem.Click += new System.EventHandler(this.OpenClassicControlPanelToolStripMenuItem_Click);
             // 
             // relaunchToolStripMenuItem
             // 
@@ -156,12 +144,148 @@ namespace Group_Policy_CC
             this.settingsToolStripMenuItem.Text = "Settings";
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.SettingsToolStripMenuItem_Click);
             // 
+            // settingsControlPanelToolStripMenuItem
+            // 
+            this.settingsControlPanelToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.taskManagerToolStripMenuItem,
+            this.windowsSettingsToolStripMenuItem,
+            this.toolStripMenuItem1,
+            this.netplWizardToolStripMenuItem,
+            this.userAccountControlToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.microsoftManagementConsoleToolStripMenuItem});
+            this.settingsControlPanelToolStripMenuItem.Name = "settingsControlPanelToolStripMenuItem";
+            this.settingsControlPanelToolStripMenuItem.Size = new System.Drawing.Size(184, 24);
+            this.settingsControlPanelToolStripMenuItem.Text = "Administrative Programs";
+            // 
+            // taskManagerToolStripMenuItem
+            // 
+            this.taskManagerToolStripMenuItem.Name = "taskManagerToolStripMenuItem";
+            this.taskManagerToolStripMenuItem.Size = new System.Drawing.Size(296, 26);
+            this.taskManagerToolStripMenuItem.Text = "Task Manager";
+            this.taskManagerToolStripMenuItem.Click += new System.EventHandler(this.TaskManagerToolStripMenuItem_Click);
+            // 
+            // windowsSettingsToolStripMenuItem
+            // 
+            this.windowsSettingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.openModernSettingsToolStripMenuItem,
+            this.openClassicControlPanelToolStripMenuItem});
+            this.windowsSettingsToolStripMenuItem.Name = "windowsSettingsToolStripMenuItem";
+            this.windowsSettingsToolStripMenuItem.Size = new System.Drawing.Size(296, 26);
+            this.windowsSettingsToolStripMenuItem.Text = "Windows Settings";
+            // 
+            // openModernSettingsToolStripMenuItem
+            // 
+            this.openModernSettingsToolStripMenuItem.Name = "openModernSettingsToolStripMenuItem";
+            this.openModernSettingsToolStripMenuItem.Size = new System.Drawing.Size(362, 26);
+            this.openModernSettingsToolStripMenuItem.Text = "Open Modern Settings (Windows 10 Only)";
+            this.openModernSettingsToolStripMenuItem.Click += new System.EventHandler(this.OpenModernSettingsToolStripMenuItem_Click_1);
+            // 
+            // openClassicControlPanelToolStripMenuItem
+            // 
+            this.openClassicControlPanelToolStripMenuItem.Name = "openClassicControlPanelToolStripMenuItem";
+            this.openClassicControlPanelToolStripMenuItem.Size = new System.Drawing.Size(362, 26);
+            this.openClassicControlPanelToolStripMenuItem.Text = "Open Classic Control Panel";
+            this.openClassicControlPanelToolStripMenuItem.Click += new System.EventHandler(this.OpenClassicControlPanelToolStripMenuItem_Click_1);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(293, 6);
+            // 
+            // netplWizardToolStripMenuItem
+            // 
+            this.netplWizardToolStripMenuItem.Image = global::Group_Policy_CC.Properties.Resources.UACShield;
+            this.netplWizardToolStripMenuItem.Name = "netplWizardToolStripMenuItem";
+            this.netplWizardToolStripMenuItem.Size = new System.Drawing.Size(296, 26);
+            this.netplWizardToolStripMenuItem.Text = "Net Places Wizard (Netplwiz)";
+            this.netplWizardToolStripMenuItem.Click += new System.EventHandler(this.NetplWizardToolStripMenuItem_Click);
+            // 
+            // userAccountControlToolStripMenuItem
+            // 
+            this.userAccountControlToolStripMenuItem.Image = global::Group_Policy_CC.Properties.Resources.UACShield;
+            this.userAccountControlToolStripMenuItem.Name = "userAccountControlToolStripMenuItem";
+            this.userAccountControlToolStripMenuItem.Size = new System.Drawing.Size(296, 26);
+            this.userAccountControlToolStripMenuItem.Text = "User Account Control";
+            this.userAccountControlToolStripMenuItem.Click += new System.EventHandler(this.UserAccountControlToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(293, 6);
+            // 
+            // microsoftManagementConsoleToolStripMenuItem
+            // 
+            this.microsoftManagementConsoleToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.rootConsoleToolStripMenuItem,
+            this.toolStripMenuItem2,
+            this.groupPolicyEditorToolStripMenuItem,
+            this.localUsersAndGroupsToolStripMenuItem,
+            this.servicesToolStripMenuItem});
+            this.microsoftManagementConsoleToolStripMenuItem.Image = global::Group_Policy_CC.Properties.Resources.UACShield;
+            this.microsoftManagementConsoleToolStripMenuItem.Name = "microsoftManagementConsoleToolStripMenuItem";
+            this.microsoftManagementConsoleToolStripMenuItem.Size = new System.Drawing.Size(296, 26);
+            this.microsoftManagementConsoleToolStripMenuItem.Text = "Microsoft Management Console";
+            // 
+            // rootConsoleToolStripMenuItem
+            // 
+            this.rootConsoleToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("rootConsoleToolStripMenuItem.Image")));
+            this.rootConsoleToolStripMenuItem.Name = "rootConsoleToolStripMenuItem";
+            this.rootConsoleToolStripMenuItem.Size = new System.Drawing.Size(331, 26);
+            this.rootConsoleToolStripMenuItem.Text = "Root Console";
+            this.rootConsoleToolStripMenuItem.Click += new System.EventHandler(this.RootConsoleToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(328, 6);
+            // 
+            // groupPolicyEditorToolStripMenuItem
+            // 
+            this.groupPolicyEditorToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("groupPolicyEditorToolStripMenuItem.Image")));
+            this.groupPolicyEditorToolStripMenuItem.Name = "groupPolicyEditorToolStripMenuItem";
+            this.groupPolicyEditorToolStripMenuItem.Size = new System.Drawing.Size(331, 26);
+            this.groupPolicyEditorToolStripMenuItem.Text = "Group Policy Editor";
+            this.groupPolicyEditorToolStripMenuItem.Click += new System.EventHandler(this.GroupPolicyEditorToolStripMenuItem_Click);
+            // 
+            // localUsersAndGroupsToolStripMenuItem
+            // 
+            this.localUsersAndGroupsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("localUsersAndGroupsToolStripMenuItem.Image")));
+            this.localUsersAndGroupsToolStripMenuItem.Name = "localUsersAndGroupsToolStripMenuItem";
+            this.localUsersAndGroupsToolStripMenuItem.Size = new System.Drawing.Size(331, 26);
+            this.localUsersAndGroupsToolStripMenuItem.Text = "Local Users and Groups (lusrmgr.msc)";
+            this.localUsersAndGroupsToolStripMenuItem.Click += new System.EventHandler(this.LocalUsersAndGroupsToolStripMenuItem_Click);
+            // 
+            // servicesToolStripMenuItem
+            // 
+            this.servicesToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("servicesToolStripMenuItem.Image")));
+            this.servicesToolStripMenuItem.Name = "servicesToolStripMenuItem";
+            this.servicesToolStripMenuItem.Size = new System.Drawing.Size(331, 26);
+            this.servicesToolStripMenuItem.Text = "Services";
+            this.servicesToolStripMenuItem.Click += new System.EventHandler(this.ServicesToolStripMenuItem_Click);
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.READMEToolStripMenuItem,
+            this.aboutWindowsToolStripMenuItem});
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(62, 24);
+            this.aboutToolStripMenuItem.Text = "About";
+            // 
             // READMEToolStripMenuItem
             // 
             this.READMEToolStripMenuItem.Name = "READMEToolStripMenuItem";
-            this.READMEToolStripMenuItem.Size = new System.Drawing.Size(80, 24);
+            this.READMEToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
             this.READMEToolStripMenuItem.Text = "README";
             this.READMEToolStripMenuItem.Click += new System.EventHandler(this.READMEToolStripMenuItem_Click);
+            // 
+            // aboutWindowsToolStripMenuItem
+            // 
+            this.aboutWindowsToolStripMenuItem.Name = "aboutWindowsToolStripMenuItem";
+            this.aboutWindowsToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
+            this.aboutWindowsToolStripMenuItem.Text = "About Windows";
+            this.aboutWindowsToolStripMenuItem.Click += new System.EventHandler(this.AboutWindowsToolStripMenuItem_Click);
             // 
             // button1
             // 
@@ -198,7 +322,7 @@ namespace Group_Policy_CC
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(555, 194);
             this.button5.TabIndex = 5;
-            this.button5.Text = "Launch PowerShell";
+            this.button5.Text = "Run Program";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.Button5_Click);
             // 
@@ -459,7 +583,7 @@ namespace Group_Policy_CC
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(555, 159);
             this.button10.TabIndex = 4;
-            this.button10.Text = "Change Desktop Background";
+            this.button10.Text = "Change Wallpapers";
             this.button10.UseVisualStyleBackColor = true;
             this.button10.Click += new System.EventHandler(this.Button10_Click);
             // 
@@ -488,13 +612,6 @@ namespace Group_Policy_CC
             this.button12.TabIndex = 6;
             this.button12.Text = "[Not Implemented]";
             this.button12.UseVisualStyleBackColor = true;
-            // 
-            // aboutWindowsToolStripMenuItem
-            // 
-            this.aboutWindowsToolStripMenuItem.Name = "aboutWindowsToolStripMenuItem";
-            this.aboutWindowsToolStripMenuItem.Size = new System.Drawing.Size(362, 26);
-            this.aboutWindowsToolStripMenuItem.Text = "About Windows";
-            this.aboutWindowsToolStripMenuItem.Click += new System.EventHandler(this.AboutWindowsToolStripMenuItem_Click);
             // 
             // Version
             // 
@@ -545,7 +662,6 @@ namespace Group_Policy_CC
         private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem relaunchToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem READMEToolStripMenuItem;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button5;
@@ -570,11 +686,25 @@ namespace Group_Policy_CC
         private Button button11;
         private Button button12;
         private ToolStripMenuItem settingsToolStripMenuItem;
+        private Label Version;
         private ToolStripMenuItem settingsControlPanelToolStripMenuItem;
+        private ToolStripMenuItem aboutToolStripMenuItem;
+        private ToolStripMenuItem READMEToolStripMenuItem;
+        private ToolStripMenuItem aboutWindowsToolStripMenuItem;
+        private ToolStripMenuItem taskManagerToolStripMenuItem;
+        private ToolStripMenuItem windowsSettingsToolStripMenuItem;
         private ToolStripMenuItem openModernSettingsToolStripMenuItem;
         private ToolStripMenuItem openClassicControlPanelToolStripMenuItem;
-        private ToolStripMenuItem aboutWindowsToolStripMenuItem;
-        private Label Version;
+        private ToolStripMenuItem userAccountControlToolStripMenuItem;
+        private ToolStripMenuItem microsoftManagementConsoleToolStripMenuItem;
+        private ToolStripMenuItem groupPolicyEditorToolStripMenuItem;
+        private ToolStripMenuItem localUsersAndGroupsToolStripMenuItem;
+        private ToolStripMenuItem netplWizardToolStripMenuItem;
+        private ToolStripSeparator toolStripSeparator1;
+        private ToolStripSeparator toolStripMenuItem1;
+        private ToolStripMenuItem rootConsoleToolStripMenuItem;
+        private ToolStripSeparator toolStripMenuItem2;
+        private ToolStripMenuItem servicesToolStripMenuItem;
     }
 }
 

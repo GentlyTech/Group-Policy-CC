@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Management;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Security.Principal;
 using System.Windows.Forms;
+using Shell32;
 
 namespace Group_Policy_CC
 {
@@ -20,6 +22,8 @@ namespace Group_Policy_CC
         Form AdminHijacker = new AdminHijackerWizard();
         Form Keybinder = new KeybindWizard();
         Form WallpaperChanger = new WallpaperChanger();
+        Form WifiPasswordsList = new WiFiPasswordsList();
+        Form Run = new Run();
 
         public bool Is64Bit()
         {
@@ -67,6 +71,8 @@ namespace Group_Policy_CC
                 this.Text = this.Text + " " + "(Administrator)";
                 relaunchToolStripMenuItem.Text = "Relaunch Application";
                 relaunchToolStripMenuItem.Image = null;
+
+                AddressAdministrativeItemsListAsAdministrator();
             }
             else
             {
@@ -99,6 +105,18 @@ namespace Group_Policy_CC
             result = MessageBox.Show(message, caption, buttons, MessageBoxIcon.Error);
         }
 
+        private void AddressAdministrativeItemsListAsAdministrator()
+        {
+            netplWizardToolStripMenuItem.Image = null;
+            userAccountControlToolStripMenuItem.Image = null;
+
+            microsoftManagementConsoleToolStripMenuItem.Image = null;
+            rootConsoleToolStripMenuItem.Image = null;
+            groupPolicyEditorToolStripMenuItem.Image = null;
+            localUsersAndGroupsToolStripMenuItem.Image = null;
+            servicesToolStripMenuItem.Image = null;
+        }
+
         public void WinBuildInfo()
         {
             //Windows & Build Info
@@ -128,9 +146,11 @@ namespace Group_Policy_CC
         [DllImport("user32.dll")]
         public static extern int SendMessage(IntPtr hWnd, uint Msg, int wParam, int lParam);
 
+        [DllImport("user32.dll")]
+        static extern bool SetForegroundWindow(IntPtr hWnd);
+
         //------------------------------------------------------------Button Functions------------------------------------------------------------------------\\
         //Page 1
-
         private void Button1_Click(object sender, EventArgs e)
         {
             PolicyRemoverWizard.ShowDialog();
@@ -168,11 +188,7 @@ namespace Group_Policy_CC
 
         private void Button5_Click(object sender, EventArgs e)
         {
-            Process PowerShell = new Process();
-            // Configure the process using the StartInfo properties.
-            PowerShell.StartInfo.FileName = "powershell.exe";
-            PowerShell.StartInfo.WindowStyle = ProcessWindowStyle.Maximized;
-            PowerShell.Start();
+            Run.ShowDialog();
         }
 
         private void Button6_Click(object sender, EventArgs e)
@@ -200,7 +216,7 @@ namespace Group_Policy_CC
 
         private void Button9_Click(object sender, EventArgs e)
         {
-            
+            WifiPasswordsList.ShowDialog();
         }
 
         private void Button10_Click(object sender, EventArgs e)
@@ -210,32 +226,25 @@ namespace Group_Policy_CC
 
         //------------------------------------------------------------Tool Strip Functions------------------------------------------------------------------------\\
 
-        private void menuToolStripMenuItem_Click(object sender, EventArgs e)
+        private void READMEToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            string message = "Program Description:\n\n" +
+    "This program can help you circumvent windows group policies set by your administrator/organization.\n\n" +
+    "At the moment, Administrator Priviliges are required to complete the tasks, but this program makes it faster and easier to take control over a machine.\n\n" +
+    "This works because some administrators enforce policies but give the students admin.\n\n" +
 
-        }
+    "Disclaimer:\n\n" +
+    "By using this program, you agree that:\n\n" +
+    "- We are not responsible for any data loss or damage caused by this program; and\n\n" +
+    "- You completely understand that you are responsible for anything that happens as a result of using this program.\n\n" +
+    "Thank you for using our product!";
 
-        private void OpenModernSettingsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Process Proc = new Process();
-                Proc.StartInfo.FileName = @"ms-settings:home";
+            string caption = "README - Please Note";
+            MessageBoxButtons buttons = MessageBoxButtons.OK;
+            DialogResult result;
 
-                Proc.Start();
-            }
-            catch
-            {
-
-            }
-        }
-
-        private void OpenClassicControlPanelToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Process Proc = new Process();
-            Proc.StartInfo.FileName = "control.exe";
-
-            Proc.Start();
+            // Displays the MessageBox.
+            result = MessageBox.Show(message, caption, buttons, MessageBoxIcon.Information);
         }
 
         private void AboutWindowsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -278,28 +287,159 @@ namespace Group_Policy_CC
             Settings.ShowDialog();
         }
 
-        private void READMEToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            string message = "Program Description:\n\n" +
-                "This program can help you circumvent windows group policies set by your administrator/organization.\n\n" +
-                "At the moment, Administrator Priviliges are required to complete the tasks, but this program makes it faster and easier to take control over a machine.\n\n" +
-                "This works because some administrators enforce policies but give the students admin.\n\n" +
-
-                "Disclaimer:\n\n" +
-                "We are not responsible for any data loss or damage caused by this program.\n\n" +
-                "Thank you for using our product!";
-
-            string caption = "README - Please Note";
-            MessageBoxButtons buttons = MessageBoxButtons.OK;
-            DialogResult result;
-
-            // Displays the MessageBox.
-            result = MessageBox.Show(message, caption, buttons, MessageBoxIcon.Information);
-        }
-
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        //======Administrative Applications======\\
+
+        private void TaskManagerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Process Proc = new Process();
+                Proc.StartInfo.FileName = "taskmgr.exe";
+
+                Proc.Start();
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void OpenModernSettingsToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                Process Proc = new Process();
+                Proc.StartInfo.FileName = @"ms-settings:home";
+
+                Proc.Start();
+            }
+            catch
+            {
+                MessageBox.Show("This version of Windows does not have the Modern Control Panel", "Error - Invalid Windows Version", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void OpenClassicControlPanelToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                Process Proc = new Process();
+                Proc.StartInfo.FileName = "control.exe";
+
+                Proc.Start();
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void NetplWizardToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Process Proc = new Process();
+                Proc.StartInfo.Verb = "runas";
+                Proc.StartInfo.FileName = "netplwiz.exe";
+
+                Proc.Start();
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void UserAccountControlToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Process Proc = new Process();
+                Proc.StartInfo.Verb = "runas";
+                Proc.StartInfo.FileName = "useraccountcontrolsettings.exe";
+
+                Proc.Start();
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void RootConsoleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Process Proc = new Process();
+                Proc.StartInfo.Verb = "runas";
+                Proc.StartInfo.FileName = "mmc.exe";
+
+                Proc.Start();
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void GroupPolicyEditorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (File.Exists(Environment.SystemDirectory + "gpedit.msc"))
+            {
+                try
+                {
+                    Process Proc = new Process();
+                    Proc.StartInfo.Verb = "runas";
+                    Proc.StartInfo.FileName = "gpedit.msc";
+
+                    Proc.Start();
+                }
+                catch
+                {
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("This edition of Windows does not support Group Policy Editing", "Error - Unsupported Edition", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void LocalUsersAndGroupsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Process Proc = new Process();
+                Proc.StartInfo.Verb = "runas";
+                Proc.StartInfo.FileName = "lusrmgr.msc";
+
+                Proc.Start();
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void ServicesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Process Proc = new Process();
+                Proc.StartInfo.Verb = "runas";
+                Proc.StartInfo.FileName = "services.msc";
+
+                Proc.Start();
+            }
+            catch
+            {
+
+            }
         }
 
         //------------------------------------------------------------Clock------------------------------------------------------------------------\\
