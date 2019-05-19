@@ -139,12 +139,6 @@ namespace Group_Policy_CC
             return name != null ? name.ToString() : "Unknown";
         }
 
-        [DllImport("ntdll.dll")]
-        public static extern uint RtlAdjustPrivilege(int Privilege, bool bEnablePrivilege, bool IsThreadPrivilege, out bool PreviousValue);
-
-        [DllImport("ntdll.dll")]
-        public static extern uint NtRaiseHardError(uint ErrorStatus, uint NumberOfParameters, uint UnicodeStringParameterMask, IntPtr Parameters, uint ValidResponseOption, out uint Response);
-
         [DllImport("user32.dll")]
         public static extern int SendMessage(IntPtr hWnd, uint Msg, int wParam, int lParam);
 
@@ -166,26 +160,6 @@ namespace Group_Policy_CC
         private void Button3_Click(object sender, EventArgs e)
         {
             Keybinder.ShowDialog();
-        }
-
-        private void Button4_Click(object sender, EventArgs e)
-        {
-            //Configure the MessageBox
-            string message = "Are you sure you want to blue screen this computer?\n\nAny unsaved work will be lost, and there is a risk that something could break (e.g. There is a Windows Update in progress).\n\nWe are not responsible for any damage or data loss caused as a result of this feature.\n\nYou have been warned...";
-            string caption = "Confirm Blue Screen";
-            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-            DialogResult result;
-
-            // Displays the MessageBox.
-            result = MessageBox.Show(message, caption, buttons, MessageBoxIcon.Exclamation);
-
-            if (result == DialogResult.Yes)
-            {
-                bool t1;
-                uint t2;
-                RtlAdjustPrivilege(19, true, false, out t1);
-                NtRaiseHardError(0xc0000022, 0, 0, IntPtr.Zero, 6, out t2);
-            }
         }
 
         private void Button5_Click(object sender, EventArgs e)

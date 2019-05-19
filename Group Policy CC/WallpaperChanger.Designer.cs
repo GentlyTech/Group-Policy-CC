@@ -36,14 +36,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.Win10Change1 = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.Win10FilePathBox1 = new System.Windows.Forms.TextBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.Win10Change2 = new System.Windows.Forms.Button();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.Win10FilePathBox2 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.CloseWin10 = new System.Windows.Forms.Button();
             this.SetWin10 = new System.Windows.Forms.Button();
@@ -93,8 +86,6 @@
             this.tableLayoutPanel2.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
             this.Win7.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
@@ -147,17 +138,15 @@
             this.tableLayoutPanel2.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.OutsetDouble;
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Controls.Add(this.panel2, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.panel3, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 0, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 32);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 3;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 78.41191F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.58809F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(786, 406);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
@@ -166,20 +155,19 @@
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.Win10Change1);
-            this.panel2.Controls.Add(this.checkBox1);
             this.panel2.Controls.Add(this.Win10FilePathBox1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(6, 6);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(774, 125);
+            this.panel2.Size = new System.Drawing.Size(774, 305);
             this.panel2.TabIndex = 0;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Location = new System.Drawing.Point(180, 38);
+            this.pictureBox1.Location = new System.Drawing.Point(180, 17);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(594, 65);
+            this.pictureBox1.Size = new System.Drawing.Size(594, 266);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
@@ -187,7 +175,7 @@
             // label4
             // 
             this.label4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label4.Location = new System.Drawing.Point(180, 21);
+            this.label4.Location = new System.Drawing.Point(180, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(594, 17);
             this.label4.TabIndex = 6;
@@ -198,104 +186,23 @@
             // 
             this.Win10Change1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Win10Change1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.Win10Change1.Location = new System.Drawing.Point(0, 21);
+            this.Win10Change1.Location = new System.Drawing.Point(0, 0);
             this.Win10Change1.Name = "Win10Change1";
-            this.Win10Change1.Size = new System.Drawing.Size(180, 82);
+            this.Win10Change1.Size = new System.Drawing.Size(180, 283);
             this.Win10Change1.TabIndex = 2;
             this.Win10Change1.Text = "Choose Wallpaper";
             this.Win10Change1.UseVisualStyleBackColor = true;
             this.Win10Change1.Click += new System.EventHandler(this.Win10Change1_Click);
             // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.checkBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.checkBox1.Location = new System.Drawing.Point(0, 0);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(774, 21);
-            this.checkBox1.TabIndex = 1;
-            this.checkBox1.Text = "Change current user desktop image";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.CheckBox1_CheckedChanged);
-            // 
             // Win10FilePathBox1
             // 
             this.Win10FilePathBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.Win10FilePathBox1.Location = new System.Drawing.Point(0, 103);
+            this.Win10FilePathBox1.Location = new System.Drawing.Point(0, 283);
             this.Win10FilePathBox1.Name = "Win10FilePathBox1";
             this.Win10FilePathBox1.ReadOnly = true;
             this.Win10FilePathBox1.Size = new System.Drawing.Size(774, 22);
             this.Win10FilePathBox1.TabIndex = 0;
             this.Win10FilePathBox1.Text = "Click \'Choose Wallpaper\' above to pick a wallpaper.";
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.pictureBox2);
-            this.panel3.Controls.Add(this.label5);
-            this.panel3.Controls.Add(this.Win10Change2);
-            this.panel3.Controls.Add(this.checkBox2);
-            this.panel3.Controls.Add(this.Win10FilePathBox2);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(6, 140);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(774, 125);
-            this.panel3.TabIndex = 1;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox2.Location = new System.Drawing.Point(180, 38);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(594, 65);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 5;
-            this.pictureBox2.TabStop = false;
-            // 
-            // label5
-            // 
-            this.label5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label5.Location = new System.Drawing.Point(180, 21);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(594, 17);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Wallpaper Preview";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Win10Change2
-            // 
-            this.Win10Change2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Win10Change2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.Win10Change2.Location = new System.Drawing.Point(0, 21);
-            this.Win10Change2.Name = "Win10Change2";
-            this.Win10Change2.Size = new System.Drawing.Size(180, 82);
-            this.Win10Change2.TabIndex = 3;
-            this.Win10Change2.Text = "Choose Wallpaper";
-            this.Win10Change2.UseVisualStyleBackColor = true;
-            this.Win10Change2.Click += new System.EventHandler(this.Win10Change2_Click);
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.checkBox2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.checkBox2.Location = new System.Drawing.Point(0, 0);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(774, 21);
-            this.checkBox2.TabIndex = 1;
-            this.checkBox2.Text = "Change current user lockscreen image";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            this.checkBox2.CheckedChanged += new System.EventHandler(this.CheckBox2_CheckedChanged);
-            // 
-            // Win10FilePathBox2
-            // 
-            this.Win10FilePathBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.Win10FilePathBox2.Location = new System.Drawing.Point(0, 103);
-            this.Win10FilePathBox2.Name = "Win10FilePathBox2";
-            this.Win10FilePathBox2.ReadOnly = true;
-            this.Win10FilePathBox2.Size = new System.Drawing.Size(774, 22);
-            this.Win10FilePathBox2.TabIndex = 0;
-            this.Win10FilePathBox2.Text = "Click \'Choose Wallpaper\' above to pick a wallpaper.";
             // 
             // tableLayoutPanel3
             // 
@@ -306,12 +213,12 @@
             this.tableLayoutPanel3.Controls.Add(this.CloseWin10, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.SetWin10, 1, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(387, 274);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(387, 320);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 125F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(393, 126);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(393, 80);
             this.tableLayoutPanel3.TabIndex = 2;
             // 
             // CloseWin10
@@ -320,7 +227,7 @@
             this.CloseWin10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CloseWin10.Location = new System.Drawing.Point(4, 4);
             this.CloseWin10.Name = "CloseWin10";
-            this.CloseWin10.Size = new System.Drawing.Size(189, 118);
+            this.CloseWin10.Size = new System.Drawing.Size(189, 72);
             this.CloseWin10.TabIndex = 0;
             this.CloseWin10.Text = "Cancel";
             this.CloseWin10.UseVisualStyleBackColor = true;
@@ -333,7 +240,7 @@
             this.SetWin10.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SetWin10.Location = new System.Drawing.Point(200, 4);
             this.SetWin10.Name = "SetWin10";
-            this.SetWin10.Size = new System.Drawing.Size(189, 118);
+            this.SetWin10.Size = new System.Drawing.Size(189, 72);
             this.SetWin10.TabIndex = 1;
             this.SetWin10.Text = "Set Wallpapers";
             this.SetWin10.UseVisualStyleBackColor = true;
@@ -500,7 +407,7 @@
             this.checkBox6.Name = "checkBox6";
             this.checkBox6.Size = new System.Drawing.Size(774, 21);
             this.checkBox6.TabIndex = 1;
-            this.checkBox6.Text = "Change current user lockscreen image";
+            this.checkBox6.Text = "Change system-wide lockscreen image";
             this.checkBox6.UseVisualStyleBackColor = true;
             // 
             // textBox4
@@ -849,9 +756,6 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.Win7.ResumeLayout(false);
             this.tableLayoutPanel6.ResumeLayout(false);
@@ -887,16 +791,9 @@
         private System.Windows.Forms.Button CloseUnsupported;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox Win10FilePathBox2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox Win10FilePathBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Button Win10Change2;
         private System.Windows.Forms.Button Win10Change1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Button CloseWin10;
         private System.Windows.Forms.Button SetWin10;

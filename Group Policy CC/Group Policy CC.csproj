@@ -148,6 +148,12 @@
     <Compile Include="WallpaperChanger.Designer.cs">
       <DependentUpon>WallpaperChanger.cs</DependentUpon>
     </Compile>
+    <Compile Include="WiFiPasswordsListRaw.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WiFiPasswordsListRaw.Designer.cs">
+      <DependentUpon>WiFiPasswordsListRaw.cs</DependentUpon>
+    </Compile>
     <Compile Include="WiFiPasswordsList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,6 +188,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="WallpaperChanger.resx">
       <DependentUpon>WallpaperChanger.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WiFiPasswordsListRaw.resx">
+      <DependentUpon>WiFiPasswordsListRaw.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WiFiPasswordsList.resx">
       <DependentUpon>WiFiPasswordsList.cs</DependentUpon>
