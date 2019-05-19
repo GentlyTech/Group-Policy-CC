@@ -52,7 +52,7 @@
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>AppIcon.ico</ApplicationIcon>
+    <ApplicationIcon>Icons\AppIcon.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup />
   <PropertyGroup>
@@ -210,7 +210,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AppIcon.ico" />
     <Content Include="Icons\AdminHijackerWizardIcon.ico" />
     <Content Include="Icons\AppIcon.ico" />
     <Content Include="Icons\KeybindWizardIcon.ico" />
