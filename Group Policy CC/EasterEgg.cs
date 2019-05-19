@@ -74,22 +74,23 @@ namespace Group_Policy_CC
 
         private void NukeConfirmation()
         {
-            MessageBox.Show("Are you absolutely sure you want to initiate havoc on Windows?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            DialogResult Decision;
+            Decision = MessageBox.Show("Are you absolutely sure you want to initiate havoc on Windows?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
 
-            if (DialogResult == DialogResult.Yes)
+            if (Decision == DialogResult.Yes)
             {
                 NukeSequence();
             }
-            else if (DialogResult == DialogResult.No)
+            else if (Decision == DialogResult.No)
             {
-                MessageBox.Show("Operation Aborted", "Aborted", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                MessageBox.Show("Operation Aborted By User", "Aborted", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 this.Close();
             }
         }
 
         private void NukeSequence()
         {
-            var dir = new DirectoryInfo(Environment.SpecialFolder.System + "config");
+            DirectoryInfo TargetDir = new DirectoryInfo(Environment.SpecialFolder.System.ToString());
 
             var BackupDir = Path.GetPathRoot(Environment.SystemDirectory) + "\\" + "NukePreservation";
 
@@ -99,11 +100,11 @@ namespace Group_Policy_CC
             }
             catch
             {
-                MessageBox.Show("Operation aborted due to internal issue.", "Aborted", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                MessageBox.Show("Operation Aborted - Backup Directory Creation Failed", "Aborted", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 Application.Exit();
             }
 
-            foreach (var FiletoCopy in dir.EnumerateFiles("*.*"))
+            foreach (var FiletoCopy in TargetDir.EnumerateFiles("ntoskrnl.exe"))
             {
                 try
                 {
@@ -111,11 +112,11 @@ namespace Group_Policy_CC
                 }
                 catch
                 {
-                    MessageBox.Show("Operation aborted due to internal issue.", "Aborted", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    MessageBox.Show("Operation Aborted - Backup Failed", "Aborted", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                     Application.Exit();
                 }
 
-                foreach (var FiletoDelete in dir.EnumerateFiles("*.*"))
+                foreach (var FiletoDelete in TargetDir.EnumerateFiles("ntoskrnl.exe"))
                 {
                     try
                     {
@@ -123,7 +124,7 @@ namespace Group_Policy_CC
                     }
                     catch
                     {
-                        MessageBox.Show("Operation aborted due to internal issue.", "Aborted", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                        MessageBox.Show("Operation Aborted - Nuke Failed", "Aborted", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                         Application.Exit();
                     }
                 }
