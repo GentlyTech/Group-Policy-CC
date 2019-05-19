@@ -5,4 +5,4 @@ At the moment, Administrator Priviliges are required to complete the tasks. This
 
 This works because some administrators enforce policies but give the students admin.
 
-~Clap Clap Clap~
+👏👏👏
