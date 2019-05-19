@@ -86,10 +86,11 @@
             // 
             // button1
             // 
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button1.Location = new System.Drawing.Point(0, 427);
+            this.button1.Location = new System.Drawing.Point(0, 411);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(800, 23);
+            this.button1.Size = new System.Drawing.Size(800, 39);
             this.button1.TabIndex = 3;
             this.button1.Text = "Refresh List";
             this.button1.UseVisualStyleBackColor = true;

@@ -96,6 +96,12 @@
     <Compile Include="AdminHijackerWizard.Designer.cs">
       <DependentUpon>AdminHijackerWizard.cs</DependentUpon>
     </Compile>
+    <Compile Include="EasterEgg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EasterEgg.Designer.cs">
+      <DependentUpon>EasterEgg.cs</DependentUpon>
+    </Compile>
     <Compile Include="KeybindWizard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +126,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RoundButton.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Run.cs">
       <SubType>Form</SubType>
@@ -147,6 +156,9 @@
     </Compile>
     <EmbeddedResource Include="AdminHijackerWizard.resx">
       <DependentUpon>AdminHijackerWizard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EasterEgg.resx">
+      <DependentUpon>EasterEgg.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KeybindWizard.resx">
       <DependentUpon>KeybindWizard.cs</DependentUpon>

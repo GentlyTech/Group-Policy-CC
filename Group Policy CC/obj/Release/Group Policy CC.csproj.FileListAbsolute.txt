@@ -17,3 +17,4 @@ C:\Users\andyy\source\Collaborative Git Repos\Group Policy CC\Group Policy CC\ob
 C:\Users\andyy\source\Collaborative Git Repos\Group Policy CC\Group Policy CC\obj\Release\Group Policy CC.csproj.ResolveComReference.cache
 C:\Users\andyy\source\Collaborative Git Repos\Group Policy CC\Group Policy CC\obj\Release\Group_Policy_CC.Run.resources
 C:\Users\andyy\source\Collaborative Git Repos\Group Policy CC\Group Policy CC\obj\Release\Group_Policy_CC.WifiPasswordsList.resources
+C:\Users\andyy\source\Collaborative Git Repos\Group Policy CC\Group Policy CC\obj\Release\Group_Policy_CC.EasterEgg.resources

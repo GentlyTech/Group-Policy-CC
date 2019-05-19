@@ -4,6 +4,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Management;
+using System.Media;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Security.Principal;
@@ -24,6 +25,7 @@ namespace Group_Policy_CC
         Form WallpaperChanger = new WallpaperChanger();
         Form WifiPasswordsList = new WiFiPasswordsList();
         Form Run = new Run();
+        Form EasterEgg = new EasterEgg();
 
         public bool Is64Bit()
         {
@@ -481,6 +483,31 @@ namespace Group_Policy_CC
 
                 (Application.OpenForms["Settings"] as Settings).ToggleClockText();
             }
+        }
+
+        //------------------------------------------------------------Easter Egg------------------------------------------------------------------------\\
+
+        int ClickCount = 0;
+
+        private void Label1_Click(object sender, EventArgs e)
+        {
+
+            ClickCount++;
+
+            if (ClickCount == 5)
+            {
+                Egg();
+            }
+        }
+
+        private void Egg()
+        {
+            if (IsAdministrator())
+            {
+                EasterEgg.ShowDialog();
+            }
+
+            ClickCount = 0;
         }
     }
 }
