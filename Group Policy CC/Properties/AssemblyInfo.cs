@@ -9,9 +9,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Group Policy CC")]
 [assembly: AssemblyDescription("This program can help you circumvent windows group policies set by your administrator/organization.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("YDS & NS")]
+[assembly: AssemblyCompany("YDS")]
 [assembly: AssemblyProduct("Group Policy CC")]
-[assembly: AssemblyCopyright("Copyright © YDS & NS 2019")]
+[assembly: AssemblyCopyright("Copyright © YDS 2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

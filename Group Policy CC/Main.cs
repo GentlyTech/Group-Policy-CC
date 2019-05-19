@@ -24,6 +24,7 @@ namespace Group_Policy_CC
         Form Keybinder = new KeybindWizard();
         Form WallpaperChanger = new WallpaperChanger();
         Form WifiPasswordsList = new WiFiPasswordsList();
+        Form WifiPasswordsListRaw = new WiFiPasswordsListRaw();
         Form Run = new Run();
         Form EasterEgg = new EasterEgg();
 
@@ -192,7 +193,7 @@ namespace Group_Policy_CC
 
         private void Button9_Click(object sender, EventArgs e)
         {
-            WifiPasswordsList.ShowDialog();
+            WifiPasswordsListRaw.ShowDialog();
         }
 
         private void Button10_Click(object sender, EventArgs e)
@@ -213,7 +214,8 @@ namespace Group_Policy_CC
     "By using this program, you agree that:\n\n" +
     "- We are not responsible for any data loss or damage caused by this program; and\n\n" +
     "- You completely understand that you are responsible for anything that happens as a result of using this program.\n\n" +
-    "Thank you for using our product!";
+    "Thank you for using our product!\n\n" +
+    "-YDS";
 
             string caption = "README - Please Note";
             MessageBoxButtons buttons = MessageBoxButtons.OK;
@@ -476,10 +478,7 @@ namespace Group_Policy_CC
 
         private void Egg()
         {
-            if (IsAdministrator())
-            {
                 EasterEgg.ShowDialog();
-            }
 
             ClickCount = 0;
         }

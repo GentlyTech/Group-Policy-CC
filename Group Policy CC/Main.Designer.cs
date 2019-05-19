@@ -276,14 +276,14 @@ namespace Group_Policy_CC
             // READMEToolStripMenuItem
             // 
             this.READMEToolStripMenuItem.Name = "READMEToolStripMenuItem";
-            this.READMEToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
+            this.READMEToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.READMEToolStripMenuItem.Text = "README";
             this.READMEToolStripMenuItem.Click += new System.EventHandler(this.READMEToolStripMenuItem_Click);
             // 
             // aboutWindowsToolStripMenuItem
             // 
             this.aboutWindowsToolStripMenuItem.Name = "aboutWindowsToolStripMenuItem";
-            this.aboutWindowsToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
+            this.aboutWindowsToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.aboutWindowsToolStripMenuItem.Text = "About Windows";
             this.aboutWindowsToolStripMenuItem.Click += new System.EventHandler(this.AboutWindowsToolStripMenuItem_Click);
             // 
