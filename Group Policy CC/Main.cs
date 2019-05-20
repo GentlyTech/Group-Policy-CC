@@ -18,6 +18,7 @@ namespace Group_Policy_CC
         //------------------------------------------------------------Local Event Handlers & Initialization------------------------------------------------------------------------\\
         //Instantiate Forms
         Form Settings = new Settings();
+        Form About = new About();
 
         Form PolicyRemoverWizard = new PolicyRemoverWizard();
         Form AdminHijacker = new AdminHijackerWizard();
@@ -205,24 +206,7 @@ namespace Group_Policy_CC
 
         private void READMEToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string message = "Program Description:\n\n" +
-    "This program can help you circumvent windows group policies set by your administrator/organization.\n\n" +
-    "At the moment, Administrator Priviliges are required to complete the tasks, but this program makes it faster and easier to take control over a machine.\n\n" +
-    "This works because some administrators enforce policies but give the students admin.\n\n" +
-
-    "Disclaimer:\n\n" +
-    "By using this program, you agree that:\n\n" +
-    "- We are not responsible for any data loss or damage caused by this program; and\n\n" +
-    "- You completely understand that you are responsible for anything that happens as a result of using this program.\n\n" +
-    "Thank you for using our product!\n\n" +
-    "-YDS";
-
-            string caption = "README - Please Note";
-            MessageBoxButtons buttons = MessageBoxButtons.OK;
-            DialogResult result;
-
-            // Displays the MessageBox.
-            result = MessageBox.Show(message, caption, buttons, MessageBoxIcon.Information);
+            About.ShowDialog();
         }
 
         private void AboutWindowsToolStripMenuItem_Click(object sender, EventArgs e)

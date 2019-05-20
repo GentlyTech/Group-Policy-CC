@@ -90,6 +90,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminHijackerWizard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,6 +166,9 @@
     <Compile Include="WiFiPasswordsList.Designer.cs">
       <DependentUpon>WiFiPasswordsList.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminHijackerWizard.resx">
       <DependentUpon>AdminHijackerWizard.cs</DependentUpon>
     </EmbeddedResource>
@@ -217,6 +226,7 @@
     <Content Include="Icons\RunIcon.ico" />
     <Content Include="Icons\SettingsIcon.ico" />
     <Content Include="Icons\WallpaperChangerIcon.ico" />
+    <None Include="Resources\Images\Banner.png" />
     <Content Include="Resources\Images\ErrorIcon.png" />
     <Content Include="Resources\Images\RunDialogIcon.png" />
     <None Include="Resources\Images\UACShield.png" />
