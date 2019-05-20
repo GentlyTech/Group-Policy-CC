@@ -170,7 +170,7 @@
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(389, 80);
             this.button5.TabIndex = 8;
-            this.button5.Text = "[Not Implemented]";
+            this.button5.Text = "[Enable/Disable] Dark Mode";
             this.button5.UseVisualStyleBackColor = true;
             // 
             // button6

@@ -50,6 +50,7 @@ namespace Group_Policy_CC
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.microsoftManagementConsoleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rootConsoleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.computerManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.groupPolicyEditorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.localUsersAndGroupsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -64,6 +65,7 @@ namespace Group_Policy_CC
             this.button3 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.Clock1 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -78,7 +80,6 @@ namespace Group_Policy_CC
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
@@ -222,6 +223,7 @@ namespace Group_Policy_CC
             // 
             this.microsoftManagementConsoleToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.rootConsoleToolStripMenuItem,
+            this.computerManagementToolStripMenuItem,
             this.toolStripMenuItem2,
             this.groupPolicyEditorToolStripMenuItem,
             this.localUsersAndGroupsToolStripMenuItem,
@@ -238,6 +240,14 @@ namespace Group_Policy_CC
             this.rootConsoleToolStripMenuItem.Size = new System.Drawing.Size(331, 26);
             this.rootConsoleToolStripMenuItem.Text = "Root Console";
             this.rootConsoleToolStripMenuItem.Click += new System.EventHandler(this.RootConsoleToolStripMenuItem_Click);
+            // 
+            // computerManagementToolStripMenuItem
+            // 
+            this.computerManagementToolStripMenuItem.Image = global::Group_Policy_CC.Properties.Resources.UACShield;
+            this.computerManagementToolStripMenuItem.Name = "computerManagementToolStripMenuItem";
+            this.computerManagementToolStripMenuItem.Size = new System.Drawing.Size(331, 26);
+            this.computerManagementToolStripMenuItem.Text = "Computer Management";
+            this.computerManagementToolStripMenuItem.Click += new System.EventHandler(this.ComputerManagementToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
@@ -371,14 +381,13 @@ namespace Group_Policy_CC
             this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button5.Font = new System.Drawing.Font("Arial", 16.2F);
-            this.button5.ForeColor = System.Drawing.SystemColors.ControlText;
             this.button5.Location = new System.Drawing.Point(3, 333);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(555, 194);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "Change Wallpapers";
+            this.button5.TabIndex = 7;
+            this.button5.Text = "Get Wifi Passwords";
             this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.Button10_Click);
+            this.button5.Click += new System.EventHandler(this.Button9_Click);
             // 
             // button6
             // 
@@ -389,9 +398,23 @@ namespace Group_Policy_CC
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(555, 194);
             this.button6.TabIndex = 6;
-            this.button6.Text = "More Options >>";
+            this.button6.Text = ">> More Options >>";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.Button6_Click);
+            // 
+            // button9
+            // 
+            this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button9.Font = new System.Drawing.Font("Arial", 16.2F);
+            this.button9.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button9.Location = new System.Drawing.Point(3, 168);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(555, 159);
+            this.button9.TabIndex = 4;
+            this.button9.Text = "Change Wallpapers";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.Button10_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -573,7 +596,7 @@ namespace Group_Policy_CC
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(555, 159);
             this.button7.TabIndex = 2;
-            this.button7.Text = "<< Go Back";
+            this.button7.Text = "<< Go Back <<";
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.Button7_Click);
             // 
@@ -589,19 +612,6 @@ namespace Group_Policy_CC
             this.button8.Text = "Install Fortnite";
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.Button8_Click);
-            // 
-            // button9
-            // 
-            this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button9.Font = new System.Drawing.Font("Arial", 16.2F);
-            this.button9.Location = new System.Drawing.Point(3, 168);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(555, 159);
-            this.button9.TabIndex = 3;
-            this.button9.Text = "Get Wifi Passwords";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.Button9_Click);
             // 
             // button10
             // 
@@ -712,7 +722,6 @@ namespace Group_Policy_CC
         private Button button7;
         private Button button8;
         private Button button9;
-        private Button button5;
         private Button button10;
         private Button button12;
         private ToolStripMenuItem settingsToolStripMenuItem;
@@ -738,6 +747,8 @@ namespace Group_Policy_CC
         private Button button11;
         private PictureBox Banner1;
         private PictureBox Banner2;
+        private ToolStripMenuItem computerManagementToolStripMenuItem;
+        private Button button5;
     }
 }
 

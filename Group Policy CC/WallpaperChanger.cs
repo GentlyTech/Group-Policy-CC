@@ -87,7 +87,7 @@ namespace Group_Policy_CC
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
                 openFileDialog.InitialDirectory = Dir;
-                openFileDialog.Filter = "All Graphics Types|*.bmp;*.jpg;*.jpeg;*.png;*.tif;*.tiff" + "BMP|*.bmp|GIF|*.gif|JPG|*.jpg;*.jpeg|PNG|*.png|TIFF|*.tif;*.tiff|";
+                openFileDialog.Filter = "All Graphics Types|*.bmp;*.jpg;*.jpeg;*.png;";
                 openFileDialog.FilterIndex = 0;
 
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
@@ -131,6 +131,8 @@ namespace Group_Policy_CC
                 if (!SystemParametersInfo(SPI_SETDESKWALLPAPER, 0, DesktopWallpaperPath, flags)) { }
 
                 MessageBox.Show("Desktop wallpaper set successfully!", "Wallpaper Set", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                this.Close();
             }
             catch
             {

@@ -178,8 +178,8 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(383, 92);
             this.label3.TabIndex = 8;
-            this.label3.Text = "Note: Stripping local machine policies may brick the device and impact the securi" +
-    "ty of the device.";
+            this.label3.Text = "Note: Stripping local machine policies may brick the device and/or impact the sec" +
+    "urity of the device.";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // checkBox1

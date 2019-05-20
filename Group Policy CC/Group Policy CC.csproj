@@ -154,17 +154,17 @@
     <Compile Include="WallpaperChanger.Designer.cs">
       <DependentUpon>WallpaperChanger.cs</DependentUpon>
     </Compile>
-    <Compile Include="WiFiPasswordsListRaw.cs">
+    <Compile Include="WiFiPasswordFinder.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WiFiPasswordsListRaw.Designer.cs">
-      <DependentUpon>WiFiPasswordsListRaw.cs</DependentUpon>
+    <Compile Include="WiFiPasswordFinder.Designer.cs">
+      <DependentUpon>WiFiPasswordFinder.cs</DependentUpon>
     </Compile>
-    <Compile Include="WiFiPasswordsList.cs">
+    <Compile Include="WiFiPasswordsList%28Deprecated%29.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WiFiPasswordsList.Designer.cs">
-      <DependentUpon>WiFiPasswordsList.cs</DependentUpon>
+    <Compile Include="WiFiPasswordsList%28Deprecated%29.Designer.cs">
+      <DependentUpon>WiFiPasswordsList%28Deprecated%29.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="About.resx">
       <DependentUpon>About.cs</DependentUpon>
@@ -198,11 +198,11 @@
     <EmbeddedResource Include="WallpaperChanger.resx">
       <DependentUpon>WallpaperChanger.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="WiFiPasswordsListRaw.resx">
-      <DependentUpon>WiFiPasswordsListRaw.cs</DependentUpon>
+    <EmbeddedResource Include="WiFiPasswordFinder.resx">
+      <DependentUpon>WiFiPasswordFinder.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="WiFiPasswordsList.resx">
-      <DependentUpon>WiFiPasswordsList.cs</DependentUpon>
+    <EmbeddedResource Include="WiFiPasswordsList%28Deprecated%29.resx">
+      <DependentUpon>WiFiPasswordsList%28Deprecated%29.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.manifest" />
     <None Include="Properties\Settings.settings">

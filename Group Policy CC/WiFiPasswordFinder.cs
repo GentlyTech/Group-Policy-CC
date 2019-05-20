@@ -5,9 +5,9 @@ using System.Windows.Forms;
 
 namespace Group_Policy_CC
 {
-    public partial class WiFiPasswordsListRaw : Form
+    public partial class WiFiPasswordFinder : Form
     {
-        public WiFiPasswordsListRaw()
+        public WiFiPasswordFinder()
         {
             InitializeComponent();
         }
@@ -97,7 +97,7 @@ namespace Group_Policy_CC
                 }
                 else
                 {
-                    MessageBox.Show("Operation Cancellled", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Operation Cancelled", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -121,6 +121,14 @@ namespace Group_Policy_CC
             {
                 MessageBox.Show("Access is denied. Try writing to a different location.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void Button5_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Welcome to the WiFi Password Finder!\n\n" +
+                "To get started with finding a WiFi password, type an SSID into the search bar in the top right corner of this window and hit Enter/Return <- (important). " +
+                "If no SSIDs exist or the WLAN service isn't running, check to make sure that a WiFi adapter exists, has the proper drivers, is enabled, and is connected/has connected to a network before." +
+                "\n\nIf an SSID has spaces in it, you may need to put quotations at the beginning and end of the SSID in the search box.", "Help", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

@@ -5,7 +5,7 @@ namespace Group_Policy_CC
 {
     public partial class WiFiPasswordsList : Form
     {
-        Form WifiPasswordsListRaw = new WiFiPasswordsListRaw();
+        Form WifiPasswordsListRaw = new WiFiPasswordFinder();
 
         public WiFiPasswordsList()
         {

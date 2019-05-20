@@ -18,5 +18,5 @@ C:\Users\andyy\source\Collaborative Git Repos\Group Policy CC\Group Policy CC\ob
 C:\Users\andyy\source\Collaborative Git Repos\Group Policy CC\Group Policy CC\obj\Release\Group_Policy_CC.Run.resources
 C:\Users\andyy\source\Collaborative Git Repos\Group Policy CC\Group Policy CC\obj\Release\Group_Policy_CC.WifiPasswordsList.resources
 C:\Users\andyy\source\Collaborative Git Repos\Group Policy CC\Group Policy CC\obj\Release\Group_Policy_CC.EasterEgg.resources
-C:\Users\andyy\source\Collaborative Git Repos\Group Policy CC\Group Policy CC\obj\Release\Group_Policy_CC.WiFiPasswordsListRaw.resources
 C:\Users\andyy\source\Collaborative Git Repos\Group Policy CC\Group Policy CC\obj\Release\Group_Policy_CC.About.resources
+C:\Users\andyy\source\Collaborative Git Repos\Group Policy CC\Group Policy CC\obj\Release\Group_Policy_CC.WiFiPasswordFinder.resources

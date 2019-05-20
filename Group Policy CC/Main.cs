@@ -25,7 +25,7 @@ namespace Group_Policy_CC
         Form Keybinder = new KeybindWizard();
         Form WallpaperChanger = new WallpaperChanger();
         Form WifiPasswordsList = new WiFiPasswordsList();
-        Form WifiPasswordsListRaw = new WiFiPasswordsListRaw();
+        Form WifiPasswordsListRaw = new WiFiPasswordFinder();
         Form Run = new Run();
         Form EasterEgg = new EasterEgg();
 
@@ -117,6 +117,7 @@ namespace Group_Policy_CC
 
             microsoftManagementConsoleToolStripMenuItem.Image = null;
             rootConsoleToolStripMenuItem.Image = null;
+            computerManagementToolStripMenuItem.Image = null;
             groupPolicyEditorToolStripMenuItem.Image = null;
             localUsersAndGroupsToolStripMenuItem.Image = null;
             servicesToolStripMenuItem.Image = null;
@@ -341,6 +342,22 @@ namespace Group_Policy_CC
                 Process Proc = new Process();
                 Proc.StartInfo.Verb = "runas";
                 Proc.StartInfo.FileName = "mmc.exe";
+
+                Proc.Start();
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void ComputerManagementToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Process Proc = new Process();
+                Proc.StartInfo.Verb = "runas";
+                Proc.StartInfo.FileName = "compmgmt.msc";
 
                 Proc.Start();
             }
