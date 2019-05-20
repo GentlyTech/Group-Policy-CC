@@ -219,7 +219,6 @@
             this.Name = "WiFiPasswordFinder";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "WiFi Password Finder";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.WiFiPasswordFinder_FormClosing);
             this.Load += new System.EventHandler(this.WiFiPasswordsList_Load);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);

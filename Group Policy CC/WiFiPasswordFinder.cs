@@ -135,11 +135,5 @@ namespace Group_Policy_CC
                 "\n\nIf an SSID has spaces in it, you may need to put quotations at the beginning and end of the SSID in the search box.\n\n" +
                 "Good Luck!", "Help", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-
-        private void WiFiPasswordFinder_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            this.Hide();
-            e.Cancel = true; // this cancels the close event.
-        }
     }
 }

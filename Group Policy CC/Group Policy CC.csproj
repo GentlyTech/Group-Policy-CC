@@ -188,6 +188,12 @@
     <Compile Include="SekureBrowzer.Designer.cs">
       <DependentUpon>SekureBrowzer.cs</DependentUpon>
     </Compile>
+    <Compile Include="SekureBrowzerSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SekureBrowzerSettings.Designer.cs">
+      <DependentUpon>SekureBrowzerSettings.cs</DependentUpon>
+    </Compile>
     <Compile Include="Settings.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -234,6 +240,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SekureBrowzer.resx">
       <DependentUpon>SekureBrowzer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SekureBrowzerSettings.resx">
+      <DependentUpon>SekureBrowzerSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>

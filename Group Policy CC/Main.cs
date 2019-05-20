@@ -193,7 +193,7 @@ namespace Group_Policy_CC
 
         private void Button9_Click(object sender, EventArgs e)
         {
-            WifiPasswordFinder.Show();
+            WifiPasswordFinder.ShowDialog();
         }
 
         private void Button10_Click(object sender, EventArgs e)
@@ -203,7 +203,7 @@ namespace Group_Policy_CC
 
         private void Button10_Click_1(object sender, EventArgs e)
         {
-            Browser.Show();
+            Browser.ShowDialog();
         }
 
         //------------------------------------------------------------Tool Strip Functions------------------------------------------------------------------------\\

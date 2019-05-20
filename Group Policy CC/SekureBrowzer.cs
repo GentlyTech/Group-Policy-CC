@@ -7,6 +7,8 @@ namespace Group_Policy_CC
 {
     public partial class SekureBrowzer : Form
     {
+        Form BrowserSettings = new SekureBrowzerSettings();
+
         public SekureBrowzer()
         {            
             InitializeComponent();
@@ -42,7 +44,7 @@ namespace Group_Policy_CC
 
                 URL = string.Empty;
 
-                webBrowser1.Navigate("https://www.google.ca");
+                webBrowser1.Navigate("https://www.bing.ca");
 
                 button1.Enabled = false;
                 button2.Enabled = false;
@@ -103,12 +105,6 @@ namespace Group_Policy_CC
             }
         }
 
-        private void SekureBrowzer_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            this.Hide();
-            e.Cancel = true; // this cancels the close event.
-        }
-
         private void SekureBrowzer_FormClosed(object sender, FormClosedEventArgs e)
         {
             timer1.Stop();
@@ -158,7 +154,20 @@ namespace Group_Policy_CC
 
         private void Button5_Click(object sender, EventArgs e)
         {
-            webBrowser1.GoHome();
+            webBrowser1.Navigate("https://www.bing.ca");
+        }
+
+        private void TextBox2_Enter(object sender, EventArgs e)
+        {
+            textBox2.Text = string.Empty;
+        }
+
+        private void TextBox2_Leave(object sender, EventArgs e)
+        {
+            if (textBox2.Text == string.Empty)
+            {
+                textBox2.Text = "Bing Search";
+            }
         }
 
         private void Label2_Click(object sender, EventArgs e)
@@ -170,11 +179,36 @@ namespace Group_Policy_CC
                 Proc.StartInfo.FileName = "chrome.exe";
 
                 Proc.Start();
+
+                this.Close();
             }
             catch
             {
+                Process Proc = new Process();
 
+                Proc.StartInfo.FileName = "explorer.exe";
+                Proc.StartInfo.Arguments = "https://www.google.com/chrome/";
+
+                Proc.Start();
+
+                this.Close();
             }
+        }
+
+        private void TextBox2_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                if (textBox2.Text != string.Empty && textBox2.Text != "Bing Search")
+                {
+                    webBrowser1.Navigate("https://www.bing.com/search?q=" + textBox2.Text);
+                }
+            }
+        }
+
+        private void Button6_Click(object sender, EventArgs e)
+        {
+            BrowserSettings.ShowDialog();
         }
     }
 }

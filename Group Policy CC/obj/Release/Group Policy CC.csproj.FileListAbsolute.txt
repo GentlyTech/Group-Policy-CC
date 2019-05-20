@@ -20,3 +20,4 @@ C:\Users\andyy\source\Collaborative Git Repos\Group Policy CC\Group Policy CC\ob
 C:\Users\andyy\source\Collaborative Git Repos\Group Policy CC\Group Policy CC\obj\Release\Group Policy CC.csproj.CoreCompileInputs.cache
 C:\Users\andyy\source\Collaborative Git Repos\Group Policy CC\Group Policy CC\obj\Release\Group Policy CC.exe
 C:\Users\andyy\source\Collaborative Git Repos\Group Policy CC\Group Policy CC\obj\Release\Group Policy CC.pdb
+C:\Users\andyy\source\Collaborative Git Repos\Group Policy CC\Group Policy CC\obj\Release\Group_Policy_CC.SekureBrowzerSettings.resources
