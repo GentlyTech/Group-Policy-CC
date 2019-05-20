@@ -617,14 +617,14 @@ namespace Group_Policy_CC
             // 
             this.button10.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button10.Enabled = false;
             this.button10.Font = new System.Drawing.Font("Arial", 16.2F);
             this.button10.Location = new System.Drawing.Point(564, 168);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(555, 159);
             this.button10.TabIndex = 5;
-            this.button10.Text = "[Not Implemented]";
+            this.button10.Text = "Sekure Browzer";
             this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.Button10_Click_1);
             // 
             // button11
             // 

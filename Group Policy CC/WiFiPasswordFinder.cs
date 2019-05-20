@@ -94,6 +94,10 @@ namespace Group_Policy_CC
                         File.Delete(filePath);
                         FileOut();
                     }
+                    else
+                    {
+                        FileOut();
+                    }
                 }
                 else
                 {
@@ -126,9 +130,16 @@ namespace Group_Policy_CC
         private void Button5_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Welcome to the WiFi Password Finder!\n\n" +
-                "To get started with finding a WiFi password, type an SSID into the search bar in the top right corner of this window and hit Enter/Return <- (important). " +
+                "To get started with finding a WiFi password, type an SSID (the entries from 'User Profiles' below) into the search bar in the top right corner of this window and hit Enter/Return. Then, look for 'Key content' under 'Security settings'.\n\n" +
                 "If no SSIDs exist or the WLAN service isn't running, check to make sure that a WiFi adapter exists, has the proper drivers, is enabled, and is connected/has connected to a network before." +
-                "\n\nIf an SSID has spaces in it, you may need to put quotations at the beginning and end of the SSID in the search box.", "Help", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                "\n\nIf an SSID has spaces in it, you may need to put quotations at the beginning and end of the SSID in the search box.\n\n" +
+                "Good Luck!", "Help", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void WiFiPasswordFinder_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Hide();
+            e.Cancel = true; // this cancels the close event.
         }
     }
 }

@@ -1,15 +1,12 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Globalization;
-using System.IO;
 using System.Linq;
 using System.Management;
-using System.Media;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Security.Principal;
 using System.Windows.Forms;
-using Shell32;
 
 namespace Group_Policy_CC
 {
@@ -19,15 +16,15 @@ namespace Group_Policy_CC
         //Instantiate Forms
         Form Settings = new Settings();
         Form About = new About();
+        Form EasterEgg = new EasterEgg();
 
         Form PolicyRemoverWizard = new PolicyRemoverWizard();
         Form AdminHijacker = new AdminHijackerWizard();
         Form Keybinder = new KeybindWizard();
         Form WallpaperChanger = new WallpaperChanger();
-        Form WifiPasswordsList = new WiFiPasswordsList();
-        Form WifiPasswordsListRaw = new WiFiPasswordFinder();
+        Form WifiPasswordFinder = new WiFiPasswordFinder();
         Form Run = new Run();
-        Form EasterEgg = new EasterEgg();
+        Form Browser = new SekureBrowzer();
 
         public bool Is64Bit()
         {
@@ -102,7 +99,7 @@ namespace Group_Policy_CC
 
             //Configure the MessageBox
             string message = "This program was not run with Administrator Privileges.\n\nIn order to use the majority of the features in this application (e.g. change the password or strip policies), Administrator Privileges are required.\n\nPlease 'Run As Administrator' to enable these functionalities.";
-            string caption = "Error: Limited User";
+            string caption = "Error - Limited User";
             MessageBoxButtons buttons = MessageBoxButtons.OK;
             DialogResult result;
 
@@ -196,12 +193,17 @@ namespace Group_Policy_CC
 
         private void Button9_Click(object sender, EventArgs e)
         {
-            WifiPasswordsListRaw.ShowDialog();
+            WifiPasswordFinder.Show();
         }
 
         private void Button10_Click(object sender, EventArgs e)
         {
             WallpaperChanger.ShowDialog();
+        }
+
+        private void Button10_Click_1(object sender, EventArgs e)
+        {
+            Browser.Show();
         }
 
         //------------------------------------------------------------Tool Strip Functions------------------------------------------------------------------------\\
