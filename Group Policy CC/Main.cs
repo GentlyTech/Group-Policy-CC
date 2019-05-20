@@ -352,8 +352,6 @@ namespace Group_Policy_CC
 
         private void GroupPolicyEditorToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (File.Exists(Environment.SystemDirectory + "gpedit.msc"))
-            {
                 try
                 {
                     Process Proc = new Process();
@@ -364,11 +362,6 @@ namespace Group_Policy_CC
                 }
                 catch
                 {
-
-                }
-            }
-            else
-            {
                 MessageBox.Show("This edition of Windows does not support Group Policy Editing", "Error - Unsupported Edition", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
