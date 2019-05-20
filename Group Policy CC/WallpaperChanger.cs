@@ -112,61 +112,61 @@ namespace Group_Policy_CC
             {
                 SetDesktopWallpaper(update_registry: true);
             }
-    }
+        }
 
-    private void SetDesktopWallpaper(bool update_registry)
-    {
-        try
+        private void SetDesktopWallpaper(bool update_registry)
         {
-            using (RegistryKey desiredKey = Registry.CurrentUser.OpenSubKey("Control Panel\\Desktop", true))
+            try
             {
-                desiredKey.SetValue("WallPaper", DesktopWallpaperPath);
-                desiredKey.Close();
+                using (RegistryKey desiredKey = Registry.CurrentUser.OpenSubKey("Control Panel\\Desktop", true))
+                {
+                    desiredKey.SetValue("WallPaper", DesktopWallpaperPath);
+                    desiredKey.Close();
+                }
+
+                uint flags = 0;
+                if (update_registry)
+                    flags = SPIF_UPDATEINIFILE | SPIF_SENDWININICHANGE;
+
+                if (!SystemParametersInfo(SPI_SETDESKWALLPAPER, 0, DesktopWallpaperPath, flags)) { }
+
+                MessageBox.Show("Desktop wallpaper set successfully!", "Wallpaper Set", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
-            uint flags = 0;
-            if (update_registry)
-                flags = SPIF_UPDATEINIFILE | SPIF_SENDWININICHANGE;
-
-            if (!SystemParametersInfo(SPI_SETDESKWALLPAPER, 0, DesktopWallpaperPath, flags)) { }
-
-            MessageBox.Show("Desktop wallpaper set successfully!", "Wallpaper Set", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            catch
+            {
+                MessageBox.Show("There was an error setting the desktop wallpaper.", "Unable to Set Wallpaper", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
-        catch
+
+        private void ToggleSetButton()
         {
-            MessageBox.Show("There was an error setting the desktop wallpaper.", "Unable to Set Wallpaper", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            if (Win10FilePathBox1.Text != "Click 'Choose Wallpaper' above to pick a wallpaper.")
+            {
+                SetWin10.Enabled = true;
+            }
+            else
+            {
+                SetWin10.Enabled = false;
+            }
         }
-    }
 
-    private void ToggleSetButton()
-    {
-        if (Win10FilePathBox1.Text != "Click 'Choose Wallpaper' above to pick a wallpaper.")
+        #endregion
+
+        #region Windows 8
+
+        #endregion
+
+        #region Windows 7
+
+        #endregion
+
+        #region Unsupported
+
+        private void Unsupported_Click(object sender, EventArgs e)
         {
-            SetWin10.Enabled = true;
+            this.Close();
         }
-        else
-        {
-            SetWin10.Enabled = false;
-        }
+
+        #endregion
     }
-
-    #endregion
-
-    #region Windows 8
-
-    #endregion
-
-    #region Windows 7
-
-    #endregion
-
-    #region Unsupported
-
-    private void Unsupported_Click(object sender, EventArgs e)
-    {
-        this.Close();
-    }
-
-    #endregion
-}
 }

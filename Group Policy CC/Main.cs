@@ -31,7 +31,7 @@ namespace Group_Policy_CC
 
         public bool Is64Bit()
         {
-            if (Environment.Is64BitOperatingSystem == true)
+            if (Environment.Is64BitOperatingSystem)
             {
                 return true;
             }
@@ -85,6 +85,7 @@ namespace Group_Policy_CC
 
             //Settings Initialization
             ClockVisible = true;
+            BannerVisible = true;
 
             Is64Bit();
             WinBuildInfo();
@@ -418,10 +419,11 @@ namespace Group_Policy_CC
         //------------------------------------------------------------Settings Functions------------------------------------------------------------------------\\
 
         public bool ClockVisible;
+        public bool BannerVisible;
 
         public void ToggleClock()
         {
-            if (Clock1.Visible == true || Clock2.Visible == true)
+            if (Clock1.Visible || Clock2.Visible)
             {
                 Clock1.Visible = false;
                 Clock2.Visible = false;
@@ -445,6 +447,28 @@ namespace Group_Policy_CC
             }
         }
 
+        public void ToggleBanner()
+        {
+            if (Banner1.Visible || Banner2.Visible)
+            {
+                Banner1.Visible = false;
+                Banner2.Visible = false;
+
+                BannerVisible = false;
+
+                (Application.OpenForms["Settings"] as Settings).ToggleBannerText();
+            }
+            else
+            {
+                Banner1.Visible = true;
+                Banner2.Visible = true;
+
+                BannerVisible = true;
+
+                (Application.OpenForms["Settings"] as Settings).ToggleBannerText();
+            }
+        }
+
         //------------------------------------------------------------Easter Egg------------------------------------------------------------------------\\
 
         int ClickCount = 0;
@@ -462,7 +486,7 @@ namespace Group_Policy_CC
 
         private void Egg()
         {
-                EasterEgg.ShowDialog();
+            EasterEgg.ShowDialog();
 
             ClickCount = 0;
         }

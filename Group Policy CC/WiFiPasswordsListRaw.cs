@@ -102,25 +102,25 @@ namespace Group_Policy_CC
             }
         }
 
-    private void FileOut()
-    {
-        try
+        private void FileOut()
         {
-            File.WriteAllText(filePath, richTextBox1.Text);
-
-            DialogResult Response;
-            Response = MessageBox.Show("Data exported successfully. Would you like to open the file?", "Success", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-
-            if (Response == DialogResult.Yes)
+            try
             {
-                Process.Start("explorer.exe", filePath);
-            }
+                File.WriteAllText(filePath, richTextBox1.Text);
 
-        }
-        catch (UnauthorizedAccessException)
-        {
-            MessageBox.Show("Access is denied. Try writing to a different location.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DialogResult Response;
+                Response = MessageBox.Show("Data exported successfully. Would you like to open the file?", "Success", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+                if (Response == DialogResult.Yes)
+                {
+                    Process.Start("explorer.exe", filePath);
+                }
+
+            }
+            catch (UnauthorizedAccessException)
+            {
+                MessageBox.Show("Access is denied. Try writing to a different location.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
-}
 }

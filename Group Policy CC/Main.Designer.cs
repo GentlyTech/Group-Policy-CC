@@ -36,6 +36,7 @@ namespace Group_Policy_CC
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.relaunchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsControlPanelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,7 +45,15 @@ namespace Group_Policy_CC
             this.openModernSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openClassicControlPanelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.netplWizardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.userAccountControlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.microsoftManagementConsoleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rootConsoleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
+            this.groupPolicyEditorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.localUsersAndGroupsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.servicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AboutProgramToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutWindowsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,7 +69,9 @@ namespace Group_Policy_CC
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.Banner1 = new System.Windows.Forms.PictureBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.Banner2 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.Clock2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -72,25 +83,16 @@ namespace Group_Policy_CC
             this.button11 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.Version = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.relaunchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.netplWizardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.userAccountControlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.microsoftManagementConsoleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.rootConsoleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
-            this.groupPolicyEditorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.localUsersAndGroupsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.servicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Banner1)).BeginInit();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Banner2)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // timer1
@@ -120,6 +122,16 @@ namespace Group_Policy_CC
             this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
             this.menuToolStripMenuItem.Size = new System.Drawing.Size(58, 24);
             this.menuToolStripMenuItem.Text = "Menu";
+            // 
+            // relaunchToolStripMenuItem
+            // 
+            this.relaunchToolStripMenuItem.Image = global::Group_Policy_CC.Properties.Resources.UACShield;
+            this.relaunchToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.relaunchToolStripMenuItem.Name = "relaunchToolStripMenuItem";
+            this.relaunchToolStripMenuItem.ShortcutKeyDisplayString = "";
+            this.relaunchToolStripMenuItem.Size = new System.Drawing.Size(222, 26);
+            this.relaunchToolStripMenuItem.Text = "Run as Administrator";
+            this.relaunchToolStripMenuItem.Click += new System.EventHandler(this.RelaunchToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
@@ -185,10 +197,76 @@ namespace Group_Policy_CC
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(293, 6);
             // 
+            // netplWizardToolStripMenuItem
+            // 
+            this.netplWizardToolStripMenuItem.Image = global::Group_Policy_CC.Properties.Resources.UACShield;
+            this.netplWizardToolStripMenuItem.Name = "netplWizardToolStripMenuItem";
+            this.netplWizardToolStripMenuItem.Size = new System.Drawing.Size(296, 26);
+            this.netplWizardToolStripMenuItem.Text = "Net Places Wizard (Netplwiz)";
+            this.netplWizardToolStripMenuItem.Click += new System.EventHandler(this.NetplWizardToolStripMenuItem_Click);
+            // 
+            // userAccountControlToolStripMenuItem
+            // 
+            this.userAccountControlToolStripMenuItem.Image = global::Group_Policy_CC.Properties.Resources.UACShield;
+            this.userAccountControlToolStripMenuItem.Name = "userAccountControlToolStripMenuItem";
+            this.userAccountControlToolStripMenuItem.Size = new System.Drawing.Size(296, 26);
+            this.userAccountControlToolStripMenuItem.Text = "User Account Control";
+            this.userAccountControlToolStripMenuItem.Click += new System.EventHandler(this.UserAccountControlToolStripMenuItem_Click);
+            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(293, 6);
+            // 
+            // microsoftManagementConsoleToolStripMenuItem
+            // 
+            this.microsoftManagementConsoleToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.rootConsoleToolStripMenuItem,
+            this.toolStripMenuItem2,
+            this.groupPolicyEditorToolStripMenuItem,
+            this.localUsersAndGroupsToolStripMenuItem,
+            this.servicesToolStripMenuItem});
+            this.microsoftManagementConsoleToolStripMenuItem.Image = global::Group_Policy_CC.Properties.Resources.UACShield;
+            this.microsoftManagementConsoleToolStripMenuItem.Name = "microsoftManagementConsoleToolStripMenuItem";
+            this.microsoftManagementConsoleToolStripMenuItem.Size = new System.Drawing.Size(296, 26);
+            this.microsoftManagementConsoleToolStripMenuItem.Text = "Microsoft Management Console";
+            // 
+            // rootConsoleToolStripMenuItem
+            // 
+            this.rootConsoleToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("rootConsoleToolStripMenuItem.Image")));
+            this.rootConsoleToolStripMenuItem.Name = "rootConsoleToolStripMenuItem";
+            this.rootConsoleToolStripMenuItem.Size = new System.Drawing.Size(331, 26);
+            this.rootConsoleToolStripMenuItem.Text = "Root Console";
+            this.rootConsoleToolStripMenuItem.Click += new System.EventHandler(this.RootConsoleToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(328, 6);
+            // 
+            // groupPolicyEditorToolStripMenuItem
+            // 
+            this.groupPolicyEditorToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("groupPolicyEditorToolStripMenuItem.Image")));
+            this.groupPolicyEditorToolStripMenuItem.Name = "groupPolicyEditorToolStripMenuItem";
+            this.groupPolicyEditorToolStripMenuItem.Size = new System.Drawing.Size(331, 26);
+            this.groupPolicyEditorToolStripMenuItem.Text = "Group Policy Editor";
+            this.groupPolicyEditorToolStripMenuItem.Click += new System.EventHandler(this.GroupPolicyEditorToolStripMenuItem_Click);
+            // 
+            // localUsersAndGroupsToolStripMenuItem
+            // 
+            this.localUsersAndGroupsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("localUsersAndGroupsToolStripMenuItem.Image")));
+            this.localUsersAndGroupsToolStripMenuItem.Name = "localUsersAndGroupsToolStripMenuItem";
+            this.localUsersAndGroupsToolStripMenuItem.Size = new System.Drawing.Size(331, 26);
+            this.localUsersAndGroupsToolStripMenuItem.Text = "Local Users and Groups (lusrmgr.msc)";
+            this.localUsersAndGroupsToolStripMenuItem.Click += new System.EventHandler(this.LocalUsersAndGroupsToolStripMenuItem_Click);
+            // 
+            // servicesToolStripMenuItem
+            // 
+            this.servicesToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("servicesToolStripMenuItem.Image")));
+            this.servicesToolStripMenuItem.Name = "servicesToolStripMenuItem";
+            this.servicesToolStripMenuItem.Size = new System.Drawing.Size(331, 26);
+            this.servicesToolStripMenuItem.Text = "Services";
+            this.servicesToolStripMenuItem.Click += new System.EventHandler(this.ServicesToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
@@ -375,7 +453,7 @@ namespace Group_Policy_CC
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.pictureBox1);
+            this.tabPage1.Controls.Add(this.Banner1);
             this.tabPage1.Controls.Add(this.tableLayoutPanel1);
             this.tabPage1.Controls.Add(this.tableLayoutPanel2);
             this.tabPage1.Location = new System.Drawing.Point(4, 5);
@@ -386,8 +464,20 @@ namespace Group_Policy_CC
             this.tabPage1.Text = "Page 1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // Banner1
+            // 
+            this.Banner1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Banner1.Image = global::Group_Policy_CC.Properties.Resources.Banner;
+            this.Banner1.Location = new System.Drawing.Point(3, 101);
+            this.Banner1.Name = "Banner1";
+            this.Banner1.Size = new System.Drawing.Size(1122, 26);
+            this.Banner1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Banner1.TabIndex = 11;
+            this.Banner1.TabStop = false;
+            // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.Banner2);
             this.tabPage2.Controls.Add(this.tableLayoutPanel3);
             this.tabPage2.Controls.Add(this.tableLayoutPanel4);
             this.tabPage2.Location = new System.Drawing.Point(4, 5);
@@ -397,6 +487,17 @@ namespace Group_Policy_CC
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Page 2";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // Banner2
+            // 
+            this.Banner2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Banner2.Image = global::Group_Policy_CC.Properties.Resources.Banner;
+            this.Banner2.Location = new System.Drawing.Point(3, 101);
+            this.Banner2.Name = "Banner2";
+            this.Banner2.Size = new System.Drawing.Size(1122, 26);
+            this.Banner2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Banner2.TabIndex = 13;
+            this.Banner2.TabStop = false;
             // 
             // tableLayoutPanel3
             // 
@@ -551,93 +652,6 @@ namespace Group_Policy_CC
             this.Version.TabIndex = 12;
             this.Version.Text = "[Windows Version and Build]";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::Group_Policy_CC.Properties.Resources.Banner;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 101);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1122, 26);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 11;
-            this.pictureBox1.TabStop = false;
-            // 
-            // relaunchToolStripMenuItem
-            // 
-            this.relaunchToolStripMenuItem.Image = global::Group_Policy_CC.Properties.Resources.UACShield;
-            this.relaunchToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.relaunchToolStripMenuItem.Name = "relaunchToolStripMenuItem";
-            this.relaunchToolStripMenuItem.ShortcutKeyDisplayString = "";
-            this.relaunchToolStripMenuItem.Size = new System.Drawing.Size(222, 26);
-            this.relaunchToolStripMenuItem.Text = "Run as Administrator";
-            this.relaunchToolStripMenuItem.Click += new System.EventHandler(this.RelaunchToolStripMenuItem_Click);
-            // 
-            // netplWizardToolStripMenuItem
-            // 
-            this.netplWizardToolStripMenuItem.Image = global::Group_Policy_CC.Properties.Resources.UACShield;
-            this.netplWizardToolStripMenuItem.Name = "netplWizardToolStripMenuItem";
-            this.netplWizardToolStripMenuItem.Size = new System.Drawing.Size(296, 26);
-            this.netplWizardToolStripMenuItem.Text = "Net Places Wizard (Netplwiz)";
-            this.netplWizardToolStripMenuItem.Click += new System.EventHandler(this.NetplWizardToolStripMenuItem_Click);
-            // 
-            // userAccountControlToolStripMenuItem
-            // 
-            this.userAccountControlToolStripMenuItem.Image = global::Group_Policy_CC.Properties.Resources.UACShield;
-            this.userAccountControlToolStripMenuItem.Name = "userAccountControlToolStripMenuItem";
-            this.userAccountControlToolStripMenuItem.Size = new System.Drawing.Size(296, 26);
-            this.userAccountControlToolStripMenuItem.Text = "User Account Control";
-            this.userAccountControlToolStripMenuItem.Click += new System.EventHandler(this.UserAccountControlToolStripMenuItem_Click);
-            // 
-            // microsoftManagementConsoleToolStripMenuItem
-            // 
-            this.microsoftManagementConsoleToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.rootConsoleToolStripMenuItem,
-            this.toolStripMenuItem2,
-            this.groupPolicyEditorToolStripMenuItem,
-            this.localUsersAndGroupsToolStripMenuItem,
-            this.servicesToolStripMenuItem});
-            this.microsoftManagementConsoleToolStripMenuItem.Image = global::Group_Policy_CC.Properties.Resources.UACShield;
-            this.microsoftManagementConsoleToolStripMenuItem.Name = "microsoftManagementConsoleToolStripMenuItem";
-            this.microsoftManagementConsoleToolStripMenuItem.Size = new System.Drawing.Size(296, 26);
-            this.microsoftManagementConsoleToolStripMenuItem.Text = "Microsoft Management Console";
-            // 
-            // rootConsoleToolStripMenuItem
-            // 
-            this.rootConsoleToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("rootConsoleToolStripMenuItem.Image")));
-            this.rootConsoleToolStripMenuItem.Name = "rootConsoleToolStripMenuItem";
-            this.rootConsoleToolStripMenuItem.Size = new System.Drawing.Size(331, 26);
-            this.rootConsoleToolStripMenuItem.Text = "Root Console";
-            this.rootConsoleToolStripMenuItem.Click += new System.EventHandler(this.RootConsoleToolStripMenuItem_Click);
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(328, 6);
-            // 
-            // groupPolicyEditorToolStripMenuItem
-            // 
-            this.groupPolicyEditorToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("groupPolicyEditorToolStripMenuItem.Image")));
-            this.groupPolicyEditorToolStripMenuItem.Name = "groupPolicyEditorToolStripMenuItem";
-            this.groupPolicyEditorToolStripMenuItem.Size = new System.Drawing.Size(331, 26);
-            this.groupPolicyEditorToolStripMenuItem.Text = "Group Policy Editor";
-            this.groupPolicyEditorToolStripMenuItem.Click += new System.EventHandler(this.GroupPolicyEditorToolStripMenuItem_Click);
-            // 
-            // localUsersAndGroupsToolStripMenuItem
-            // 
-            this.localUsersAndGroupsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("localUsersAndGroupsToolStripMenuItem.Image")));
-            this.localUsersAndGroupsToolStripMenuItem.Name = "localUsersAndGroupsToolStripMenuItem";
-            this.localUsersAndGroupsToolStripMenuItem.Size = new System.Drawing.Size(331, 26);
-            this.localUsersAndGroupsToolStripMenuItem.Text = "Local Users and Groups (lusrmgr.msc)";
-            this.localUsersAndGroupsToolStripMenuItem.Click += new System.EventHandler(this.LocalUsersAndGroupsToolStripMenuItem_Click);
-            // 
-            // servicesToolStripMenuItem
-            // 
-            this.servicesToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("servicesToolStripMenuItem.Image")));
-            this.servicesToolStripMenuItem.Name = "servicesToolStripMenuItem";
-            this.servicesToolStripMenuItem.Size = new System.Drawing.Size(331, 26);
-            this.servicesToolStripMenuItem.Text = "Services";
-            this.servicesToolStripMenuItem.Click += new System.EventHandler(this.ServicesToolStripMenuItem_Click);
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -661,11 +675,12 @@ namespace Group_Policy_CC
             this.tableLayoutPanel1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Banner1)).EndInit();
             this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Banner2)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -721,7 +736,8 @@ namespace Group_Policy_CC
         private ToolStripSeparator toolStripMenuItem2;
         private ToolStripMenuItem servicesToolStripMenuItem;
         private Button button11;
-        private PictureBox pictureBox1;
+        private PictureBox Banner1;
+        private PictureBox Banner2;
     }
 }
 
