@@ -7,8 +7,6 @@ namespace Group_Policy_CC
 {
     public partial class SekureBrowzer : Form
     {
-        Form BrowserSettings = new SekureBrowzerSettings();
-
         public SekureBrowzer()
         {            
             InitializeComponent();
@@ -204,11 +202,6 @@ namespace Group_Policy_CC
                     webBrowser1.Navigate("https://www.bing.com/search?q=" + textBox2.Text);
                 }
             }
-        }
-
-        private void Button6_Click(object sender, EventArgs e)
-        {
-            BrowserSettings.ShowDialog();
         }
     }
 }
