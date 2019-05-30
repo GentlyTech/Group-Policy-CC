@@ -27,7 +27,7 @@ namespace Group_Policy_CC
 
         private void CheckElevation()
         {
-            if (Main.IsAdministrator())
+            if (Hub.IsAdministrator())
             {
                 label3.Visible = true;
                 pictureBox2.Visible = true;
@@ -41,7 +41,7 @@ namespace Group_Policy_CC
 
         private void RunProcessSelector()
         {
-            if (Main.IsAdministrator())
+            if (Hub.IsAdministrator())
             {
                 RunProcessAdmin();
             }
@@ -139,6 +139,14 @@ namespace Group_Policy_CC
             {
                 RunProcessSelector();
             }
+        }
+
+        private void Run_KeyDown(object sender, KeyEventArgs e)
+        {
+                if (e.KeyCode == Keys.Escape)
+                {
+                    this.Close();
+                }
         }
     }
 }

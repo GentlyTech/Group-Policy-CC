@@ -29,12 +29,12 @@ namespace Group_Policy_CC
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            (Application.OpenForms["Main"] as Main).ToggleClock();
+            (Application.OpenForms["Hub"] as Hub).ToggleClock();
         }
 
         private void Button3_Click(object sender, EventArgs e)
         {
-            (Application.OpenForms["Main"] as Main).ToggleBanner();
+            (Application.OpenForms["Hub"] as Hub).ToggleBanner();
         }
 
         private void Button8_Click(object sender, EventArgs e)
@@ -45,11 +45,11 @@ namespace Group_Policy_CC
         //------------------------------------------------------------Return Functions from Main------------------------------------------------------------------------\\
         public void ToggleClockText()
         {
-            if ((Application.OpenForms["Main"] as Main).ClockVisible)
+            if ((Application.OpenForms["Hub"] as Hub).ClockVisible)
             {
                 button1.Text = "Hide Clock";
             }
-            else if (!(Application.OpenForms["Main"] as Main).ClockVisible)
+            else if (!(Application.OpenForms["Hub"] as Hub).ClockVisible)
             {
                 button1.Text = "Show Clock";
             }
@@ -57,11 +57,11 @@ namespace Group_Policy_CC
 
         public void ToggleBannerText()
         {
-            if ((Application.OpenForms["Main"] as Main).BannerVisible)
+            if ((Application.OpenForms["Hub"] as Hub).BannerVisible)
             {
                 button3.Text = "Hide Banner";
             }
-            else if (!(Application.OpenForms["Main"] as Main).BannerVisible)
+            else if (!(Application.OpenForms["Hub"] as Hub).BannerVisible)
             {
                 button3.Text = "Show Banner";
             }

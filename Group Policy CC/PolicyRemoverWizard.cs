@@ -190,7 +190,7 @@ namespace Group_Policy_CC
             }
             catch (UnauthorizedAccessException)
             {
-                //Do not add any exceptions here
+
             }
             catch (ArgumentException)
             {

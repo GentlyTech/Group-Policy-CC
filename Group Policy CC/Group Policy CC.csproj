@@ -153,11 +153,11 @@
     <Compile Include="KeybindWizard.Designer.cs">
       <DependentUpon>KeybindWizard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Main.cs">
+    <Compile Include="Hub.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Main.Designer.cs">
-      <DependentUpon>Main.cs</DependentUpon>
+    <Compile Include="Hub.Designer.cs">
+      <DependentUpon>Hub.cs</DependentUpon>
     </Compile>
     <Compile Include="ModernBrowser.cs" />
     <Compile Include="PolicyRemoverWizard.cs">
@@ -218,8 +218,8 @@
     <EmbeddedResource Include="KeybindWizard.resx">
       <DependentUpon>KeybindWizard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Main.resx">
-      <DependentUpon>Main.cs</DependentUpon>
+    <EmbeddedResource Include="Hub.resx">
+      <DependentUpon>Hub.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PolicyRemoverWizard.resx">
       <DependentUpon>PolicyRemoverWizard.cs</DependentUpon>

@@ -47,7 +47,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(778, 50);
+            this.label1.Size = new System.Drawing.Size(774, 50);
             this.label1.TabIndex = 0;
             this.label1.Text = "Congratulations! You found an Easter Egg!";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -65,7 +65,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(784, 100);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(780, 100);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // label2
@@ -75,7 +75,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.label2.Location = new System.Drawing.Point(3, 50);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(778, 50);
+            this.label2.Size = new System.Drawing.Size(774, 50);
             this.label2.TabIndex = 2;
             this.label2.Text = "What does this button do?";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -84,12 +84,12 @@
             // 
             this.panel1.Controls.Add(this.radioButton2);
             this.panel1.Controls.Add(this.radioButton1);
-            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.Nuke);
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 100);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(784, 334);
+            this.panel1.Size = new System.Drawing.Size(780, 330);
             this.panel1.TabIndex = 4;
             // 
             // radioButton2
@@ -120,7 +120,7 @@
             // 
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.button1.Location = new System.Drawing.Point(21, 202);
+            this.button1.Location = new System.Drawing.Point(657, 108);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(92, 35);
             this.button1.TabIndex = 5;
@@ -146,7 +146,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 434);
+            this.ClientSize = new System.Drawing.Size(780, 430);
             this.ControlBox = false;
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tableLayoutPanel1);

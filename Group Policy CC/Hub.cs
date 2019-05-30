@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Group_Policy_CC
 {
-    public partial class Main : Form
+    public partial class Hub : Form
     {
         //------------------------------------------------------------Local Event Handlers & Initialization------------------------------------------------------------------------\\
         //Instantiate Forms
@@ -39,7 +39,7 @@ namespace Group_Policy_CC
         }
 
 
-        public Main()
+        public Hub()
         {
             InitializeComponent();
             timer1.Start();

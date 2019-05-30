@@ -12,6 +12,14 @@ namespace Group_Policy_CC
             InitializeComponent();
         }
 
+        private void WallpaperChanger_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
+        }
+
         [DllImport("user32.dll", SetLastError = true)]
         [return: MarshalAs(UnmanagedType.Bool)]
         static extern bool SystemParametersInfo(uint uiAction, uint uiParam, String pvParam, uint fWinIni);
@@ -26,7 +34,7 @@ namespace Group_Policy_CC
 
         private void WallpaperChanger_Load(object sender, EventArgs e)
         {
-            OSFriendlyName = (Application.OpenForms["Main"] as Main).OSFriendlyName();
+            OSFriendlyName = (Application.OpenForms["Hub"] as Hub).OSFriendlyName();
 
             if (OSFriendlyName.Contains("Windows 10"))
             {
@@ -47,7 +55,7 @@ namespace Group_Policy_CC
 
             ResetWin10Options();
             //ResetWin8Options();
-            //ResetWin7Options();
+            ResetWin7Options();
         }
 
         public void Windows10WallpaperChanger()
@@ -68,50 +76,6 @@ namespace Group_Policy_CC
         public void Unsupported()
         {
             tabControl1.SelectedIndex = 3;
-        }
-
-        #region Windows 10
-
-        private void ResetWin10Options()
-        {
-            Win10FilePathBox1.Text = "Click 'Choose Wallpaper' above to pick a wallpaper.";
-            pictureBox1.Image = null;
-            ToggleSetButton();
-        }
-        //------------------------------------------------------------Button Click Event Handlers------------------------------------------------------------------------\\
-
-        private void Win10Change1_Click(object sender, EventArgs e)
-        {
-            string Dir = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
-
-            using (OpenFileDialog openFileDialog = new OpenFileDialog())
-            {
-                openFileDialog.InitialDirectory = Dir;
-                openFileDialog.Filter = "All Graphics Types|*.bmp;*.jpg;*.jpeg;*.png;";
-                openFileDialog.FilterIndex = 0;
-
-                if (openFileDialog.ShowDialog() == DialogResult.OK)
-                {
-                    //Get the path of specified file
-                    DesktopWallpaperPath = openFileDialog.FileName.ToString();
-                    Win10FilePathBox1.Text = DesktopWallpaperPath;
-                    pictureBox1.ImageLocation = DesktopWallpaperPath;
-                    ToggleSetButton();
-                }
-            }
-        }
-
-        private void CancelWin10_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void SetWin10_Click(object sender, EventArgs e)
-        {
-            if (Win10FilePathBox1.Text != "Click 'Choose Wallpaper' above to pick a wallpaper.")
-            {
-                SetDesktopWallpaper(update_registry: true);
-            }
         }
 
         private void SetDesktopWallpaper(bool update_registry)
@@ -140,9 +104,53 @@ namespace Group_Policy_CC
             }
         }
 
-        private void ToggleSetButton()
+        #region Windows 10
+
+        private void ResetWin10Options()
         {
-            if (Win10FilePathBox1.Text != "Click 'Choose Wallpaper' above to pick a wallpaper.")
+            Win10FilePathTextBox.Text = "Click 'Choose Wallpaper' above to pick a wallpaper.";
+            pictureBox1.Image = null;
+            ToggleWin10SetButton();
+        }
+        //------------------------------------------------------------Button Click Event Handlers------------------------------------------------------------------------\\
+
+        private void Win10Change1_Click(object sender, EventArgs e)
+        {
+            string Dir = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
+
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.InitialDirectory = Dir;
+                openFileDialog.Filter = "All Graphics Types|*.bmp;*.jpg;*.jpeg;*.png;";
+                openFileDialog.FilterIndex = 0;
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    //Get the path of specified file
+                    DesktopWallpaperPath = openFileDialog.FileName.ToString();
+                    Win10FilePathTextBox.Text = DesktopWallpaperPath;
+                    pictureBox1.ImageLocation = DesktopWallpaperPath;
+                    ToggleWin10SetButton();
+                }
+            }
+        }
+
+        private void CancelWin10_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void SetWin10_Click(object sender, EventArgs e)
+        {
+            if (Win10FilePathTextBox.Text != "Click 'Choose Wallpaper' above to pick a wallpaper.")
+            {
+                SetDesktopWallpaper(update_registry: true);
+            }
+        }
+
+        private void ToggleWin10SetButton()
+        {
+            if (Win10FilePathTextBox.Text != "Click 'Choose Wallpaper' above to pick a wallpaper.")
             {
                 SetWin10.Enabled = true;
             }
@@ -156,9 +164,71 @@ namespace Group_Policy_CC
 
         #region Windows 8
 
+        private void Button6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Button5_Click(object sender, EventArgs e)
+        {
+
+        }
         #endregion
 
         #region Windows 7
+
+        private void ResetWin7Options()
+        {
+            Win7FilePathTextBox.Text = "Click 'Choose Wallpaper' above to pick a wallpaper.";
+            pictureBox2.Image = null;
+            ToggleWin7SetButton();
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            string Dir = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
+
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.InitialDirectory = Dir;
+                openFileDialog.Filter = "All Graphics Types|*.bmp;*.jpg;*.jpeg;*.png;";
+                openFileDialog.FilterIndex = 0;
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    //Get the path of specified file
+                    DesktopWallpaperPath = openFileDialog.FileName.ToString();
+                    Win7FilePathTextBox.Text = DesktopWallpaperPath;
+                    pictureBox2.ImageLocation = DesktopWallpaperPath;
+                    ToggleWin7SetButton();
+                }
+            }
+        }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            if (Win7FilePathTextBox.Text != "Click 'Choose Wallpaper' above to pick a wallpaper.")
+            {
+                SetDesktopWallpaper(update_registry: true);
+            }
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void ToggleWin7SetButton()
+        {
+            if (Win7FilePathTextBox.Text != "Click 'Choose Wallpaper' above to pick a wallpaper.")
+            {
+                Win7SetButton.Enabled = true;
+            }
+            else
+            {
+                Win7SetButton.Enabled = false;
+            }
+        }
 
         #endregion
 
@@ -168,6 +238,7 @@ namespace Group_Policy_CC
         {
             this.Close();
         }
+
 
         #endregion
     }

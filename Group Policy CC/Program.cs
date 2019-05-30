@@ -13,7 +13,7 @@ namespace Group_Policy_CC
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Main());
+            Application.Run(new Hub());
         }
     }
 }
