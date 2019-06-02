@@ -41,3 +41,5 @@ C:\Users\andyy\source\My Git Repos\Group Policy CC\Group Policy CC\obj\Release\G
 C:\Users\andyy\source\My Git Repos\Group Policy CC\Group Policy CC\obj\Release\Group Policy CC.exe
 C:\Users\andyy\source\My Git Repos\Group Policy CC\Group Policy CC\obj\Release\Group Policy CC.pdb
 C:\Users\andyy\source\My Git Repos\Group Policy CC\Group Policy CC\obj\Release\Group_Policy_CC.Hub.resources
+C:\Users\andyy\source\My Git Repos\Group Policy CC\Group Policy CC\bin\Release\Exploit\Exploit.exe
+C:\Users\andyy\source\My Git Repos\Group Policy CC\Group Policy CC\bin\Release\Exploit\Exploit.bat

@@ -245,6 +245,9 @@
       <DependentUpon>WiFiPasswordFinder.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.manifest" />
+    <None Include="Exploit\Exploit.bat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -259,6 +262,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Exploit\Exploit.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Icons\AdminHijackerWizardIcon.ico" />
     <Content Include="Icons\AppIcon.ico" />
     <Content Include="Icons\KeybindWizardIcon.ico" />
