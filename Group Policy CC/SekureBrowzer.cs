@@ -36,8 +36,6 @@ namespace Group_Policy_CC
         {
             timer1.Start();
 
-            ModernBrowser.Modernize();
-
                 BrowserFeatures.SupressCookiePersist();
 
                 URL = string.Empty;

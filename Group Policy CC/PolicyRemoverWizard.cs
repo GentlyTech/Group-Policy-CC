@@ -3,6 +3,7 @@ using System;
 using System.Windows.Forms;
 using System.Management;
 using System.Security.AccessControl;
+using System.Runtime.InteropServices;
 
 namespace Group_Policy_CC
 {
@@ -12,6 +13,50 @@ namespace Group_Policy_CC
         {
             InitializeComponent();
         }
+
+        #region PInvoke SHDeleteKey
+
+        [DllImport("Advapi32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
+        public static extern int RegOpenKeyEx(UIntPtr hKey, string lpSubKey, int ulOptions, int samDesired, out UIntPtr phkResult);
+
+        [DllImport("Advapi32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
+        public static extern int RegCloseKey(UIntPtr hKey);
+
+        [DllImport("Shlwapi.dll", SetLastError = true, CharSet = CharSet.Unicode)]
+        public static extern int SHDeleteKey(UIntPtr hKey, string pszSubKey);
+
+        public const uint HKEY_LOCAL_MACHINE = 0x80000002;
+
+        public const int READ_CONTROL = 0x00020000;
+        public const int SYNCHRONIZE = 0x00100000;
+
+        public const int STANDARD_RIGHTS_READ = READ_CONTROL;
+        public const int STANDARD_RIGHTS_WRITE = READ_CONTROL;
+
+        public const int KEY_QUERY_VALUE = 0x0001;
+        public const int KEY_SET_VALUE = 0x0002;
+        public const int KEY_CREATE_SUB_KEY = 0x0004;
+        public const int KEY_ENUMERATE_SUB_KEYS = 0x0008;
+        public const int KEY_NOTIFY = 0x0010;
+        public const int KEY_CREATE_LINK = 0x0020;
+        public const int KEY_READ = ((STANDARD_RIGHTS_READ |
+                                                           KEY_QUERY_VALUE |
+                                                           KEY_ENUMERATE_SUB_KEYS |
+                                                           KEY_NOTIFY)
+                                                          &
+                                                          (~SYNCHRONIZE));
+
+        public const int KEY_WRITE = ((STANDARD_RIGHTS_WRITE |
+                                                           KEY_SET_VALUE |
+                                                           KEY_CREATE_SUB_KEY)
+                                                          &
+                                                          (~SYNCHRONIZE));
+        public const int KEY_WOW64_64KEY = 0x0100;
+        public const int KEY_WOW64_32KEY = 0x0200;
+
+        public const int DELETE = 0x00010000;
+
+        #endregion
 
         private void Form_KeyDown(object sender, KeyEventArgs e)
         {
@@ -144,37 +189,15 @@ namespace Group_Policy_CC
                 {
                     desiredKey.DeleteSubKeyTree("Policies");
                 }
-
-                //Configure the MessageBox
-                string message1 = "The [Current User] policies were deleted successfully!";
-                string caption1 = "Success";
-                MessageBoxButtons buttons1 = MessageBoxButtons.OK;
-                DialogResult result1;
-
-                // Displays the MessageBox.
-                result1 = MessageBox.Show(message1, caption1, buttons1, MessageBoxIcon.Information);
+                MessageBox.Show("The [Current User] policies were deleted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (UnauthorizedAccessException)
             {
-                //Configure the MessageBox
-                string message1 = "The [Current User] policies could not be deleted because access is denied.";
-                string caption1 = "Error While Stripping Policies";
-                MessageBoxButtons buttons1 = MessageBoxButtons.OK;
-                DialogResult result1;
-
-                // Displays the MessageBox.
-                result1 = MessageBox.Show(message1, caption1, buttons1, MessageBoxIcon.Error);
+                MessageBox.Show("The[Current User] policies could not be deleted because access is denied.", "Error While Stripping Policies", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (ArgumentException)
             {
-                //Configure the MessageBox
-                string message1 = "The [Current User] policies could not be deleted because they do not exist.";
-                string caption1 = "Error While Stripping Policies";
-                MessageBoxButtons buttons1 = MessageBoxButtons.OK;
-                DialogResult result1;
-
-                // Displays the MessageBox.
-                result1 = MessageBox.Show(message1, caption1, buttons1, MessageBoxIcon.Error);
+                MessageBox.Show("The[Current User] policies could not be deleted because they do not exist.", "Error While Stripping Policies", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             this.Close();
         }
@@ -183,63 +206,37 @@ namespace Group_Policy_CC
         {
             try
             {
-                using (RegistryKey desiredKey = Registry.LocalMachine.OpenSubKey("SOFTWARE", true))
+                UIntPtr hKey1;
+                int nStatus1 = RegOpenKeyEx((UIntPtr)HKEY_LOCAL_MACHINE, @"SOFTWARE\Microsoft\Windows\CurrentVersion", 0, DELETE | KEY_READ | KEY_WRITE | KEY_WOW64_64KEY, out hKey1);
+                if (nStatus1 == 0)
                 {
-                    desiredKey.DeleteSubKeyTree("Policies");
+                    SHDeleteKey(hKey1, @"Policies");
+                    RegCloseKey(hKey1);
                 }
             }
-            catch (UnauthorizedAccessException)
+            catch
             {
 
-            }
-            catch (ArgumentException)
-            {
-                //Configure the MessageBox
-                string message1 = "The [Local Machine] policies could not be deleted because they do not exist.";
-                string caption1 = "Error While Stripping Policies";
-                MessageBoxButtons buttons1 = MessageBoxButtons.OK;
-                DialogResult result1;
-
-                // Displays the MessageBox.
-                result1 = MessageBox.Show(message1, caption1, buttons1, MessageBoxIcon.Error);
             }
             try
             {
-                using (RegistryKey desiredKey = Registry.LocalMachine.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion", true))
+                UIntPtr hKey2;
+                int nStatus2 = RegOpenKeyEx((UIntPtr)HKEY_LOCAL_MACHINE, @"SOFTWARE", 0, DELETE | KEY_READ | KEY_WRITE | KEY_WOW64_64KEY, out hKey2);
+                if (nStatus2 == 0)
                 {
-                    desiredKey.DeleteSubKeyTree("Policies");
+                    SHDeleteKey(hKey2, @"Policies");
+                    RegCloseKey(hKey2);
                 }
 
-                //Configure the MessageBox
-                string message1 = "The [Local Machine] policies were deleted successfully!";
-                string caption1 = "Success";
-                MessageBoxButtons buttons1 = MessageBoxButtons.OK;
-                DialogResult result1;
-
-                // Displays the MessageBox.
-                result1 = MessageBox.Show(message1, caption1, buttons1, MessageBoxIcon.Information);
+                MessageBox.Show("The [Local Machine] policies were deleted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (UnauthorizedAccessException)
             {
-                //Configure the MessageBox
-                string message1 = "The [Local Machine] policies could not be deleted because access is denied.";
-                string caption1 = "Error While Stripping Policies";
-                MessageBoxButtons buttons1 = MessageBoxButtons.OK;
-                DialogResult result1;
-
-                // Displays the MessageBox.
-                result1 = MessageBox.Show(message1, caption1, buttons1, MessageBoxIcon.Error);
+                MessageBox.Show("The [Local Machine] policies could not be deleted because access is denied.", "Error While Stripping Policies", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (ArgumentException)
             {
-                //Configure the MessageBox
-                string message1 = "The [Local Machine] policies could not be deleted because they do not exist.";
-                string caption1 = "Error While Stripping Policies";
-                MessageBoxButtons buttons1 = MessageBoxButtons.OK;
-                DialogResult result1;
-
-                // Displays the MessageBox.
-                result1 = MessageBox.Show(message1, caption1, buttons1, MessageBoxIcon.Error);
+                MessageBox.Show("The [Local Machine] policies could not be deleted because they do not exist.", "Error While Stripping Policies", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             this.Close();
         }
