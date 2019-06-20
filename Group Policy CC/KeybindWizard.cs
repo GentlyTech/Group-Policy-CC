@@ -82,6 +82,7 @@ namespace Group_Policy_CC
         private void Button4_Click(object sender, EventArgs e)
         {
             RemoveDebugger();
+            this.Close();
         }
 
         //------------------------------------------------Void Functions------------------------------------------------\\

@@ -47,6 +47,7 @@ namespace Group_Policy_CC
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.netplWizardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.userAccountControlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registryEditorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.microsoftManagementConsoleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rootConsoleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -157,6 +158,7 @@ namespace Group_Policy_CC
             this.toolStripMenuItem1,
             this.netplWizardToolStripMenuItem,
             this.userAccountControlToolStripMenuItem,
+            this.registryEditorToolStripMenuItem,
             this.toolStripSeparator1,
             this.microsoftManagementConsoleToolStripMenuItem});
             this.settingsControlPanelToolStripMenuItem.Name = "settingsControlPanelToolStripMenuItem";
@@ -213,6 +215,14 @@ namespace Group_Policy_CC
             this.userAccountControlToolStripMenuItem.Size = new System.Drawing.Size(304, 26);
             this.userAccountControlToolStripMenuItem.Text = "User Account Control";
             this.userAccountControlToolStripMenuItem.Click += new System.EventHandler(this.UserAccountControlToolStripMenuItem_Click);
+            // 
+            // registryEditorToolStripMenuItem
+            // 
+            this.registryEditorToolStripMenuItem.Image = global::Group_Policy_CC.Properties.Resources.UACShield;
+            this.registryEditorToolStripMenuItem.Name = "registryEditorToolStripMenuItem";
+            this.registryEditorToolStripMenuItem.Size = new System.Drawing.Size(304, 26);
+            this.registryEditorToolStripMenuItem.Text = "Registry Editor";
+            this.registryEditorToolStripMenuItem.Click += new System.EventHandler(this.RegistryEditorToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
@@ -749,6 +759,7 @@ namespace Group_Policy_CC
         private PictureBox Banner2;
         private ToolStripMenuItem computerManagementToolStripMenuItem;
         private Button button5;
+        private ToolStripMenuItem registryEditorToolStripMenuItem;
     }
 }
 

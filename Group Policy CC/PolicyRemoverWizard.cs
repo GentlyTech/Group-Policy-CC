@@ -163,14 +163,7 @@ namespace Group_Policy_CC
                 label1.Text = "Welcome to the Group Policy Remover Wizard";
                 label2.Visible = true;
 
-                //Configure the MessageBox
-                string message2 = "No level of action was selected.\n\nPlease select one and try again.";
-                string caption2 = "Error - No Selection";
-                MessageBoxButtons buttons2 = MessageBoxButtons.OK;
-                DialogResult result2;
-
-                // Displays the MessageBox.
-                result2 = MessageBox.Show(message2, caption2, buttons2, MessageBoxIcon.Error);
+                MessageBox.Show("No level of action was selected.\n\nPlease select one and try again.", "Error - No Selection", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

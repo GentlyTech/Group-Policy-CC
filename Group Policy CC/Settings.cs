@@ -23,6 +23,7 @@ namespace Group_Policy_CC
             //Check Settings State
             ToggleClockText();
             ToggleBannerText();
+            ToggleFullscreenText();
         }
 
         //------------------------------------------------------------Button Event Handlers------------------------------------------------------------------------\\
@@ -30,6 +31,11 @@ namespace Group_Policy_CC
         private void Button1_Click(object sender, EventArgs e)
         {
             (Application.OpenForms["Hub"] as Hub).ToggleClock();
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            (Application.OpenForms["Hub"] as Hub).ToggleFullscreen();
         }
 
         private void Button3_Click(object sender, EventArgs e)
@@ -57,13 +63,37 @@ namespace Group_Policy_CC
 
         public void ToggleBannerText()
         {
-            if ((Application.OpenForms["Hub"] as Hub).BannerVisible)
+            /*if ((Application.OpenForms["Hub"] as Hub).BannerVisible)
             {
                 button3.Text = "Hide Banner";
             }
             else if (!(Application.OpenForms["Hub"] as Hub).BannerVisible)
             {
                 button3.Text = "Show Banner";
+            }
+        }
+
+        public void ToggleDarkModeText()
+        {
+            if ((Application.OpenForms["Hub"] as Hub).DarkMode)
+            {
+                
+            }
+            else if (!(Application.OpenForms["Hub"] as Hub).DarkMode)
+            {
+                
+            }*/
+        }
+
+        public void ToggleFullscreenText()
+        {
+            if ((Application.OpenForms["Hub"] as Hub).FormBorderStyle == FormBorderStyle.None)
+            {
+                button2.Text = "Exit Fullscreen";
+            }
+            else
+            {
+                button2.Text = "Enter Fullscreen";
             }
         }
     }

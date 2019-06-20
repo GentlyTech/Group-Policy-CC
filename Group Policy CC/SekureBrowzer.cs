@@ -101,12 +101,6 @@ namespace Group_Policy_CC
             }
         }
 
-        private void SekureBrowzer_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            timer1.Stop();
-            BrowserFeatures.EndBrowserSession();
-        }
-
         private void WebBrowser1_ProgressChanged(Object sender, WebBrowserProgressChangedEventArgs e)
         {
             progressBar1.Maximum = (int)e.MaximumProgress;
@@ -120,10 +114,12 @@ namespace Group_Policy_CC
             if (CheckForInternetConnection())
             {
                 webBrowser1.Visible = true;
+                this.Refresh();
             }
             else if (!CheckForInternetConnection())
             {
                 webBrowser1.Visible = false;
+                this.Refresh();
             }
         }
 
@@ -176,7 +172,7 @@ namespace Group_Policy_CC
 
                 Proc.Start();
 
-                this.Close();
+                this.Hide();
             }
             catch
             {
@@ -187,7 +183,7 @@ namespace Group_Policy_CC
 
                 Proc.Start();
 
-                this.Close();
+                this.Hide();
             }
         }
 
@@ -200,6 +196,13 @@ namespace Group_Policy_CC
                     webBrowser1.Navigate("https://www.bing.com/search?q=" + textBox2.Text);
                 }
             }
+        }
+
+        private void SekureBrowzer_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            BrowserFeatures.EndBrowserSession();
+            e.Cancel = true;
+            this.Hide();
         }
     }
 }

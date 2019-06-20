@@ -267,7 +267,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sekure Browzer";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SekureBrowzer_FormClosed);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SekureBrowzer_FormClosing);
             this.Load += new System.EventHandler(this.SekureBrowzer_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

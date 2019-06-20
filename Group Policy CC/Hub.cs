@@ -6,6 +6,7 @@ using System.Management;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Security.Principal;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace Group_Policy_CC
@@ -111,6 +112,7 @@ namespace Group_Policy_CC
         {
             netplWizardToolStripMenuItem.Image = null;
             userAccountControlToolStripMenuItem.Image = null;
+            registryEditorToolStripMenuItem.Image = null;
 
             microsoftManagementConsoleToolStripMenuItem.Image = null;
             rootConsoleToolStripMenuItem.Image = null;
@@ -203,7 +205,7 @@ namespace Group_Policy_CC
 
         private void Button10_Click_1(object sender, EventArgs e)
         {
-            Browser.ShowDialog();
+            Browser.Show();
         }
 
         //------------------------------------------------------------Tool Strip Functions------------------------------------------------------------------------\\
@@ -219,6 +221,7 @@ namespace Group_Policy_CC
             Proc.StartInfo.FileName = "winver.exe";
 
             Proc.Start();
+
         }
 
         private void RelaunchToolStripMenuItem_Click(object sender, EventArgs e)
@@ -328,6 +331,22 @@ namespace Group_Policy_CC
                 Process Proc = new Process();
                 Proc.StartInfo.Verb = "runas";
                 Proc.StartInfo.FileName = "useraccountcontrolsettings.exe";
+
+                Proc.Start();
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void RegistryEditorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Process Proc = new Process();
+                Proc.StartInfo.Verb = "runas";
+                Proc.StartInfo.FileName = "regedit.exe";
 
                 Proc.Start();
             }
@@ -479,6 +498,31 @@ namespace Group_Policy_CC
 
                 (Application.OpenForms["Settings"] as Settings).ToggleBannerText();
             }
+        }
+
+        public void ToggleDarkMode()
+        {
+
+        }
+
+        public void ToggleFullscreen()
+        {
+            if (this.FormBorderStyle != FormBorderStyle.None)
+            {
+                this.WindowState = FormWindowState.Normal;
+                this.FormBorderStyle = FormBorderStyle.None;
+                this.Bounds = Screen.PrimaryScreen.Bounds;
+
+                (Application.OpenForms["Settings"] as Settings).ToggleFullscreenText();
+            }
+            else
+            {
+                this.FormBorderStyle = FormBorderStyle.Sizable;
+                this.WindowState = FormWindowState.Maximized;
+
+                (Application.OpenForms["Settings"] as Settings).ToggleFullscreenText();
+            }
+
         }
 
         //------------------------------------------------------------Easter Egg------------------------------------------------------------------------\\
