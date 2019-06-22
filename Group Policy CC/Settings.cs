@@ -63,7 +63,7 @@ namespace Group_Policy_CC
 
         public void ToggleBannerText()
         {
-            /*if ((Application.OpenForms["Hub"] as Hub).BannerVisible)
+            if ((Application.OpenForms["Hub"] as Hub).BannerVisible)
             {
                 button3.Text = "Hide Banner";
             }
@@ -73,7 +73,7 @@ namespace Group_Policy_CC
             }
         }
 
-        public void ToggleDarkModeText()
+        /*public void ToggleDarkModeText()
         {
             if ((Application.OpenForms["Hub"] as Hub).DarkMode)
             {
@@ -82,8 +82,8 @@ namespace Group_Policy_CC
             else if (!(Application.OpenForms["Hub"] as Hub).DarkMode)
             {
                 
-            }*/
-        }
+            }
+        }*/
 
         public void ToggleFullscreenText()
         {

@@ -382,7 +382,7 @@ namespace Group_Policy_CC
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(555, 159);
             this.button3.TabIndex = 3;
-            this.button3.Text = "Bind Shift to Launch Program";
+            this.button3.Text = "Shift Keybind";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 
@@ -395,7 +395,7 @@ namespace Group_Policy_CC
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(555, 194);
             this.button5.TabIndex = 7;
-            this.button5.Text = "Get Wifi Passwords";
+            this.button5.Text = "WiFi Information";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.Button9_Click);
             // 

@@ -8,47 +8,30 @@ namespace Group_Policy_CC
     public partial class SekureBrowzer : Form
     {
         public SekureBrowzer()
-        {            
+        {
             InitializeComponent();
 
             webBrowser1.ScriptErrorsSuppressed = true;
-        }
-
-        public static bool CheckForInternetConnection()
-        {
-            try
-            {
-                using (var client = new WebClient())
-                using (client.OpenRead("http://clients3.google.com/generate_204"))
-                {
-                    return true;
-                }
-            }
-            catch
-            {
-                return false;
-            }
         }
 
         string URL;
 
         private void SekureBrowzer_Load(object sender, EventArgs e)
         {
-            timer1.Start();
+            BrowserFeatures.SupressCookiePersist();
 
-                BrowserFeatures.SupressCookiePersist();
+            URL = string.Empty;
 
-                URL = string.Empty;
+            webBrowser1.Navigate("https://www.bing.ca");
 
-                webBrowser1.Navigate("https://www.bing.ca");
-
-                button1.Enabled = false;
-                button2.Enabled = false;
+            button1.Enabled = false;
+            button2.Enabled = false;
         }
 
         private void WebBrowser1_Navigating(object sender, WebBrowserNavigatingEventArgs e)
         {
             URL = webBrowser1.Url.ToString();
+            Status.Text = "Loading...";
 
             if (!webBrowser1.CanGoBack)
             {
@@ -81,6 +64,7 @@ namespace Group_Policy_CC
         private void WebBrowser1_Navigated(object sender, WebBrowserNavigatedEventArgs e)
         {
             textBox1.Text = webBrowser1.Url.ToString();
+            Status.Text = "Done";
 
             if (!webBrowser1.CanGoBack)
             {
@@ -105,22 +89,6 @@ namespace Group_Policy_CC
         {
             progressBar1.Maximum = (int)e.MaximumProgress;
             progressBar1.Value = (int)e.CurrentProgress;
-        }
-
-        private void Timer1_Tick(object sender, EventArgs e)
-        {
-            CheckForInternetConnection();
-
-            if (CheckForInternetConnection())
-            {
-                webBrowser1.Visible = true;
-                this.Refresh();
-            }
-            else if (!CheckForInternetConnection())
-            {
-                webBrowser1.Visible = false;
-                this.Refresh();
-            }
         }
 
         private void Button1_Click(object sender, EventArgs e)

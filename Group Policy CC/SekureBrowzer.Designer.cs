@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SekureBrowzer));
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -44,8 +43,8 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.label1 = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel3 = new System.Windows.Forms.Panel();
+            this.Status = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -227,13 +226,9 @@
     "This page will refresh once a connection is established.";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // timer1
-            // 
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
-            // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.Status);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.Location = new System.Drawing.Point(0, 423);
@@ -241,8 +236,20 @@
             this.panel3.Size = new System.Drawing.Size(800, 27);
             this.panel3.TabIndex = 4;
             // 
+            // Status
+            // 
+            this.Status.AutoSize = true;
+            this.Status.Dock = System.Windows.Forms.DockStyle.Left;
+            this.Status.Location = new System.Drawing.Point(0, 0);
+            this.Status.Name = "Status";
+            this.Status.Size = new System.Drawing.Size(56, 17);
+            this.Status.TabIndex = 2;
+            this.Status.Text = "[Status]";
+            this.Status.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // label2
             // 
+            this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label2.Dock = System.Windows.Forms.DockStyle.Right;
             this.label2.Location = new System.Drawing.Point(673, 0);
             this.label2.Name = "label2";
@@ -275,6 +282,7 @@
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -292,11 +300,11 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label Status;
     }
 }

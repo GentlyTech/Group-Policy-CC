@@ -184,13 +184,25 @@ namespace Group_Policy_CC
                 }
                 MessageBox.Show("The [Current User] policies were deleted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            catch (UnauthorizedAccessException)
+        catch
             {
-                MessageBox.Show("The[Current User] policies could not be deleted because access is denied.", "Error While Stripping Policies", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            catch (ArgumentException)
-            {
-                MessageBox.Show("The[Current User] policies could not be deleted because they do not exist.", "Error While Stripping Policies", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                UIntPtr hKey;
+                int nStatus = RegOpenKeyEx((UIntPtr)HKEY_LOCAL_MACHINE, @"SOFTWARE\Microsoft\Windows\CurrentVersion", 0, DELETE | KEY_READ | KEY_WRITE | KEY_WOW64_64KEY, out hKey);
+                if (nStatus == 0)
+                {
+                    SHDeleteKey(hKey, @"Policies");
+                    RegCloseKey(hKey);
+                }
+
+                UIntPtr hKey1;
+                int nStatus1 = RegOpenKeyEx((UIntPtr)HKEY_LOCAL_MACHINE, @"SOFTWARE", 0, DELETE | KEY_READ | KEY_WRITE | KEY_WOW64_64KEY, out hKey1);
+                if (nStatus1 == 0)
+                {
+                    SHDeleteKey(hKey1, @"Policies");
+                    RegCloseKey(hKey1);
+                }
+
+                MessageBox.Show("The [Current User] policies were deleted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             this.Close();
         }

@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
 using System.Management;
+using System.Media;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Security.Principal;
@@ -39,11 +41,43 @@ namespace Group_Policy_CC
             }
         }
 
+        RegistryKey SettingsKey = Registry.CurrentUser.CreateSubKey(@"SOFTWARE\YDS", true);
 
         public Hub()
         {
             InitializeComponent();
             timer1.Start();
+
+            SetUserSettings();
+        }
+
+        private void SetUserSettings()
+        {
+            try
+            {
+                var ClockSetting = (string)SettingsKey.GetValue("Clock").ToString();
+                var BannerSetting = (string)SettingsKey.GetValue("Banner").ToString();
+                var FullscreenSetting = (string)SettingsKey.GetValue("Fullscreen").ToString();
+
+                if (ClockSetting.Contains("False"))
+                {
+                    ToggleClock();
+                }
+
+                if (BannerSetting.Contains("False"))
+                {
+                    ToggleBanner();
+                }
+
+                if (FullscreenSetting.Contains("True"))
+                {
+                    ToggleFullscreen();
+                }
+            }
+            catch
+            {
+
+            }
         }
 
         private void OnResized(object sender, EventArgs e)
@@ -390,16 +424,16 @@ namespace Group_Policy_CC
 
         private void GroupPolicyEditorToolStripMenuItem_Click(object sender, EventArgs e)
         {
-                try
-                {
-                    Process Proc = new Process();
-                    Proc.StartInfo.Verb = "runas";
-                    Proc.StartInfo.FileName = "gpedit.msc";
+            try
+            {
+                Process Proc = new Process();
+                Proc.StartInfo.Verb = "runas";
+                Proc.StartInfo.FileName = "gpedit.msc";
 
-                    Proc.Start();
-                }
-                catch
-                {
+                Proc.Start();
+            }
+            catch
+            {
                 MessageBox.Show("This edition of Windows does not support Group Policy Editing", "Error - Unsupported Edition", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -464,6 +498,8 @@ namespace Group_Policy_CC
                 ClockVisible = false;
 
                 (Application.OpenForms["Settings"] as Settings).ToggleClockText();
+
+                SettingsKey.SetValue("Clock", "False");
             }
             else
             {
@@ -475,6 +511,8 @@ namespace Group_Policy_CC
                 ClockVisible = true;
 
                 (Application.OpenForms["Settings"] as Settings).ToggleClockText();
+
+                SettingsKey.SetValue("Clock", "True");
             }
         }
 
@@ -488,6 +526,8 @@ namespace Group_Policy_CC
                 BannerVisible = false;
 
                 (Application.OpenForms["Settings"] as Settings).ToggleBannerText();
+
+                SettingsKey.SetValue("Banner", "False");
             }
             else
             {
@@ -497,6 +537,8 @@ namespace Group_Policy_CC
                 BannerVisible = true;
 
                 (Application.OpenForms["Settings"] as Settings).ToggleBannerText();
+
+                SettingsKey.SetValue("Banner", "True");
             }
         }
 
@@ -514,6 +556,8 @@ namespace Group_Policy_CC
                 this.Bounds = Screen.PrimaryScreen.Bounds;
 
                 (Application.OpenForms["Settings"] as Settings).ToggleFullscreenText();
+
+                SettingsKey.SetValue("Fullscreen", "True");
             }
             else
             {
@@ -521,6 +565,8 @@ namespace Group_Policy_CC
                 this.WindowState = FormWindowState.Maximized;
 
                 (Application.OpenForms["Settings"] as Settings).ToggleFullscreenText();
+
+                SettingsKey.SetValue("Fullscreen", "False");
             }
 
         }
