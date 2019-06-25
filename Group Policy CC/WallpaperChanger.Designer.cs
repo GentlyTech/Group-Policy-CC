@@ -224,7 +224,7 @@
             this.SetWin10.Name = "SetWin10";
             this.SetWin10.Size = new System.Drawing.Size(189, 72);
             this.SetWin10.TabIndex = 1;
-            this.SetWin10.Text = "Set Wallpapers";
+            this.SetWin10.Text = "Set Wallpaper";
             this.SetWin10.UseVisualStyleBackColor = true;
             this.SetWin10.Click += new System.EventHandler(this.SetWin10_Click);
             // 
@@ -359,7 +359,7 @@
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(189, 72);
             this.button6.TabIndex = 1;
-            this.button6.Text = "Set Wallpapers";
+            this.button6.Text = "Set Wallpaper";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.Button6_Click);
             // 
@@ -495,7 +495,7 @@
             this.Win7SetButton.Name = "Win7SetButton";
             this.Win7SetButton.Size = new System.Drawing.Size(189, 72);
             this.Win7SetButton.TabIndex = 1;
-            this.Win7SetButton.Text = "Set Wallpapers";
+            this.Win7SetButton.Text = "Set Wallpaper";
             this.Win7SetButton.UseVisualStyleBackColor = true;
             this.Win7SetButton.Click += new System.EventHandler(this.Button3_Click);
             // 
