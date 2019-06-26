@@ -89,11 +89,11 @@ namespace Group_Policy_CC
         {
             if ((Application.OpenForms["Hub"] as Hub).FormBorderStyle == FormBorderStyle.None)
             {
-                button2.Text = "Exit Fullscreen";
+                button5.Text = "Exit Fullscreen";
             }
             else
             {
-                button2.Text = "Enter Fullscreen";
+                button5.Text = "Enter Fullscreen";
             }
         }
     }

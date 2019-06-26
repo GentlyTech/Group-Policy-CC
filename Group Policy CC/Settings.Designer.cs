@@ -111,14 +111,14 @@
             // 
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button2.Enabled = false;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.button2.Location = new System.Drawing.Point(404, 95);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(390, 80);
             this.button2.TabIndex = 5;
-            this.button2.Text = "[Enable/Disable] Fullscreen";
+            this.button2.Text = "[Enable/Disable] Dark Mode";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // button3
             // 
@@ -150,14 +150,14 @@
             // 
             this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button5.Enabled = false;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.button5.Location = new System.Drawing.Point(6, 273);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(389, 80);
             this.button5.TabIndex = 8;
-            this.button5.Text = "[Enable/Disable] Dark Mode";
+            this.button5.Text = "[Enable/Disable] Fullscreen";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.Button2_Click);
             // 
             // button6
             // 
