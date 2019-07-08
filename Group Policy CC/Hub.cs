@@ -547,5 +547,20 @@ namespace Group_Policy_CC
 
             ClickCount = 0;
         }
+
+        private void Hub_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyCode == Keys.F11)
+                {
+                    ToggleFullscreen();
+                }
+            }
+            catch
+            {
+
+            }
+        }
     }
 }
