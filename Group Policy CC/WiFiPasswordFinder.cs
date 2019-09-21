@@ -81,7 +81,7 @@ namespace Group_Policy_CC
                 string InitialDir = Environment.SpecialFolder.UserProfile + "\\Downloads";
 
                 Browser.Filter = "Text File (*.txt) | *.txt|All Files (*.*) | *.*";
-                Browser.FileName = "Exported WiFi Profile";
+                Browser.FileName = "Console Data";
                 Browser.InitialDirectory = InitialDir;
                 DialogResult result = Browser.ShowDialog();
 

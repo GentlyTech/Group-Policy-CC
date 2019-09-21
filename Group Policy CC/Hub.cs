@@ -1,14 +1,11 @@
-﻿using Microsoft.Win32;
-using System;
+﻿using System;
 using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
 using System.Management;
-using System.Media;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Security.Principal;
-using System.Threading;
 using System.Windows.Forms;
 
 namespace Group_Policy_CC
