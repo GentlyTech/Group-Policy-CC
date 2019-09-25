@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Diagnostics;
+using System.DirectoryServices.AccountManagement;
 using System.Globalization;
 using System.Linq;
 using System.Management;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Security.Principal;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace Group_Policy_CC
@@ -42,6 +44,8 @@ namespace Group_Policy_CC
         {
             InitializeComponent();
             timer1.Start();
+
+            Username.Text =  Environment.UserDomainName + "\\" + Environment.UserName;
         }
 
         private void OnResized(object sender, EventArgs e)

@@ -85,6 +85,7 @@ namespace Group_Policy_CC
             this.button11 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.Version = new System.Windows.Forms.Label();
+            this.Username = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -672,11 +673,22 @@ namespace Group_Policy_CC
             this.Version.TabIndex = 12;
             this.Version.Text = "[Windows Version and Build]";
             // 
+            // Username
+            // 
+            this.Username.AutoSize = true;
+            this.Username.Dock = System.Windows.Forms.DockStyle.Right;
+            this.Username.Location = new System.Drawing.Point(868, 28);
+            this.Username.Name = "Username";
+            this.Username.Size = new System.Drawing.Size(81, 17);
+            this.Username.TabIndex = 13;
+            this.Username.Text = "[Username]";
+            // 
             // Hub
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1136, 697);
+            this.Controls.Add(this.Username);
             this.Controls.Add(this.Version);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
@@ -762,6 +774,7 @@ namespace Group_Policy_CC
         private ToolStripMenuItem computerManagementToolStripMenuItem;
         private Button button5;
         private ToolStripMenuItem registryEditorToolStripMenuItem;
+        private Label Username;
     }
 }
 
