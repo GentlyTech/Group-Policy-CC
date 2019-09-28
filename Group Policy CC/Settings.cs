@@ -22,7 +22,7 @@ namespace Group_Policy_CC
         {
             //Check Settings State
             ToggleClockText();
-            ToggleBannerText();
+            ToggleImageBannerText();
             ToggleFullscreenText();
         }
 
@@ -30,7 +30,7 @@ namespace Group_Policy_CC
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            (Application.OpenForms["Hub"] as Hub).ToggleClock();
+            (Application.OpenForms["Hub"] as Hub).ToggleWelcomeBanner();
         }
 
         private void Button2_Click(object sender, EventArgs e)
@@ -40,7 +40,7 @@ namespace Group_Policy_CC
 
         private void Button3_Click(object sender, EventArgs e)
         {
-            (Application.OpenForms["Hub"] as Hub).ToggleBanner();
+            (Application.OpenForms["Hub"] as Hub).ToggleImageBanner();
         }
 
         private void Button8_Click(object sender, EventArgs e)
@@ -51,25 +51,25 @@ namespace Group_Policy_CC
         //------------------------------------------------------------Return Functions from Main------------------------------------------------------------------------\\
         public void ToggleClockText()
         {
-            if ((Application.OpenForms["Hub"] as Hub).ClockVisible)
+            if ((Application.OpenForms["Hub"] as Hub).WelcomeBannerVisible)
             {
-                button1.Text = "Hide Clock";
+                button1.Text = "Hide Welcome Banner";
             }
-            else if (!(Application.OpenForms["Hub"] as Hub).ClockVisible)
+            else if (!(Application.OpenForms["Hub"] as Hub).WelcomeBannerVisible)
             {
-                button1.Text = "Show Clock";
+                button1.Text = "Show Welcome Banner";
             }
         }
 
-        public void ToggleBannerText()
+        public void ToggleImageBannerText()
         {
-            if ((Application.OpenForms["Hub"] as Hub).BannerVisible)
+            if ((Application.OpenForms["Hub"] as Hub).ImageBannerVisible)
             {
-                button3.Text = "Hide Banner";
+                button3.Text = "Hide Image Banner";
             }
-            else if (!(Application.OpenForms["Hub"] as Hub).BannerVisible)
+            else if (!(Application.OpenForms["Hub"] as Hub).ImageBannerVisible)
             {
-                button3.Text = "Show Banner";
+                button3.Text = "Show Image Banner";
             }
         }
 

@@ -90,7 +90,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(389, 80);
             this.button1.TabIndex = 2;
-            this.button1.Text = "[Show/Hide] Clock";
+            this.button1.Text = "[Show/Hide] Welcome Banner";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
@@ -129,7 +129,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(389, 80);
             this.button3.TabIndex = 6;
-            this.button3.Text = "[Show/Hide] Banner";
+            this.button3.Text = "[Show/Hide] Image Banner";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 

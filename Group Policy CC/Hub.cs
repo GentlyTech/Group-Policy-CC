@@ -84,8 +84,8 @@ namespace Group_Policy_CC
             }
 
             //Settings Initialization
-            ClockVisible = true;
-            BannerVisible = true;
+            WelcomeBannerVisible = true;
+            ImageBannerVisible = true;
 
             Is64Bit();
             WinBuildInfo();
@@ -451,54 +451,56 @@ namespace Group_Policy_CC
 
         //------------------------------------------------------------Settings Functions------------------------------------------------------------------------\\
 
-        public bool ClockVisible;
-        public bool BannerVisible;
+        public bool WelcomeBannerVisible;
+        public bool ImageBannerVisible;
 
-        public void ToggleClock()
+        public void ToggleWelcomeBanner()
         {
-            if (Clock1.Visible || Clock2.Visible)
+            if (tableLayoutPanel1.Visible || tableLayoutPanel3.Visible)
             {
-                Clock1.Visible = false;
-                Clock2.Visible = false;
-                tableLayoutPanel1.ColumnCount = 1;
-                tableLayoutPanel3.ColumnCount = 1;
+                tableLayoutPanel1.Visible = false;
+                tableLayoutPanel3.Visible = false;
 
-                ClockVisible = false;
+                WelcomeBannerVisible = false;
 
                 (Application.OpenForms["Settings"] as Settings).ToggleClockText();
             }
             else
             {
-                Clock1.Visible = true;
-                Clock2.Visible = true;
-                tableLayoutPanel1.ColumnCount = 2;
-                tableLayoutPanel3.ColumnCount = 2;
+                tableLayoutPanel1.Visible = true;
+                tableLayoutPanel3.Visible = true;
 
-                ClockVisible = true;
+                WelcomeBannerVisible = true;
 
                 (Application.OpenForms["Settings"] as Settings).ToggleClockText();
             }
         }
 
-        public void ToggleBanner()
+        public void ToggleImageBanner()
         {
             if (Banner1.Visible || Banner2.Visible)
             {
                 Banner1.Visible = false;
                 Banner2.Visible = false;
 
-                BannerVisible = false;
+                ImageBannerVisible = false;
 
-                (Application.OpenForms["Settings"] as Settings).ToggleBannerText();
+                tableLayoutPanel2.Dock = DockStyle.Fill;
+                tableLayoutPanel4.Dock = DockStyle.Fill;
+
+                (Application.OpenForms["Settings"] as Settings).ToggleImageBannerText();
             }
             else
             {
                 Banner1.Visible = true;
                 Banner2.Visible = true;
 
-                BannerVisible = true;
+                ImageBannerVisible = true;
 
-                (Application.OpenForms["Settings"] as Settings).ToggleBannerText();
+                tableLayoutPanel2.Dock = DockStyle.Bottom;
+                tableLayoutPanel4.Dock = DockStyle.Bottom;
+
+                (Application.OpenForms["Settings"] as Settings).ToggleImageBannerText();
             }
         }
 

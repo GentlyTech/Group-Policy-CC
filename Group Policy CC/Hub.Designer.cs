@@ -67,12 +67,12 @@ namespace Group_Policy_CC
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.Clock1 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.Banner1 = new System.Windows.Forms.PictureBox();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.Clock1 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.Banner2 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -88,10 +88,10 @@ namespace Group_Policy_CC
             this.Username = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Banner1)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Banner2)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
@@ -112,7 +112,7 @@ namespace Group_Policy_CC
             this.aboutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1136, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1136, 30);
             this.menuStrip1.TabIndex = 7;
             this.menuStrip1.TabStop = true;
             this.menuStrip1.Text = "menuStrip1";
@@ -123,7 +123,7 @@ namespace Group_Policy_CC
             this.relaunchToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
-            this.menuToolStripMenuItem.Size = new System.Drawing.Size(60, 24);
+            this.menuToolStripMenuItem.Size = new System.Drawing.Size(60, 26);
             this.menuToolStripMenuItem.Text = "Menu";
             // 
             // relaunchToolStripMenuItem
@@ -147,7 +147,7 @@ namespace Group_Policy_CC
             // settingsToolStripMenuItem
             // 
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(76, 24);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(76, 26);
             this.settingsToolStripMenuItem.Text = "Settings";
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.SettingsToolStripMenuItem_Click);
             // 
@@ -163,7 +163,7 @@ namespace Group_Policy_CC
             this.toolStripSeparator1,
             this.microsoftManagementConsoleToolStripMenuItem});
             this.settingsControlPanelToolStripMenuItem.Name = "settingsControlPanelToolStripMenuItem";
-            this.settingsControlPanelToolStripMenuItem.Size = new System.Drawing.Size(186, 24);
+            this.settingsControlPanelToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
             this.settingsControlPanelToolStripMenuItem.Text = "Administrative Programs";
             // 
             // taskManagerToolStripMenuItem
@@ -295,7 +295,7 @@ namespace Group_Policy_CC
             this.AboutProgramToolStripMenuItem,
             this.aboutWindowsToolStripMenuItem});
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(64, 24);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(64, 26);
             this.aboutToolStripMenuItem.Text = "About";
             // 
             // AboutProgramToolStripMenuItem
@@ -364,7 +364,7 @@ namespace Group_Policy_CC
             this.tableLayoutPanel2.Controls.Add(this.button5, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.button6, 1, 2);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 127);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 125);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 3;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 31.25F));
@@ -427,6 +427,44 @@ namespace Group_Policy_CC
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.Button10_Click);
             // 
+            // tabControl1
+            // 
+            this.tabControl1.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.ItemSize = new System.Drawing.Size(0, 1);
+            this.tabControl1.Location = new System.Drawing.Point(0, 30);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1136, 667);
+            this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
+            this.tabControl1.TabIndex = 11;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.Banner1);
+            this.tabPage1.Controls.Add(this.tableLayoutPanel2);
+            this.tabPage1.Controls.Add(this.tableLayoutPanel1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 5);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1128, 658);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Page 1";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // Banner1
+            // 
+            this.Banner1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Banner1.Image = global::Group_Policy_CC.Properties.Resources.Banner;
+            this.Banner1.Location = new System.Drawing.Point(3, 101);
+            this.Banner1.Name = "Banner1";
+            this.Banner1.Size = new System.Drawing.Size(1122, 24);
+            this.Banner1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Banner1.TabIndex = 11;
+            this.Banner1.TabStop = false;
+            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
@@ -470,44 +508,6 @@ namespace Group_Policy_CC
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label1.Click += new System.EventHandler(this.Label1_Click);
             this.label1.DoubleClick += new System.EventHandler(this.Label1_Click);
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.ItemSize = new System.Drawing.Size(0, 1);
-            this.tabControl1.Location = new System.Drawing.Point(0, 28);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1136, 669);
-            this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
-            this.tabControl1.TabIndex = 11;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.Banner1);
-            this.tabPage1.Controls.Add(this.tableLayoutPanel1);
-            this.tabPage1.Controls.Add(this.tableLayoutPanel2);
-            this.tabPage1.Location = new System.Drawing.Point(4, 5);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1128, 660);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Page 1";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // Banner1
-            // 
-            this.Banner1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Banner1.Image = global::Group_Policy_CC.Properties.Resources.Banner;
-            this.Banner1.Location = new System.Drawing.Point(3, 101);
-            this.Banner1.Name = "Banner1";
-            this.Banner1.Size = new System.Drawing.Size(1122, 26);
-            this.Banner1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Banner1.TabIndex = 11;
-            this.Banner1.TabStop = false;
             // 
             // tabPage2
             // 
@@ -667,7 +667,7 @@ namespace Group_Policy_CC
             // 
             this.Version.AutoSize = true;
             this.Version.Dock = System.Windows.Forms.DockStyle.Right;
-            this.Version.Location = new System.Drawing.Point(949, 28);
+            this.Version.Location = new System.Drawing.Point(949, 30);
             this.Version.Name = "Version";
             this.Version.Size = new System.Drawing.Size(187, 17);
             this.Version.TabIndex = 12;
@@ -677,7 +677,7 @@ namespace Group_Policy_CC
             // 
             this.Username.AutoSize = true;
             this.Username.Dock = System.Windows.Forms.DockStyle.Right;
-            this.Username.Location = new System.Drawing.Point(868, 28);
+            this.Username.Location = new System.Drawing.Point(868, 30);
             this.Username.Name = "Username";
             this.Username.Size = new System.Drawing.Size(81, 17);
             this.Username.TabIndex = 13;
@@ -705,11 +705,11 @@ namespace Group_Policy_CC
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Banner1)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Banner2)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
@@ -733,9 +733,6 @@ namespace Group_Policy_CC
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label Clock1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
@@ -775,6 +772,9 @@ namespace Group_Policy_CC
         private Button button5;
         private ToolStripMenuItem registryEditorToolStripMenuItem;
         private Label Username;
+        private TableLayoutPanel tableLayoutPanel1;
+        private Label Clock1;
+        private Label label1;
     }
 }
 
