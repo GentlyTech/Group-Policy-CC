@@ -112,7 +112,7 @@ namespace Group_Policy_CC
             this.aboutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1136, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1136, 28);
             this.menuStrip1.TabIndex = 7;
             this.menuStrip1.TabStop = true;
             this.menuStrip1.Text = "menuStrip1";
@@ -123,7 +123,7 @@ namespace Group_Policy_CC
             this.relaunchToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
-            this.menuToolStripMenuItem.Size = new System.Drawing.Size(60, 26);
+            this.menuToolStripMenuItem.Size = new System.Drawing.Size(60, 24);
             this.menuToolStripMenuItem.Text = "Menu";
             // 
             // relaunchToolStripMenuItem
@@ -147,7 +147,7 @@ namespace Group_Policy_CC
             // settingsToolStripMenuItem
             // 
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(76, 26);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(76, 24);
             this.settingsToolStripMenuItem.Text = "Settings";
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.SettingsToolStripMenuItem_Click);
             // 
@@ -163,7 +163,7 @@ namespace Group_Policy_CC
             this.toolStripSeparator1,
             this.microsoftManagementConsoleToolStripMenuItem});
             this.settingsControlPanelToolStripMenuItem.Name = "settingsControlPanelToolStripMenuItem";
-            this.settingsControlPanelToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
+            this.settingsControlPanelToolStripMenuItem.Size = new System.Drawing.Size(186, 24);
             this.settingsControlPanelToolStripMenuItem.Text = "Administrative Programs";
             // 
             // taskManagerToolStripMenuItem
@@ -295,7 +295,7 @@ namespace Group_Policy_CC
             this.AboutProgramToolStripMenuItem,
             this.aboutWindowsToolStripMenuItem});
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(64, 26);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(64, 24);
             this.aboutToolStripMenuItem.Text = "About";
             // 
             // AboutProgramToolStripMenuItem
@@ -320,7 +320,7 @@ namespace Group_Policy_CC
             this.button1.Location = new System.Drawing.Point(3, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(555, 159);
-            this.button1.TabIndex = 2;
+            this.button1.TabIndex = 1;
             this.button1.Text = "Strip Group Policies";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
@@ -333,7 +333,7 @@ namespace Group_Policy_CC
             this.button2.Location = new System.Drawing.Point(564, 3);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(555, 159);
-            this.button2.TabIndex = 1;
+            this.button2.TabIndex = 2;
             this.button2.Text = "Hijack Administrator Account";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.Button2_Click);
@@ -346,7 +346,7 @@ namespace Group_Policy_CC
             this.button4.Location = new System.Drawing.Point(564, 168);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(555, 159);
-            this.button4.TabIndex = 5;
+            this.button4.TabIndex = 4;
             this.button4.Text = "Run Program";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.Button5_Click);
@@ -364,7 +364,7 @@ namespace Group_Policy_CC
             this.tableLayoutPanel2.Controls.Add(this.button5, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.button6, 1, 2);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 125);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 127);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 3;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 31.25F));
@@ -395,7 +395,7 @@ namespace Group_Policy_CC
             this.button5.Location = new System.Drawing.Point(3, 333);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(555, 194);
-            this.button5.TabIndex = 7;
+            this.button5.TabIndex = 5;
             this.button5.Text = "WiFi Information";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.Button9_Click);
@@ -422,7 +422,7 @@ namespace Group_Policy_CC
             this.button9.Location = new System.Drawing.Point(3, 168);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(555, 159);
-            this.button9.TabIndex = 4;
+            this.button9.TabIndex = 3;
             this.button9.Text = "Change Wallpapers";
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.Button10_Click);
@@ -434,10 +434,10 @@ namespace Group_Policy_CC
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.ItemSize = new System.Drawing.Size(0, 1);
-            this.tabControl1.Location = new System.Drawing.Point(0, 30);
+            this.tabControl1.Location = new System.Drawing.Point(0, 28);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1136, 667);
+            this.tabControl1.Size = new System.Drawing.Size(1136, 669);
             this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl1.TabIndex = 11;
             // 
@@ -449,7 +449,7 @@ namespace Group_Policy_CC
             this.tabPage1.Location = new System.Drawing.Point(4, 5);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1128, 658);
+            this.tabPage1.Size = new System.Drawing.Size(1128, 660);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Page 1";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -460,7 +460,7 @@ namespace Group_Policy_CC
             this.Banner1.Image = global::Group_Policy_CC.Properties.Resources.Banner;
             this.Banner1.Location = new System.Drawing.Point(3, 101);
             this.Banner1.Name = "Banner1";
-            this.Banner1.Size = new System.Drawing.Size(1122, 24);
+            this.Banner1.Size = new System.Drawing.Size(1122, 26);
             this.Banner1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Banner1.TabIndex = 11;
             this.Banner1.TabStop = false;
@@ -512,8 +512,8 @@ namespace Group_Policy_CC
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.Banner2);
-            this.tabPage2.Controls.Add(this.tableLayoutPanel3);
             this.tabPage2.Controls.Add(this.tableLayoutPanel4);
+            this.tabPage2.Controls.Add(this.tableLayoutPanel3);
             this.tabPage2.Location = new System.Drawing.Point(4, 5);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -606,7 +606,7 @@ namespace Group_Policy_CC
             this.button7.Location = new System.Drawing.Point(3, 3);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(555, 159);
-            this.button7.TabIndex = 2;
+            this.button7.TabIndex = 1;
             this.button7.Text = "<< Go Back <<";
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.Button7_Click);
@@ -619,7 +619,7 @@ namespace Group_Policy_CC
             this.button8.Location = new System.Drawing.Point(564, 3);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(555, 159);
-            this.button8.TabIndex = 1;
+            this.button8.TabIndex = 2;
             this.button8.Text = "Install Fortnite";
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.Button8_Click);
@@ -632,7 +632,7 @@ namespace Group_Policy_CC
             this.button10.Location = new System.Drawing.Point(564, 168);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(555, 159);
-            this.button10.TabIndex = 5;
+            this.button10.TabIndex = 4;
             this.button10.Text = "Sekure Browzer";
             this.button10.UseVisualStyleBackColor = true;
             this.button10.Click += new System.EventHandler(this.Button10_Click_1);
@@ -646,7 +646,7 @@ namespace Group_Policy_CC
             this.button11.Location = new System.Drawing.Point(3, 333);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(555, 194);
-            this.button11.TabIndex = 7;
+            this.button11.TabIndex = 5;
             this.button11.Text = "[Not Implemented]";
             this.button11.UseVisualStyleBackColor = true;
             // 
@@ -667,7 +667,7 @@ namespace Group_Policy_CC
             // 
             this.Version.AutoSize = true;
             this.Version.Dock = System.Windows.Forms.DockStyle.Right;
-            this.Version.Location = new System.Drawing.Point(949, 30);
+            this.Version.Location = new System.Drawing.Point(949, 28);
             this.Version.Name = "Version";
             this.Version.Size = new System.Drawing.Size(187, 17);
             this.Version.TabIndex = 12;
@@ -677,7 +677,7 @@ namespace Group_Policy_CC
             // 
             this.Username.AutoSize = true;
             this.Username.Dock = System.Windows.Forms.DockStyle.Right;
-            this.Username.Location = new System.Drawing.Point(868, 30);
+            this.Username.Location = new System.Drawing.Point(868, 28);
             this.Username.Name = "Username";
             this.Username.Size = new System.Drawing.Size(81, 17);
             this.Username.TabIndex = 13;
