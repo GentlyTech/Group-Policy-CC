@@ -69,33 +69,33 @@ namespace Group_Policy_CC
             this.button9 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.Banner1 = new System.Windows.Forms.PictureBox();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.ImageBanner1 = new System.Windows.Forms.PictureBox();
+            this.WelcomeBanner1 = new System.Windows.Forms.TableLayoutPanel();
             this.Clock1 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.Banner2 = new System.Windows.Forms.PictureBox();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.Clock2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.ImageBanner2 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
+            this.WelcomeBanner2 = new System.Windows.Forms.TableLayoutPanel();
+            this.Clock2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.Version = new System.Windows.Forms.Label();
             this.Username = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Banner1)).BeginInit();
-            this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ImageBanner1)).BeginInit();
+            this.WelcomeBanner1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Banner2)).BeginInit();
-            this.tableLayoutPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ImageBanner2)).BeginInit();
             this.tableLayoutPanel4.SuspendLayout();
+            this.WelcomeBanner2.SuspendLayout();
             this.SuspendLayout();
             // 
             // timer1
@@ -443,9 +443,9 @@ namespace Group_Policy_CC
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.Banner1);
+            this.tabPage1.Controls.Add(this.ImageBanner1);
             this.tabPage1.Controls.Add(this.tableLayoutPanel2);
-            this.tabPage1.Controls.Add(this.tableLayoutPanel1);
+            this.tabPage1.Controls.Add(this.WelcomeBanner1);
             this.tabPage1.Location = new System.Drawing.Point(4, 5);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -454,32 +454,32 @@ namespace Group_Policy_CC
             this.tabPage1.Text = "Page 1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // Banner1
+            // ImageBanner1
             // 
-            this.Banner1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Banner1.Image = global::Group_Policy_CC.Properties.Resources.Banner;
-            this.Banner1.Location = new System.Drawing.Point(3, 101);
-            this.Banner1.Name = "Banner1";
-            this.Banner1.Size = new System.Drawing.Size(1122, 26);
-            this.Banner1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Banner1.TabIndex = 11;
-            this.Banner1.TabStop = false;
+            this.ImageBanner1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ImageBanner1.Image = global::Group_Policy_CC.Properties.Resources.Banner;
+            this.ImageBanner1.Location = new System.Drawing.Point(3, 101);
+            this.ImageBanner1.Name = "ImageBanner1";
+            this.ImageBanner1.Size = new System.Drawing.Size(1122, 26);
+            this.ImageBanner1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ImageBanner1.TabIndex = 11;
+            this.ImageBanner1.TabStop = false;
             // 
-            // tableLayoutPanel1
+            // WelcomeBanner1
             // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.Clock1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 98F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1122, 98);
-            this.tableLayoutPanel1.TabIndex = 10;
+            this.WelcomeBanner1.ColumnCount = 2;
+            this.WelcomeBanner1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.WelcomeBanner1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.WelcomeBanner1.Controls.Add(this.Clock1, 0, 0);
+            this.WelcomeBanner1.Controls.Add(this.label1, 0, 0);
+            this.WelcomeBanner1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.WelcomeBanner1.Location = new System.Drawing.Point(3, 3);
+            this.WelcomeBanner1.Name = "WelcomeBanner1";
+            this.WelcomeBanner1.RowCount = 1;
+            this.WelcomeBanner1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.WelcomeBanner1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 98F));
+            this.WelcomeBanner1.Size = new System.Drawing.Size(1122, 98);
+            this.WelcomeBanner1.TabIndex = 10;
             // 
             // Clock1
             // 
@@ -511,9 +511,9 @@ namespace Group_Policy_CC
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.Banner2);
+            this.tabPage2.Controls.Add(this.ImageBanner2);
             this.tabPage2.Controls.Add(this.tableLayoutPanel4);
-            this.tabPage2.Controls.Add(this.tableLayoutPanel3);
+            this.tabPage2.Controls.Add(this.WelcomeBanner2);
             this.tabPage2.Location = new System.Drawing.Point(4, 5);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -522,58 +522,16 @@ namespace Group_Policy_CC
             this.tabPage2.Text = "Page 2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // Banner2
+            // ImageBanner2
             // 
-            this.Banner2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Banner2.Image = global::Group_Policy_CC.Properties.Resources.Banner;
-            this.Banner2.Location = new System.Drawing.Point(3, 101);
-            this.Banner2.Name = "Banner2";
-            this.Banner2.Size = new System.Drawing.Size(1122, 26);
-            this.Banner2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Banner2.TabIndex = 13;
-            this.Banner2.TabStop = false;
-            // 
-            // tableLayoutPanel3
-            // 
-            this.tableLayoutPanel3.ColumnCount = 2;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Controls.Add(this.Clock2, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.label3, 0, 0);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 1;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 98F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1122, 98);
-            this.tableLayoutPanel3.TabIndex = 11;
-            // 
-            // Clock2
-            // 
-            this.Clock2.AutoSize = true;
-            this.Clock2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.Clock2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Clock2.Font = new System.Drawing.Font("Comic Sans MS", 20F, System.Drawing.FontStyle.Bold);
-            this.Clock2.Location = new System.Drawing.Point(564, 0);
-            this.Clock2.Name = "Clock2";
-            this.Clock2.Size = new System.Drawing.Size(555, 98);
-            this.Clock2.TabIndex = 16;
-            this.Clock2.Text = "[Time]";
-            this.Clock2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(3, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(555, 98);
-            this.label3.TabIndex = 17;
-            this.label3.Text = "More Options";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ImageBanner2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ImageBanner2.Image = global::Group_Policy_CC.Properties.Resources.Banner;
+            this.ImageBanner2.Location = new System.Drawing.Point(3, 101);
+            this.ImageBanner2.Name = "ImageBanner2";
+            this.ImageBanner2.Size = new System.Drawing.Size(1122, 26);
+            this.ImageBanner2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ImageBanner2.TabIndex = 13;
+            this.ImageBanner2.TabStop = false;
             // 
             // tableLayoutPanel4
             // 
@@ -620,7 +578,7 @@ namespace Group_Policy_CC
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(555, 159);
             this.button8.TabIndex = 2;
-            this.button8.Text = "Install Fortnite";
+            this.button8.Text = "Remote Shutdown Tool\r\n(Domains Only)";
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.Button8_Click);
             // 
@@ -662,6 +620,48 @@ namespace Group_Policy_CC
             this.button12.TabIndex = 6;
             this.button12.Text = "[Not Implemented]";
             this.button12.UseVisualStyleBackColor = true;
+            // 
+            // WelcomeBanner2
+            // 
+            this.WelcomeBanner2.ColumnCount = 2;
+            this.WelcomeBanner2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.WelcomeBanner2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.WelcomeBanner2.Controls.Add(this.Clock2, 0, 0);
+            this.WelcomeBanner2.Controls.Add(this.label3, 0, 0);
+            this.WelcomeBanner2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.WelcomeBanner2.Location = new System.Drawing.Point(3, 3);
+            this.WelcomeBanner2.Name = "WelcomeBanner2";
+            this.WelcomeBanner2.RowCount = 1;
+            this.WelcomeBanner2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.WelcomeBanner2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 98F));
+            this.WelcomeBanner2.Size = new System.Drawing.Size(1122, 98);
+            this.WelcomeBanner2.TabIndex = 11;
+            // 
+            // Clock2
+            // 
+            this.Clock2.AutoSize = true;
+            this.Clock2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Clock2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Clock2.Font = new System.Drawing.Font("Comic Sans MS", 20F, System.Drawing.FontStyle.Bold);
+            this.Clock2.Location = new System.Drawing.Point(564, 0);
+            this.Clock2.Name = "Clock2";
+            this.Clock2.Size = new System.Drawing.Size(555, 98);
+            this.Clock2.TabIndex = 16;
+            this.Clock2.Text = "[Time]";
+            this.Clock2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(3, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(555, 98);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "More Options";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Version
             // 
@@ -707,14 +707,14 @@ namespace Group_Policy_CC
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Banner1)).EndInit();
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ImageBanner1)).EndInit();
+            this.WelcomeBanner1.ResumeLayout(false);
+            this.WelcomeBanner1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Banner2)).EndInit();
-            this.tableLayoutPanel3.ResumeLayout(false);
-            this.tableLayoutPanel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ImageBanner2)).EndInit();
             this.tableLayoutPanel4.ResumeLayout(false);
+            this.WelcomeBanner2.ResumeLayout(false);
+            this.WelcomeBanner2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -736,7 +736,6 @@ namespace Group_Policy_CC
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private TableLayoutPanel tableLayoutPanel3;
         private Label Clock2;
         private Label label3;
         private TableLayoutPanel tableLayoutPanel4;
@@ -766,15 +765,16 @@ namespace Group_Policy_CC
         private ToolStripSeparator toolStripMenuItem2;
         private ToolStripMenuItem servicesToolStripMenuItem;
         private Button button11;
-        private PictureBox Banner1;
-        private PictureBox Banner2;
         private ToolStripMenuItem computerManagementToolStripMenuItem;
         private Button button5;
         private ToolStripMenuItem registryEditorToolStripMenuItem;
         private Label Username;
-        private TableLayoutPanel tableLayoutPanel1;
         private Label Clock1;
         private Label label1;
+        public TableLayoutPanel WelcomeBanner2;
+        public TableLayoutPanel WelcomeBanner1;
+        public PictureBox ImageBanner2;
+        public PictureBox ImageBanner1;
     }
 }
 

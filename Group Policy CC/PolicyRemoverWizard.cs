@@ -173,19 +173,6 @@ namespace Group_Policy_CC
         {
             try
             {
-                using (RegistryKey desiredKey = Registry.CurrentUser.OpenSubKey("SOFTWARE", true))
-                {
-                    desiredKey.DeleteSubKeyTree("Policies");
-                }
-
-                using (RegistryKey desiredKey = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion", true))
-                {
-                    desiredKey.DeleteSubKeyTree("Policies");
-                }
-                MessageBox.Show("The [Current User] policies were deleted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-        catch
-            {
                 UIntPtr hKey;
                 int nStatus = RegOpenKeyEx((UIntPtr)HKEY_LOCAL_MACHINE, @"SOFTWARE\Microsoft\Windows\CurrentVersion", 0, DELETE | KEY_READ | KEY_WRITE | KEY_WOW64_64KEY, out hKey);
                 if (nStatus == 0)
@@ -203,6 +190,25 @@ namespace Group_Policy_CC
                 }
 
                 MessageBox.Show("The [Current User] policies were deleted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                /*using (RegistryKey desiredKey = Registry.CurrentUser.OpenSubKey("SOFTWARE", true))
+                {
+                    desiredKey.DeleteSubKeyTree("Policies");
+                }
+
+                using (RegistryKey desiredKey = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion", true))
+                {
+                    desiredKey.DeleteSubKeyTree("Policies");
+                }
+                MessageBox.Show("The [Current User] policies were deleted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);*/
+            }
+            catch (UnauthorizedAccessException)
+            {
+                MessageBox.Show("The [Current User] policies could not be deleted because access is denied.", "Error While Stripping Policies", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (ArgumentException)
+            {
+                MessageBox.Show("The [Current User] policies could not be deleted because they do not exist..", "Error While Stripping Policies", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             this.Close();
         }
@@ -218,13 +224,7 @@ namespace Group_Policy_CC
                     SHDeleteKey(hKey1, @"Policies");
                     RegCloseKey(hKey1);
                 }
-            }
-            catch
-            {
 
-            }
-            try
-            {
                 UIntPtr hKey2;
                 int nStatus2 = RegOpenKeyEx((UIntPtr)HKEY_LOCAL_MACHINE, @"SOFTWARE", 0, DELETE | KEY_READ | KEY_WRITE | KEY_WOW64_64KEY, out hKey2);
                 if (nStatus2 == 0)

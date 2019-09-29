@@ -21,9 +21,11 @@ namespace Group_Policy_CC
         private void Settings_Load(object sender, EventArgs e)
         {
             //Check Settings State
-            ToggleClockText();
+            ToggleWelcomeBannerText();
             ToggleImageBannerText();
             ToggleFullscreenText();
+
+            timer1.Start();
         }
 
         //------------------------------------------------------------Button Event Handlers------------------------------------------------------------------------\\
@@ -49,13 +51,13 @@ namespace Group_Policy_CC
         }
 
         //------------------------------------------------------------Return Functions from Main------------------------------------------------------------------------\\
-        public void ToggleClockText()
+        public void ToggleWelcomeBannerText()
         {
-            if ((Application.OpenForms["Hub"] as Hub).WelcomeBannerVisible)
+            if ((Application.OpenForms["Hub"] as Hub).WelcomeBanner1.Visible)
             {
                 button1.Text = "Hide Welcome Banner";
             }
-            else if (!(Application.OpenForms["Hub"] as Hub).WelcomeBannerVisible)
+            else if (!(Application.OpenForms["Hub"] as Hub).WelcomeBanner1.Visible)
             {
                 button1.Text = "Show Welcome Banner";
             }
@@ -63,11 +65,11 @@ namespace Group_Policy_CC
 
         public void ToggleImageBannerText()
         {
-            if ((Application.OpenForms["Hub"] as Hub).ImageBannerVisible)
+            if ((Application.OpenForms["Hub"] as Hub).ImageBanner1.Visible)
             {
                 button3.Text = "Hide Image Banner";
             }
-            else if (!(Application.OpenForms["Hub"] as Hub).ImageBannerVisible)
+            else if (!(Application.OpenForms["Hub"] as Hub).ImageBanner1.Visible)
             {
                 button3.Text = "Show Image Banner";
             }
@@ -95,6 +97,13 @@ namespace Group_Policy_CC
             {
                 button5.Text = "Enter Fullscreen";
             }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            ToggleWelcomeBannerText();
+            ToggleImageBannerText();
+            ToggleFullscreenText();
         }
     }
 }

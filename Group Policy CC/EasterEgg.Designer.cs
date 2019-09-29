@@ -47,7 +47,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(774, 50);
+            this.label1.Size = new System.Drawing.Size(770, 50);
             this.label1.TabIndex = 0;
             this.label1.Text = "Congratulations! You found an Easter Egg!";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -65,7 +65,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(780, 100);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(776, 100);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // label2
@@ -75,7 +75,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.label2.Location = new System.Drawing.Point(3, 50);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(774, 50);
+            this.label2.Size = new System.Drawing.Size(770, 50);
             this.label2.TabIndex = 2;
             this.label2.Text = "What does this button do?";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -89,7 +89,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 100);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(780, 330);
+            this.panel1.Size = new System.Drawing.Size(776, 326);
             this.panel1.TabIndex = 4;
             // 
             // radioButton2
@@ -134,11 +134,11 @@
             this.Nuke.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Nuke.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Nuke.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Nuke.Location = new System.Drawing.Point(285, 14);
+            this.Nuke.Location = new System.Drawing.Point(280, 3);
             this.Nuke.Name = "Nuke";
             this.Nuke.Size = new System.Drawing.Size(225, 223);
             this.Nuke.TabIndex = 4;
-            this.Nuke.Text = "Emergencies Only";
+            this.Nuke.Text = "Launch Nuke";
             this.Nuke.UseVisualStyleBackColor = false;
             this.Nuke.Click += new System.EventHandler(this.Nuke_Click);
             // 
@@ -146,7 +146,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(780, 430);
+            this.ClientSize = new System.Drawing.Size(776, 426);
             this.ControlBox = false;
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tableLayoutPanel1);

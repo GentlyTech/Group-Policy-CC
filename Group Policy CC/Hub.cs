@@ -1,13 +1,13 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Diagnostics;
-using System.DirectoryServices.AccountManagement;
+using System.DirectoryServices.ActiveDirectory;
 using System.Globalization;
 using System.Linq;
 using System.Management;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Security.Principal;
-using System.Threading;
 using System.Windows.Forms;
 
 namespace Group_Policy_CC
@@ -45,7 +45,120 @@ namespace Group_Policy_CC
             InitializeComponent();
             timer1.Start();
 
-            Username.Text =  Environment.UserDomainName + "\\" + Environment.UserName;
+            Username.Text = Environment.UserDomainName + "\\" + Environment.UserName;
+        }
+
+        private void LoadSettings()
+        {
+            try
+            {
+                using (RegistryKey key = Registry.CurrentUser.OpenSubKey("SOFTWARE\\YDS\\GPCC\\Settings", true))
+                {
+
+                    if (key == null)
+                    {
+                        RegistryKey MakeKey = Registry.CurrentUser.CreateSubKey("Software\\YDS\\GPCC\\Settings", true);
+                        MakeKey.SetValue("WelcomeBannerVisible", 1, RegistryValueKind.DWord);
+                        MakeKey.SetValue("ImageBannerVisible", 1, RegistryValueKind.DWord);
+                        MakeKey.SetValue("IsFullscreen", 0, RegistryValueKind.DWord);
+                    }
+
+                    object K1 = key.GetValue("WelcomeBannerVisible");
+                    if (K1 != null)
+                    {
+                        if (K1.Equals(0))
+                        {
+                            ToggleWelcomeBanner();
+                        }
+                    }
+                    else
+                    {
+                        key.SetValue("WelcomeBannerVisible", 1, RegistryValueKind.DWord);
+                    }
+
+                    object K2 = key.GetValue("ImageBannerVisible");
+                    if (K2 != null)
+                    {
+                        if (K2.Equals(0))
+                        {
+                            ToggleImageBanner();
+                        }
+                    }
+                    else
+                    {
+                        key.SetValue("ImageBannerVisible", 1, RegistryValueKind.DWord);
+                    }
+
+                    object K3 = key.GetValue("HKCU\\SOFTWARE\\YDS\\GPCC\\Settings\\IsFullscreen");
+                    if (K3 != null)
+                    {
+                        if (K3.Equals(1))
+                        {
+                            ToggleFullscreen();
+                        }
+                    }
+                    else
+                    {
+                        key.SetValue("IsFullscreen", 0, RegistryValueKind.DWord);
+                    }
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Unable to Load Settings", "Load Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void WriteSettings(int SettingNumber, bool Value)
+        {
+            using (RegistryKey key = Registry.CurrentUser.OpenSubKey("Software\\YDS\\GPCC\\Settings", true))
+            {
+                if (key == null)
+                {
+                    RegistryKey MakeKey = Registry.CurrentUser.CreateSubKey("Software\\YDS\\GPCC\\Settings", true);
+                    MakeKey.SetValue("WelcomeBannerVisible", 1, RegistryValueKind.DWord);
+                    MakeKey.SetValue("ImageBannerVisible", 1, RegistryValueKind.DWord);
+                    MakeKey.SetValue("IsFullscreen", 0, RegistryValueKind.DWord);
+                }
+
+                if (SettingNumber == 1)
+                {
+                    if (Value)
+                    {
+                        key.SetValue("WelcomeBannerVisible", 1, RegistryValueKind.DWord);
+                    }
+                    else
+                    {
+                        key.SetValue("WelcomeBannerVisible", 0, RegistryValueKind.DWord);
+                    }
+                }
+                else if (SettingNumber == 2)
+                {
+                    if (Value)
+                    {
+                        key.SetValue("ImageBannerVisible", 1, RegistryValueKind.DWord);
+                    }
+                    else
+                    {
+                        key.SetValue("ImageBannerVisible", 0, RegistryValueKind.DWord);
+                    }
+                }
+                else if (SettingNumber == 3)
+                {
+                    if (Value)
+                    {
+                        key.SetValue("IsFullscreen", 1, RegistryValueKind.DWord);
+                    }
+                    else
+                    {
+                        key.SetValue("IsFullscreen", 0, RegistryValueKind.DWord);
+                    }
+                }
+                else
+                {
+                    throw new Exception("Something went wrong while saving settings! Please report this bug to the creator.");
+                }
+            }
         }
 
         private void OnResized(object sender, EventArgs e)
@@ -70,6 +183,8 @@ namespace Group_Policy_CC
 
         private void Main_Load(object sender, EventArgs e)
         {
+            LoadSettings();
+
             if (IsAdministrator())
             {
                 this.Text = this.Text + " " + "(Administrator)";
@@ -83,15 +198,31 @@ namespace Group_Policy_CC
                 Lockdown();
             }
 
-            //Settings Initialization
-            WelcomeBannerVisible = true;
-            ImageBannerVisible = true;
-
             Is64Bit();
             WinBuildInfo();
+
+            if (CheckDomain())
+            {
+                button8.Enabled = true;
+            }
+            else if (!CheckDomain())
+            {
+                button8.Enabled = false;
+            }
         }
 
-
+        bool CheckDomain()
+        {
+            try
+            {
+                Domain.GetComputerDomain();
+                return true;
+            }
+            catch (ActiveDirectoryObjectNotFoundException)
+            {
+                return false;
+            }
+        }
 
         private void Lockdown()
         {
@@ -186,13 +317,7 @@ namespace Group_Policy_CC
 
         private void Button8_Click(object sender, EventArgs e)
         {
-            string message = "Haha... no.";
-            string caption = "Install Fortnite";
-            MessageBoxButtons buttons = MessageBoxButtons.OK;
-            DialogResult result;
-
-            // Displays the MessageBox.
-            result = MessageBox.Show(message, caption, buttons, MessageBoxIcon.Stop);
+            throw new NotImplementedException("This function will come soon! Check back later!");
         }
 
         private void Button9_Click(object sender, EventArgs e)
@@ -450,63 +575,54 @@ namespace Group_Policy_CC
         }
 
         //------------------------------------------------------------Settings Functions------------------------------------------------------------------------\\
-
-        public bool WelcomeBannerVisible;
-        public bool ImageBannerVisible;
-
         public void ToggleWelcomeBanner()
         {
-            if (tableLayoutPanel1.Visible || tableLayoutPanel3.Visible)
+            if (WelcomeBanner1.Visible || WelcomeBanner2.Visible)
             {
-                tableLayoutPanel1.Visible = false;
-                tableLayoutPanel3.Visible = false;
+                WelcomeBanner1.Visible = false;
+                WelcomeBanner2.Visible = false;
 
-                WelcomeBannerVisible = false;
+                WriteSettings(1, false);
 
-                (Application.OpenForms["Settings"] as Settings).ToggleClockText();
+                //(Application.OpenForms["Settings"] as Settings).ToggleClockText();
             }
             else
             {
-                tableLayoutPanel1.Visible = true;
-                tableLayoutPanel3.Visible = true;
+                WelcomeBanner1.Visible = true;
+                WelcomeBanner2.Visible = true;
 
-                WelcomeBannerVisible = true;
+                WriteSettings(1, true);
 
-                (Application.OpenForms["Settings"] as Settings).ToggleClockText();
+                //(Application.OpenForms["Settings"] as Settings).ToggleClockText();
             }
         }
 
         public void ToggleImageBanner()
         {
-            if (Banner1.Visible || Banner2.Visible)
+            if (ImageBanner1.Visible || ImageBanner2.Visible)
             {
-                Banner1.Visible = false;
-                Banner2.Visible = false;
-
-                ImageBannerVisible = false;
+                ImageBanner1.Visible = false;
+                ImageBanner2.Visible = false;
 
                 tableLayoutPanel2.Dock = DockStyle.Fill;
                 tableLayoutPanel4.Dock = DockStyle.Fill;
 
-                (Application.OpenForms["Settings"] as Settings).ToggleImageBannerText();
+                WriteSettings(2, false);
+
+                //(Application.OpenForms["Settings"] as Settings).ToggleImageBannerText();
             }
             else
             {
-                Banner1.Visible = true;
-                Banner2.Visible = true;
-
-                ImageBannerVisible = true;
+                ImageBanner1.Visible = true;
+                ImageBanner2.Visible = true;
 
                 tableLayoutPanel2.Dock = DockStyle.Bottom;
                 tableLayoutPanel4.Dock = DockStyle.Bottom;
 
-                (Application.OpenForms["Settings"] as Settings).ToggleImageBannerText();
+                WriteSettings(2, true);
+
+                //(Application.OpenForms["Settings"] as Settings).ToggleImageBannerText();
             }
-        }
-
-        public void ToggleDarkMode()
-        {
-
         }
 
         public void ToggleFullscreen()
@@ -517,15 +633,22 @@ namespace Group_Policy_CC
                 this.FormBorderStyle = FormBorderStyle.None;
                 this.Bounds = Screen.PrimaryScreen.Bounds;
 
-                (Application.OpenForms["Settings"] as Settings).ToggleFullscreenText();
+                WriteSettings(3, true);
+
+                //(Application.OpenForms["Settings"] as Settings).ToggleFullscreenText();
             }
             else
             {
                 this.FormBorderStyle = FormBorderStyle.Sizable;
                 this.WindowState = FormWindowState.Maximized;
 
-                (Application.OpenForms["Settings"] as Settings).ToggleFullscreenText();
+                WriteSettings(3, false);
+
+                //(Application.OpenForms["Settings"] as Settings).ToggleFullscreenText();
             }
+        }
+        public void ToggleDarkMode()
+        {
 
         }
 
