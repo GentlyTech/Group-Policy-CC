@@ -26,6 +26,7 @@ namespace Group_Policy_CC
         public static extern int SHDeleteKey(UIntPtr hKey, string pszSubKey);
 
         public const uint HKEY_LOCAL_MACHINE = 0x80000002;
+        public const uint HKEY_CURRENT_USER = 0x80000001;
 
         public const int READ_CONTROL = 0x00020000;
         public const int SYNCHRONIZE = 0x00100000;
@@ -174,7 +175,7 @@ namespace Group_Policy_CC
             try
             {
                 UIntPtr hKey;
-                int nStatus = RegOpenKeyEx((UIntPtr)HKEY_LOCAL_MACHINE, @"SOFTWARE\Microsoft\Windows\CurrentVersion", 0, DELETE | KEY_READ | KEY_WRITE | KEY_WOW64_64KEY, out hKey);
+                int nStatus = RegOpenKeyEx((UIntPtr)HKEY_CURRENT_USER, @"SOFTWARE\Microsoft\Windows\CurrentVersion", 0, DELETE | KEY_READ | KEY_WRITE | KEY_WOW64_64KEY, out hKey);
                 if (nStatus == 0)
                 {
                     SHDeleteKey(hKey, @"Policies");
@@ -182,7 +183,7 @@ namespace Group_Policy_CC
                 }
 
                 UIntPtr hKey1;
-                int nStatus1 = RegOpenKeyEx((UIntPtr)HKEY_LOCAL_MACHINE, @"SOFTWARE", 0, DELETE | KEY_READ | KEY_WRITE | KEY_WOW64_64KEY, out hKey1);
+                int nStatus1 = RegOpenKeyEx((UIntPtr)HKEY_CURRENT_USER, @"SOFTWARE", 0, DELETE | KEY_READ | KEY_WRITE | KEY_WOW64_64KEY, out hKey1);
                 if (nStatus1 == 0)
                 {
                     SHDeleteKey(hKey1, @"Policies");
