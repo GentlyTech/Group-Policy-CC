@@ -105,7 +105,7 @@ namespace Group_Policy_CC
             }
             catch
             {
-                MessageBox.Show("Unable to Load Settings", "Load Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show("Unable to Load Settings", "Load Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
