@@ -45,6 +45,12 @@ namespace Group_Policy_CC
             (Application.OpenForms["Hub"] as Hub).ToggleImageBanner();
         }
 
+        private void button7_Click(object sender, EventArgs e)
+        {
+            (Application.OpenForms["Hub"] as Hub).ResetSettings();
+            button7.Text = "The default settings will apply the next time you launch the program.";
+        }
+
         private void Button8_Click(object sender, EventArgs e)
         {
             this.Close();

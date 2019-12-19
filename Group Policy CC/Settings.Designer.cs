@@ -40,6 +40,7 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.button7 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,6 +58,7 @@
             this.tableLayoutPanel1.Controls.Add(this.button4, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.button5, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.button6, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.button7, 0, 4);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -178,6 +180,19 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // button7
+            // 
+            this.button7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.button7.ForeColor = System.Drawing.Color.Red;
+            this.button7.Location = new System.Drawing.Point(6, 362);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(389, 82);
+            this.button7.TabIndex = 10;
+            this.button7.Text = "Reset Settings";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -212,5 +227,6 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button button7;
     }
 }

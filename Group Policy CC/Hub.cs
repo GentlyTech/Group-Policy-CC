@@ -109,6 +109,14 @@ namespace Group_Policy_CC
             }
         }
 
+        public void ResetSettings()
+        {
+                RegistryKey MakeKey = Registry.CurrentUser.CreateSubKey("Software\\YDS\\GPCC\\Settings", true);
+                MakeKey.SetValue("WelcomeBannerVisible", 1, RegistryValueKind.DWord);
+                MakeKey.SetValue("ImageBannerVisible", 1, RegistryValueKind.DWord);
+                MakeKey.SetValue("IsFullscreen", 0, RegistryValueKind.DWord);
+        }
+
         private void WriteSettings(int SettingNumber, bool Value)
         {
             using (RegistryKey key = Registry.CurrentUser.OpenSubKey("Software\\YDS\\GPCC\\Settings", true))
